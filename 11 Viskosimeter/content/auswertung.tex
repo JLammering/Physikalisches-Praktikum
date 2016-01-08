@@ -1,9 +1,143 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsubsection{Viskosität bei Raumtemperatur}
+
+Bei der kleinen Glaskugel werden folgende Werte für Gewicht und Radius
+gemessen:
+\begin{align}
+  m_\text{k} & = \SI{4.4531}{\gram} & r_\text{k} & =
+  \SI{7.8203(9)}{\milli\meter}.
+\end{align}
+Daraus folgt die Dichte
+
+\begin{equation}
+  \rho_\text{k} = \frac{m_\text{k}}{V_\text{k}} = \frac{m_\text{k}}
+  {\frac{4}{3}\pi r_\text{k}^3} = \SI{2222.9(7)}{\kilo\gram\per\cubic\meter}.
+\end{equation}
+Die zehn Werte der Fallzeit der kleinen Kugel am Viskosimeter werden gemitteln,
+sodass mit einer Zeit
+
+\begin{equation}
+  t_{k} = \SI{12.9(1)}{\second}
+\end{equation}
+weitergerechnet werden kann.
+Mit der gegebenen Apparaturkonstante
+
+\begin{equation}
+  K_\text{k} = \SI{0.07640}{\pascal\cubic\centi\meter\per\kilo\gram}
+\end{equation}
+für die kleine Kugel und der Dichte von Wasser [!!!Quelle!!!]
+
+\begin{equation}
+  \rho_\text{W} = \SI{998.2}{\kilo\gram\per\cubic\meter}
+\end{equation}
+folgt bei Raumtemperatur $T=\SI{18}{\kelvin}$ über die Formel
+
+\begin{equation}
+  \eta_\text{W} = (\rho_\text{k}-\rho_\text{W})K_\text{k} \cdot t_\text{k}
+  \label{eqn:Viskositaet}
+\end{equation}
+die Viskosität des destillierten Wassers
+
+\begin{equation}
+  \eta_\text{W} = \SI{1.21(1)}{\milli\pascal\second}.
+\end{equation}
+
+\subsubsection{Apparaturkonstante}
+
+Die Messung der Temperaturabhängigkeit wird mit der großen Kugel durchgeführt,
+weshalb zunächst die Apparaturkonstante für diese Kugel bestimmt werden muss.
+Die Werte für die Masse und den Radius der großen Kugel betragen
+
+\begin{align}
+  m_\text{g} & = \SI{4.96}{\gram} & r_\text{g} & = \SI{7.908(1)}{\milli\meter}.
+\end{align}
+Das führt zu der Dichte
+
+\begin{equation}
+  \rho_\text{g} = \frac{m_\text{g}}{V_\text{g}} = \frac{m_\text{g}}
+  {\frac{4}{3}\pi r_\text{g}^3} = \SI{2394(1)}{\kilo\gram\per\cubic\meter}.
+\end{equation}
+Der Mittelwert der zehn Fallzeiten der großen Kugel beträgt
+
+\begin{equation}
+  t_\text{g} = \SI{84.1(4)}{\second}.
+\end{equation}
+Über die berechneten Dichten, die Fallzeit und die Viskosität $\eta_\text{W}$
+von Wasser folgt bei Raumtemperatur die Apparaturkonstante
+
+\begin{equation}
+  K_\text{g} = \frac{\eta_\text{W}}{t(\rho_\text{g}-\rho_\text{W})}
+  = \SI{10.3(1)}{\milli\pascal\cubic\centi\meter\per\kilo\gram}
+\end{equation}
+für die große Kugel.
+
+\subsubsection{Temperaturabhängigkeit der Viskosität}
+
+In Tabelle \ref{tab:FallTemp} sind die Messwerte für die Fallzeit
+bei verschiedenen Temperaturen abgebildet.
+
+\begin{table}[h]
+  \centering
+  \caption{Messwerte der Temperatur und Fallzeit.}
+  \label{tab:FallTemp}
+  \begin{tabular}{c c}
+    \toprule
+    $T/\si{\celsius}$ & $t/\si{\second}$ \\
+    \midrule
+    18.0 & 84.13 \\
+    18.0 & 84.63 \\
+    40.0 & 58.50 \\
+    40.0 & 58.55 \\
+    45.0 & 54.56 \\
+    45.0 & 55.58 \\
+    48.0 & 50.84 \\
+    48.0 & 50.97 \\
+    51.0 & 47.35 \\
+    51.0 & 47.63 \\
+    54.0 & 44.75 \\
+    54.0 & 44.38 \\
+    58.0 & 42.58 \\
+    58.0 & 42.40 \\
+    61.0 & 40.79 \\
+    61.0 & 40.76 \\
+    65.5 & 38.10 \\
+    65.5 & 38.09 \\
+    70.5 & 38.50 \\
+    70.5 & 38.67 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Aus den Werten für die Fallzeit $t$ kann über die Formel \eqref{eqn:Viskositaet}
+die Viskosität $\eta(T)$ für die jeweiligen Temperaturen $T$ bestimmt werden.
+Die Messwertpaare werden dann durch eine Exponentialfunktion, wie in der
+Andraedschen Gleichung \eqref{eqn:}, angenähert.
+In Abbildung \ref{fig:VisTemp} sind die Messwerte und die Ausgleichsfunktion
+jeweils mit $ln(\eta)$ und $\frac{1}{T}$ dargestellt.
+Daraus ergeben sich die Koeffizienten
+
+\begin{equation}
+  A = \num{4.8(5)e-6}
+\end{equation}
+und
+
+\begin{equation}
+  B = (\num{1610(30)}).
+\end{equation}
+Damit lautet die Funktion der Viskosität von der Temperatur
+
+\begin{equation}
+  \eta(T) = (\num{4.8(5)}) \symup{e}^{\frac{\num{1610(30)}}{T}\si{\second}}
+  \si{\micro\pascal\second}
+\end{equation}
+
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics[width=\textwidth]{plotandrat.pdf}
+  \caption{Graph von $\eta(T)$ und Messwerte.}
+  \label{fig:VisTemp}
 \end{figure}
+
+%http://www.wissenschaft-technik-ethik.de/wasser_dichte.html
