@@ -1,4 +1,48 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+Die Art und Weise wie sich ein Körper durch eine Flüssigkeit
+bewegt hängt von einigen Faktoren ab. Diese Faktoren sind unter anderem
+ die Beschaffenheit des Körpers wie Masse und Volumen, die stark temperaturabhängige
+Viskosität und die Dichte der Flüssigkeit.
+Die  Viskosität kann mit Hilfe eines Kugelfallviskosimeters bestimmt werden.
+Dort wird eine Kugel durch ein Rohr mit leicht größerem Radius fallen gelassen.
+Es muss darauf geachtet werden dieses Experiment bei einer laminaren
+Strömung durchzuführen. Das heißt, dass sich die Flüssigkeitsschichten nicht
+vermischen, sich also keine Turbulenzen bilden.
+Eine Kenngröße die angibt, ob mit laminarer oder turbulenter Strömung
+zu rechnen ist, ist die $Reynolds-Zahl~Re$. Berechnet wird sie mit Formel
+\eqref{eqn:reynolds}; wobei $d$ der Durchmesser des Rohres ist und $v$
+die Geschwindigkeit der Kugel.
+
+\begin{equation}
+  Re = \frac{\rho v d}{\eta}
+  \label{eqn:reynolds}
+\end{equation}
+
+Der kritische Wert, über dem bei Rohrströmungen mit Turbulenzen zu rechnen
+ist, ist $Re_{\text{krit}} = 2300$.
+Die Kräfte, die auf die Kugel wirken sind dann: die Gewichtskraft $\vec{F_{\text{g}}}$
+, der Auftrieb $\vec{F_{\text{A}}}$ und die Reibung $\vec{F_{\text{R}}}$.
+Die Reibung ist proportional zur Geschwindigkeit der Kugel und nimmt zu, bis
+sich ein Gleichgewicht einstellt und die Kugel sich mit konstanter Geschwindigkeit
+weiterbewegt.
+Wenn man dann die Fallzeit t bestimmt, kann die Viskosität $\eta$ mit Formel
+\eqref{eqn:visko1} bestimmt werden.
+
+\begin{equation}
+  \eta = K (\rho_{\text{K}}-\rho_{\text{Fl}}) \cdot t
+  \label{eqn:visko1}
+\end{equation}
+
+Bei vielen Flüssigkeiten ist $\eta$ abhängig von der Temperatur $T$.
+
+Dann
+wird die $Andradesche Gleichung$ \eqref{eqn:andra} genutzt.
+
+\begin{equation}
+  \eta(T) = \symup{A} \symup{e}^{\frac{\symup{B}}{T}}
+  \label{eqn:andra}
+\end{equation}
+
+$\symup{A}$ und $\symup{B}$ sind Konstanten.
