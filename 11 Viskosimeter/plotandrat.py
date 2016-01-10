@@ -49,6 +49,22 @@ print('Fehler vom CurveFit:', errors)
 
 plt.plot(1/T, np.log(n), 'kx', label = r'Messwerte')
 T = np.linspace(280, 350,1000)
+
+1000*f(293.15, *params)*404.06
+
+print('20', f(293.15, *params)*1000, 1002.0/1000,
+100*(1-(1/(1000*f(293.15, *params))*1.002)))
+print('30', f(303.15, *params)*1000, 797.68/1000,
+100*(1-(1/(1000*f(303.15, *params))*0.79768)))
+print('40', f(313.15, *params)*1000, 653.25/1000,
+100*(1-(1/(1000*f(313.15, *params))*0.65325)))
+print('50:', f(323.15, *params)*1000, 547.08/1000,
+100*(1-(1/(1000*f(323.15, *params))*0.54708)))
+print('60', f(333.15, *params)*1000, 466.59/1000,
+100*(1-(1/(1000*f(333.15, *params))*0.46659)))
+print('70', f(343.15, *params)*1000, 404.06/1000,
+100*(1-(1/(1000*f(343.15, *params))*0.40406)))
+
 plt.plot(1/T, np.log(f(T, *params)), 'r-', label = r'Ausgleichsgerade')
 
 plt.xlabel(r'$(1/T)/\si{\kelvin}^{-1}$')
