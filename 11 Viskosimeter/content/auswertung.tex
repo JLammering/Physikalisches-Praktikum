@@ -42,6 +42,7 @@ die Viskosität des destillierten Wassers
 
 \begin{equation}
   \eta_\text{W} = \SI{1.21(1)}{\milli\pascal\second}.
+  \label{eqn:Viskosi}
 \end{equation}
 
 \subsubsection{Apparaturkonstante}
@@ -58,6 +59,7 @@ Das führt zu der Dichte
 \begin{equation}
   \rho_\text{g} = \frac{m_\text{g}}{V_\text{g}} = \frac{m_\text{g}}
   {\frac{4}{3}\pi r_\text{g}^3} = \SI{2394(1)}{\kilo\gram\per\cubic\meter}.
+  \label{eqn:rhog}
 \end{equation}
 Der Mittelwert der zehn Fallzeiten der großen Kugel beträgt
 
@@ -139,3 +141,26 @@ Damit lautet die Funktion der Viskosität von der Temperatur
   \caption{Graph von $\eta(T)$ und Messwerte.}
   \label{fig:VisTemp}
 \end{figure}
+
+\subsubsection{Reynolds-Zahl}
+
+Die Reynolds-Zahl des destillierten Wassers kann mit Hilfe der Viskosität aus
+Gleichung \eqref{eqn:Viskosi}, der Dichte der großen Kugel aus Gleichung
+\eqref{eqn:rhog},
+der Fallrohrdicke, die etwa dem Durchmesser der großen Kugel
+
+\begin{equation}
+  d_\text{g} = 2 r_\text{g} = \SI{15.816(2)}{\milli\meter}
+\end{equation}
+entspricht, und der Geschwindigkeit der großen Kugel
+
+\begin{equation}
+  v_\text{g} = \frac{0.1}{\num{84.1(0.4)}}\si{\meter\per\second} =
+  \SI{1.190(5)e-3}{\meter\per\second}
+\end{equation}
+bestimmt werden.
+Mit Gleichung \eqref{eqn:reynolds} folgt
+
+\begin{equation}
+  Re = \num{37.3(4)}.
+\end{equation}

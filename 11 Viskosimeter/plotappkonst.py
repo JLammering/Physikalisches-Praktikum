@@ -43,8 +43,9 @@ n = ufloat(0.001209, 0.000012)
 #Apparaturkonstante:
 K = n/(T*(p-P))
 print('Apparaturkonstante:', K)
-
 #Reynolds-Zahl:
 l = 0.1
-Re = p*2*r*l/(T*n)
+v = l/T
+d = 2*r
+Re = (p*v*d)/n
 print('Reynolds-Zahl:', Re)
