@@ -232,6 +232,7 @@ Die daraus resultierende Differentialgleichung
 
 \begin{equation}
   D \varphi + \theta \frac{\symup{d}^2\varphi}{\symup{d}t^2} = 0
+  \label{eqn:DrehmomentDGL}
 \end{equation}
 kann mit dem Ansatz
 
@@ -271,6 +272,42 @@ Die entgültige Gleichung für den Torsionsmodul $G$ lautet dann
 
 \subsection{Magnetisches Moment}
 
-gauß bei rlc gedämpfte schwingung
+Mit der vorgestellten Messmethode kann auch das magnetische Moment
+$m$ eines Permanentmagneten bestimmt werden.
+Dazu muss außen um die schwingende Kugel
+eine Helmholtzspule aufgestellt und der Magnet in die Kugel hinein gebaut
+werden.
+Durch das äußere homogene Magnetfeld von der Spule wirkt ein Drehmoment
 
+\begin{equation}
+  mB\sin(\gamma)
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=5cm]{magnMom.png}
+  \caption{Permanentmagnet in einem äußeren homogenen Magnetfeld.}
+  \label{fig:MagnetMoment}
+\end{figure}
+
+auf den Permanentmagneten und somit auch auf die Kugel und den Draht.
+Dies ist auch in Abbildung \ref{fig:MagnetMoment} dargestellt.
+Mit diesem Drehmoment erhält die DGL aus \eqref{eqn:DrehmomentDGL} einen
+zusätzlichen Term, sodass mit einer Kleinwinkelnäherung
+die neue Periodendauer
+
+\begin{equation}
+  T_\text{m} = 2\pi \sqrt{\frac{\theta}{mB+D}}
+\end{equation}
+und damit das magnetische Moment
+
+\begin{equation}
+  m = \frac{1}{B}\Bigl(\frac{4 \pi^2 \theta}{T_m^2}-D\Bigr)
+\end{equation}
+folgt.
+1
+1
+1
+1
+gauß bei rlc gedämpfte schwingung
 \cite{sample}
