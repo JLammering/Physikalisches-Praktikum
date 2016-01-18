@@ -44,20 +44,21 @@ B25 = feldst(2.5)
 momentwerteT.append(1/T_gem25**2)
 momentwerteB.append(B25)
 
-plt.plot(momentwerteT, momentwerteB, 'rx', label = 'Messwerte')
+#plotten der Messwerte
+plt.plot(momentwerteB, momentwerteT, 'rx', label = 'Messwerte')
 
 
 
 #Ausgleichsgerade
-slope, intercept, r_value, p_value, std_err = linregress(momentwerteT, momentwerteB)
+slope, intercept, r_value, p_value, std_err = linregress(momentwerteB, momentwerteT)
 a = np.linspace(0, 0.02, 1000)
 plt.plot(a, slope*a + intercept, 'b-', label = r'$Ausgleichsgerade$')
 
 #verschönern
-plt.xlabel(r'$1/T_m^2\: / \: 1/\si{\square\second}$')
-plt.ylabel(r'$B\:/\: \si{\tesla}$')
-plt.ylim(-0.001, 0.003)
-plt.xlim(0, 0.02)
+plt.ylabel(r'$1/T_m^2\: / \: 1/\si{\square\second}$')
+plt.xlabel(r'$B\:/\: \si{\tesla}$')
+plt.ylim(0, 0.02)
+plt.xlim(0, 0.003)
 plt.legend(loc = 'best')
 
 #speichern

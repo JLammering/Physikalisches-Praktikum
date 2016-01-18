@@ -8,7 +8,7 @@ Die Messwerte für $T$ sind in Tabelle \ref{tab:Tvert} aufgetragen.
 
 \begin{table}[h]
   \centering
-  \caption{Messwerte der Periodendauern.}
+  \caption{Messwerte der Periodendauern bei vertikalem Magnet in der Kugel.}
   \label{tab:Tvert}
   \begin{tabular}{S}
     \toprule
@@ -97,8 +97,171 @@ Außerdem ist $R_{\text{k}}$ mit
 
 angegeben.
 
-Dann ergibt sich für den Schubmodul $G$
+Dann ergibt sich für den Schubmodul $G$:
 
 \begin{equation*}
   G = \SI{6.3(1)e10}{\newton\per\meter\squared}
 \end{equation*}
+
+Die Abweichung vom Literaturwert $G = \SI{8.2e10}{\newton\per\meter\squared}$
+beträgt $\SI{23}{\percent}$.
+
+Mit Hilfe des Schubmoduls und der Gleichungen \eqref{eqn:???}
+können nun auch $Q$ und $\mu$ berechnet werden. Das Elastizitätsmodul ist mit
+$E = \SI{21e10}{\newton\per\meter\squared}$ gegeben.
+
+\begin{equation*}
+  \mu = \frac{E}{2G}-1 = \num{6.6(1)e21}
+\end{equation*}
+
+\begin{equation*}
+  Q = \frac{E}{3(1-2\mu)} = \SI{-5.3(1)e-12}{\newton\per\meter\squared}
+\end{equation*}
+
+\subsection{Magnetisches Moment}
+
+\begin{table}[h]
+  \centering
+  \caption{Messwerte der Periodendauern bei unterschiedlich starkem Magnetfeld.}
+  \label{tab:tstrom}
+  \begin{tabular}{S S S S S}
+    \toprule
+    {$T_{m,\SI{0.5}{\ampere}}\:/\:\si{\second}$} & {$T_{m,\SI{1}{\ampere}}\:/\:\si{\second}$}
+    & {$T_{m,\SI{1.5}{\ampere}}\:/\:\si{\second}$} & {$T_{m,\SI{2}{\ampere}}\:/\:\si{\second}$}
+    & {$T_{m,\SI{2.5}{\ampere}}\:/\:\si{\second}$}\\
+    \midrule
+    13.613 & 10.931 & 9.339 & 8.169 & 7.396\\
+    13.626 & 10.845 & 9.276 & 8.295 & 7.598\\
+    13.578 & 10.930 & 9.260 & 8.141 & 7.365\\
+    13.621 & 10.843 & 9.341 & 8.306 & 7.617\\
+    13.585 & 10.933 & 9.331 & 8.161 & 7.391\\
+    13.603 & 10.847 & 9.257 & 8.290 & 7.418\\
+    13.618 & 10.933 & 9.330 & 8.204 & 7.332\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Die gemessenen Periodendauern bei unterschiedlicher an der Hemholtzspule
+anliegenden Stromstärke sind in Tabelle \ref{tab:tstrom} angegeben.
+
+Außerdem wird die magnetische Flussdichte mit Formel \eqref{eqn:helmholtz}
+berechnet.
+
+\begin{equation}
+  B = \mu_0 \frac{8 I N}{\sqrt{125}R}
+  \label{eqn:helmholtz}
+\end{equation}
+
+Der Radius der Helmholtzspule ist mit $R = \SI{72e-3}{\meter}$ und die
+Windungszahl mit $N = 80$ gegeben. Die berechneten Werte für $B$ sind
+in Tabelle \ref{tab:wertestromplot} angegeben. Außerdem sind dort
+die Werte für $\frac{1}{T_m^2}$ hierfür wurden die Werte aus Tabelle
+\ref{tab:tstrom} gemittelt.
+
+\begin{table}[h]
+  \centering
+  \caption{In Abbildung \ref{fig:momentplot} eingetragene Werte.}
+  \label{tab:wertestromplot}
+  \begin{tabular}{S S S}
+    \toprule
+    {$I \:/\:\si{\ampere}$} & {$B\:/\:\si{\milli\tesla}$}
+    & {$\frac{1}{T_{\text{m}}^2}\:/\:\si{10^{-2}\cdot 1 \per\second\squared}$}\\
+    \midrule
+    0.5 & 0.50 & 0.54\\
+    1 & 1.00 & 0.84\\
+    1.5 & 1.50 & 1.15\\
+    2 & 2.00 & 1.50\\
+    2.5 & 2.50 & 1.80\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Diese Werte werden in Abbildung \ref{fig:momentplot} gezeigt und eine Ausgleichsrechnung
+nach linearer Regression durchgeführt.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{build/momentplot.pdf}
+  \caption{Graph zur Bestimmung des magnetischen Moments.}
+  \label{fig:momentplot}
+\end{figure}
+
+Die Ausgleichsrechnung liefert dann für die Steigung $a$, den Achsenabschnitt $b$
+und den Fehler der Regression $\sigma_{\text{a}}$:
+
+\begin{align*}
+  a &= \SI{6.33 +- 0.06}{\ampere\per\kilogram} & b &= \SI{2.15e-3}{\frac{1}{\second\squared}}\\
+  \sigma_{\text{a}} &= \SI{6e-2}{\ampere\per\kilogram}
+\end{align*}
+
+Nun wird von der Steigung auf das magnetische Moment geschlossen.
+Zur Bestimmung des magnetischen Moments $m$ wird die Formel \eqref{eqn:????}      %verlinken!!
+umgestellt zu Formel \eqref{eqn:magmom}.
+
+\begin{equation}
+  \frac{1}{T_{\text{m}}^2} = \frac{m}{4 \pi^2 \theta} \cdot B + \frac{D}{4 \pi^2 \theta}
+  \label{eqn:magmom}
+\end{equation}
+
+Dann kann aus der Steigung nach Gleichung \eqref{eqn:steigung} das magnetische Moment
+berechnet werden.
+
+\begin{align}
+  \intertext{mit}
+  \theta &= \theta_{\text{Kugel}} + \theta_{\text{Halterung}} = \SI{0.1555 +- 0.0001}{\cdot10^{-3} \kilogram\meter\squared}\\
+  \intertext{ergibt sich}
+  m &= a 4 \pi^2 \theta = \SI{0.00971 +- 0.00009}{\ampere\meter\squared}\label{eqn:steigung}.
+\end{align}
+
+\subsection{Erdmagnetfeld}
+
+Da das magnetische Moment nun bekannt ist, kann die horizontale Komponente des
+Erdmagnetfeld $B$ bestimmmt werden.
+
+In Tabelle \ref{tab:erdmag} sind die Messwerte aufgetragen, die mit ausgeschalteter
+Helmholtz-Spule und horizontal ausgerichtetem Magneten in der Kugel aufgenommen wurden.
+
+\begin{table}[h]
+  \centering
+  \caption{Messwerte der Periodendauern bei horizontalem Magnet in der Kugel.}
+  \label{tab:erdmag}
+  \begin{tabular}{S}
+    \toprule
+    {$T\:/\:\si{\second}$} \\
+    \midrule
+    19.889 \\
+    19.889 \\
+    19.838 \\
+    19.871 \\
+    19.877 \\
+    19.899 \\
+    19.969 \\
+    19.965 \\
+    19.943 \\
+    19.906 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Gemittelt ergibt sich $T_{\text{m, horizontal}} = \SI{19.90 +- 0.04}{\second}$.
+Da dieser Wert eigentlich kleiner sein müsste, da das Erdmagnetfeld im Gegensatz
+zum Aufbau für Tabelle \ref{tab:Tvert} die Schwingung dämpft, wird angenommen, dass
+der Magnet um $\SI{180}{\degree}$ verdreht ist. Zur Korrektur wird folgende Rechnung durchgeführt:
+\begin{equation}
+  T_{\text{m, hor.}} = T_{\text{m, vert.}} - (T_{\text{m, hor.}}-T_{\text{m, vert.}}) = \SI{19.75 +- 0.08}{\second}.
+\end{equation}
+
+
+Mit
+
+\begin{equation}
+  D = \SI{1.539 +- 0.005}{\newton\meter}
+\end{equation}
+
+kann nun $B$ nach Umstellen der Gleichung \eqref{eqn:????????} berechnet werden:
+
+\begin{equation}
+  B = \frac{4\pi^2\theta}{m T_{\text{m, hor.}}^2} - \frac{D}{m} = \SI{3.6(9)e-5}{\tesla}.
+\end{equation}
+
+Die Abweichung vom angegebenen Literaturwert $B = \SI{3e-5}{\tesla}$ beträgt $\SI{20}{\percent}$.
