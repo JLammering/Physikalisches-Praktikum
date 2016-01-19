@@ -3,7 +3,7 @@
 
 \subsection{Schubmodul}
 
-Um den Schubmodul zu bestimmen wird Formel \eqref{eqn:????} genutzt.                  %label einfügen
+Um den Schubmodul zu bestimmen wird Formel \eqref{eqn:schubG} genutzt.                  %label einfügen
 Die Messwerte für $T$ sind in Tabelle \ref{tab:Tvert} aufgetragen.
 
 \begin{table}[h]
@@ -106,7 +106,8 @@ Dann ergibt sich für den Schubmodul $G$:
 Die Abweichung vom Literaturwert $G = \SI{8.2e10}{\newton\per\meter\squared}$
 beträgt $\SI{23}{\percent}$.
 
-Mit Hilfe des Schubmoduls und der Gleichungen \eqref{eqn:???}
+Mit Hilfe des Schubmoduls und der Gleichungen \eqref{eqn:Emu} und
+\eqref{eqn:EQ}
 können nun auch $Q$ und $\mu$ berechnet werden. Das Elastizitätsmodul ist mit
 $E = \SI{21e10}{\newton\per\meter\squared}$ gegeben.
 
@@ -195,7 +196,7 @@ und den Fehler der Regression $\sigma_{\text{a}}$:
 \end{align*}
 
 Nun wird von der Steigung auf das magnetische Moment geschlossen.
-Zur Bestimmung des magnetischen Moments $m$ wird die Formel \eqref{eqn:????}      %verlinken!!
+Zur Bestimmung des magnetischen Moments $m$ wird die Formel \eqref{eqn:altmagmom}      %verlinken!!
 umgestellt zu Formel \eqref{eqn:magmom}.
 
 \begin{equation}
@@ -212,6 +213,8 @@ berechnet werden.
   \intertext{ergibt sich}
   m &= a 4 \pi^2 \theta = \SI{0.00971 +- 0.00009}{\ampere\meter\squared}\label{eqn:steigung}.
 \end{align}
+
+\FloatBarrier
 
 \subsection{Erdmagnetfeld}
 
@@ -258,7 +261,7 @@ Mit
   D = \SI{1.539 +- 0.005}{\newton\meter}
 \end{equation}
 
-kann nun $B$ nach Umstellen der Gleichung \eqref{eqn:????????} berechnet werden:
+kann nun $B$ nach Umstellen der Gleichung \eqref{eqn:altmagmom} berechnet werden:
 
 \begin{equation}
   B = \frac{4\pi^2\theta}{m T_{\text{m, hor.}}^2} - \frac{D}{m} = \SI{3.6(9)e-5}{\tesla}.
