@@ -1,4 +1,4 @@
-# zweiseitig eingespannter quadratischer Stab
+# zweiseitig eingespannter quadratischer Stab Fit rechts
 import matplotlib.pyplot as plt
 import numpy as np
 from uncertainties import ufloat
@@ -27,18 +27,6 @@ I = Du**4/12
 
 # Ausgleichsfunktionen für rechts und links:
 
-def DL(xl, El):
-    return F/(48*El*I.n)*(3*L**2*xl - 4*xl**3)
-
-lparams, lcov = curve_fit(DL, xl, dl)
-
-El_value = lparams
-El_error = np.sqrt(np.diag(lcov))
-
-a = np.linspace(0, 0.275)
-plt.plot(a, DL(a,*lparams), 'r-')
-
-print(El_value, El_error)
 def DR(xr, Er):
     return F/(48*Er*I.n)*(4*xr**3 - 12*L*xr**2 + 9*L**2*xr - L**3)
 
@@ -47,12 +35,17 @@ Er_value = rparams
 Er_error = np.sqrt(np.diag(rcov))
 
 a = np.linspace(0.275, 0.55)
-plt.plot(a, DR(a,*rparams), 'r-')
+plt.plot(a, 1000*DR(a,*rparams), 'r-', label= r'Ausgleichsfunktion')
 
 print(Er_value, Er_error)
 
 # Plot der Messwerte
-plt.plot(xl,dl,'k.')
-plt.plot(xr,dr,'r.')
+plt.plot(xr,1000*dr,'k.', label = r'Messwerte')
 
-plt.savefig('Stab2doppelt.pdf')
+# Rest:
+plt.xlim(0.275, 0.55)
+plt.xlabel(r'$f(x)/\si{\meter}$')
+plt.ylabel(r'$D/\si{\milli\meter}$')
+plt.legend(loc = 'best')
+plt.grid()
+plt.savefig('build/Stab2doppeltr.pdf')

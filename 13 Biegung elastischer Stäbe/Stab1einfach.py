@@ -19,7 +19,7 @@ R = ufloat(0.01003,0.00005)*0.5
 I = (np.pi*R**4)/3
 
 # Plot der Messwerte:
-plt.plot(x, d, 'k.')
+plt.plot(x, 1000*d, 'k.', label = r'Messwerte')
 
 # Abstandsfunktion und Plot:
 def D(x, E):
@@ -28,7 +28,7 @@ def D(x, E):
 params,cov = curve_fit(D, x, d)
 
 a = np.linspace(0,0.5)
-plt.plot(a, D(a,*params), 'b-', label = r'Ausgleichsfunktion')
+plt.plot(a, 1000*D(a,*params), 'b-', label = r'Ausgleichsfunktion')
 
 # Elastizitätsmodul:
 E_error = np.sqrt(np.diag(cov))
@@ -43,8 +43,10 @@ print(
 )
 
 # Rest:
-#plt.xlabel(r'$A/\si{\meter}$')
-#plt.ylabel(r'$D/\si{\meter}$')
+plt.xlim(0, 0.465)
+plt.ylim(0, 4.1)
+plt.xlabel(r'$x/\si{\meter}$')
+plt.ylabel(r'$D/\si{\milli\meter}$')
 plt.legend(loc = 'best')
 plt.grid()
-plt.savefig('Stab1einfach.pdf')
+plt.savefig('build/Stab1einfach.pdf')
