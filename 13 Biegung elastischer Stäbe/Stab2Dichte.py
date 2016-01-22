@@ -18,6 +18,15 @@ dd = np.sqrt((10/9)*np.mean((d-md)**2))
 L = ufloat(ml, dl)
 D = ufloat(md, dd)
 
+#effektive Länge einseitig:
+leff = [0.482, 0.4815, 0.482]
+mleff = np.mean(leff)
+dleff = np.sqrt((10/9)*np.mean((leff-mleff)**2))
+Leff = ufloat(mleff, dleff)
+
+#effektive Länge beidseitig:
+Leff2 = 0.55
+
 #Volumen:
 V = D**2 * L
 
@@ -29,4 +38,7 @@ print('quadratischer Stab:',
 'Mittelwert Länge:', L,
 'Mittelwert Durchmesser:', D,
 'Volumen:', V,
-'Dichte:' , p)
+'Dichte:' , p,
+'Länge eff 1:', Leff,
+'Länge eff 2:', Leff2
+)

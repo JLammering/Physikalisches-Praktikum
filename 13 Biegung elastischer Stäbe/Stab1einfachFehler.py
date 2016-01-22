@@ -4,7 +4,7 @@ import numpy as np
 
 # Messwerte Abstand, ohneGewicht, mitGewicht:
 x, d1, d2 = np.genfromtxt('Stab1einfach.txt', unpack = True)
-d = 1/1000*(d1-d2)
+d = (d1-d2)/1000
 
 # Plot der Messwerte:
 L = 0.462
