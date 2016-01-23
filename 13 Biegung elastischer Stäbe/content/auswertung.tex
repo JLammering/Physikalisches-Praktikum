@@ -60,7 +60,7 @@ Stabes
   \SI{6.6(3)e-10}{\meter\tothe{4}}.
 \end{equation}
 
-\subsubsection{Bestimmung des Elastizitätsmoduls bei einseitiger Auflage}
+\subsubsection{Bestimmung des Elastizitätsmoduls bei einseitiger Einspanung}
 
 In Tabelle \ref{tab:Rundein} sind die Messwerte der Durchbiegungsmessung am
 einseitig eingespannten, runden Stab dargestellt.
@@ -71,7 +71,30 @@ aus gesehen, und
   D_\text{1,r,a} - D_\text{1,r,b} = D_\text{1,r}
 \end{equation}
 die Auslenkung des Stabes aus seiner Anfangsposition, in der er nicht belastet
-wird. Mit der Masse
+wird. In Tabelle \ref{tab:Rundeinleff} sind die Messwerte für die effektive
+Länge des eingespannten runden Stabes aufgeführt.
+
+\begin{table}[H]
+  \centering
+  \caption{Effektive Länge des einfach eingespannten, runden Stabes.}
+  \label{tab:Rundeinleff}
+  \begin{tabular}{c}
+    \toprule
+    $L_\text{eff,1,r}/\si{\meter}$ \\
+    \midrule
+    0.462 \\
+    0.462 \\
+    0.462 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Es ergibt sich der Mittelwert
+
+\begin{equation}
+  L_\text{eff,1,r} = \SI{0.462}{\meter}.
+\end{equation}
+Mit der Masse
 
 \begin{equation}
   M_\text{1,r} = \SI{1.1831}{\kilo\gram}
@@ -156,7 +179,7 @@ quadratischen Stabes
   \frac{d_\text{q}^4}{12} = \SI{8.23(8)e-10}{\meter\tothe{4}}.
 \end{equation}
 
-\subsubsection{Bestimmung des Elastizitätsmoduls bei einseitiger Auflage}
+\subsubsection{Bestimmung des Elastizitätsmoduls bei einseitiger Einspannung}
 
 In Tabelle \ref{tab:Quadein} sind die Messwerte der Durchbiegungsmessung am
 einseitig eingespannten, quadratischen Stab dargestellt.
@@ -166,7 +189,31 @@ und
 \begin{equation}
   D_\text{1,q,a} - D_\text{1,q,b} = D_\text{1,q}
 \end{equation}
-die Biegung des Stabes. Über die Masse
+die Biegung des Stabes.
+In Tabelle \ref{tab:Quadeinleff} sind die Messwerte für die effektive
+Länge des eingespannten quadratischen Stabes aufgeführt.
+
+\begin{table}[H]
+  \centering
+  \caption{Effektive Länge des einfach eingespannten, quadratischen Stabes.}
+  \label{tab:Quadeinleff}
+  \begin{tabular}{c}
+    \toprule
+    $L_\text{eff,1,q}/\si{\meter}$ \\
+    \midrule
+    0.482 \\
+    0.4815 \\
+    0.482 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Es ergibt sich der Mittelwert
+
+\begin{equation}
+  L_\text{eff,1,q} = \SI{0.4818(3)}{\meter}.
+\end{equation}
+Über die Masse
 
 \begin{equation}
   M_\text{1,q} =  \SI{0.5395}{\kilo\gram}
@@ -189,7 +236,68 @@ Elastizitätsmodul $E$ bestimmt. Die Messwerte und der Fit sind in Abbildung
 \subsubsection{Bestimmung des Elastizitätsmoduls bei doppelseitiger Auflage}
 
 In Tabelle \ref{tab:Quadzwei} sind die Messwerte der Durchbiegungsmessung am
-doppelt eingespannten, quadratischen Stab abgebildet.
+doppelt aufgelegten, quadratischen Stab abgebildet. Da das Gewicht bei dieser
+Messung in der Mitte hängt, müssen Messwerte für beide Seiten getrennt
+aufgenommen werden. Die effektive Länge des aufgelegten Stabes beträgt
+
+\begin{equation}
+  L_\text{eff,2,q} = \SI{0.55}{\meter},
+\end{equation}
+womit der Aufhängepunkt des Gewichtes in der Mitte bei $\SI{0.275}{\meter}$
+liegt. Die Werte $x_\text{2,q}$ sind die jeweiligen Abstände der
+betrachteten Stellen von dem Aufhängepunkt. Diese werden
+für die Ausgleichsrechnungen so umgerechnet, dass sie die Abstände der
+der jeweiligen betrachteten Stellen von der linken Auflagestelle beschreiben.
+Somit sind die Abstandswerte für die Biegungswerte an der linken Seite
+
+\begin{equation}
+  x_\text{2,q,l} = x_\text{2,q},
+\end{equation}
+mit umgedrehter Zuordnung, und an der rechten Seite
+
+\begin{equation}
+  x_\text{2,q,r} = x_\text{2,q} + \SI{0.275}{\meter}.
+\end{equation}
+Die Biegung des Stabes an der linken Seite ist
+
+\begin{equation}
+  D_\text{2,q,l,a} - D_\text{2,q,l,b} = D_\text{2,q,l}
+\end{equation}
+und die an der rechten Seite
+
+\begin{equation}
+  D_\text{2,q,r,a} - D_\text{2,q,r,b} = D_\text{2,q,r}.
+\end{equation}
+Die Gewichtskraft, die am Stab angreift, ist mit der Masse
+
+\begin{equation}
+  M_\text{2,q} = \SI{4.7094}{\kilo\gram}
+\end{equation}
+und der Erdbeschleunigung \eqref{eqn:Erdbeschl}
+
+\begin{equation}
+  F_\text{2,q} = \SI{46.20}{\newton}
+\end{equation}
+Es werden zwei Ausgleichsfunktionen \eqref{eqn:} und \eqref{eqn:} und somit
+auch zwei Elastizitätsmodule bestimmt.
+Die Messwerte für den linken und den rechten Teil des Stabes und die jeweiligen
+Fits sind in den Abbildungen \ref{fig:Stab2doppeltlinks} und
+\ref{fig:Stab2doppeltrechts} dargestellt.
+Aus den daraus resultierenden Elastizitätsmodulen
+
+\begin{equation}
+  E_\text{2,q,l} = \SI{109(7)e09}{\newton\meter\squared}
+\end{equation}
+und
+
+\begin{equation}
+  E_\text{2,q,r} = \SI{131(1)e09}{\newton\meter\squared}
+\end{equation}
+folgt der Mittelwert
+
+\begin{equation}
+  E_\text{2,q} = \SI{120(4)e09}{\newton\meter\squared}.
+\end{equation}
 
 \begin{figure}
   \centering
@@ -225,7 +333,7 @@ doppelt eingespannten, quadratischen Stab abgebildet.
 
 \begin{table}[h]
   \centering
-  \caption{Messwerte für den einseitig eingespannten, runden Stab.}
+  \caption{Messwerte für den einfach eingespannten, runden Stab.}
   \label{tab:Rundein}
   \begin{tabular}{c c c}
     \toprule
@@ -311,12 +419,12 @@ doppelt eingespannten, quadratischen Stab abgebildet.
 
 \begin{table}[h]
   \centering
-  \caption{Messwerte für den doppelt eingespannten, quadratischen Stab.}
+  \caption{Messwerte für den doppelt aufgelegten, quadratischen Stab.}
   \label{tab:Quadzwei}
   \begin{tabular}{c c c c c}
     \toprule
     $x_\text{2,q}/\si{\centi\meter}$ & $D_\text{2,q,l,a}/\si{\milli\meter}$ &
-    $D_\text{2,q,l,b}/\si{\milli\meter}$ & $D_\text{2,q,r,a}/\si{\milli\meter}$
+    $D_\text{2,q,r,a}/\si{\milli\meter}$ & $D_\text{2,q,l,b}/\si{\milli\meter}$
     & $D_\text{2,q,r,b}/\si{\milli\meter}$\\
     \midrule
     1.0 & 8.49 & 9.03 & 7.07 & 7.65 \\
@@ -337,6 +445,3 @@ doppelt eingespannten, quadratischen Stab abgebildet.
     \bottomrule
   \end{tabular}
 \end{table}
-
-
-leff dran denken !!!!!

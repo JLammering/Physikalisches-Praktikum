@@ -33,11 +33,12 @@ def DR(xr, Er):
 rparams, rcov = curve_fit(DR, xr, dr)
 Er_value = rparams
 Er_error = np.sqrt(np.diag(rcov))
+Er_ufl = ufloat(Er_value, Er_error)
 
 a = np.linspace(0.275, 0.55)
 plt.plot(a, 1000*DR(a,*rparams), 'r-', label= r'Ausgleichsfunktion')
 
-print(Er_value, Er_error)
+print('E-Modul links:',Er_ufl)
 
 # Plot der Messwerte
 plt.plot(xr,1000*dr,'k.', label = r'Messwerte')

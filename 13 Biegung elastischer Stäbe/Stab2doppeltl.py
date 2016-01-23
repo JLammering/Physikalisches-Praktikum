@@ -10,8 +10,8 @@ x = x/100
 dr = (dlog-dlmg)/1000
 dl = (drog-drmg)/1000
 
-dl = dl[::-1]
 # Abstand von links gesehen:
+dl = dl[::-1]
 xl = x
 xr = 0.275 + x
 
@@ -34,11 +34,28 @@ lparams, lcov = curve_fit(DL, xl, dl)
 
 El_value = lparams
 El_error = np.sqrt(np.diag(lcov))
+El_ufl = ufloat(El_value, El_error)
 
 a = np.linspace(0, 0.275)
 plt.plot(a, 1000*DL(a,*lparams), 'r-', label = r'Ausgleichsfunktion')
 
-print(El_value, El_error)
+print('Kraft:', F)
+print('E-Modul links:', El_ufl)
+
+#Für genaue Werte ist auch die andere Ausgleichsfunktion mit drin:
+
+def DR(xr, Er):
+    return F/(48*Er*I.n)*(4*xr**3 - 12*L*xr**2 + 9*L**2*xr - L**3)
+
+rparams, rcov = curve_fit(DR, xr, dr)
+Er_value = rparams
+Er_error = np.sqrt(np.diag(rcov))
+Er_ufl = ufloat(Er_value, Er_error)
+
+#Mittelwerte der E-Module:
+
+E_value = (Er_ufl+El_ufl)/2
+print('E-modul:', E_value)
 
 # Plot der Messwerte
 plt.plot(xl,1000*dl,'k.', label = r'Messwerte')
