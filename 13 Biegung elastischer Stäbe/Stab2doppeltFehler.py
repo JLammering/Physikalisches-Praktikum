@@ -19,18 +19,18 @@ def f2(x):
     return 3*(L**2)*x - 4*x**3
 
 #links:
-plt.plot(dl, f2(x), 'k.', label = r'Messwerte links')
+plt.plot(f2(x), dl, 'k.', label = r'Messwerte links')
 
 #rechts:
-plt.plot(dr, f2(x), 'r.', label = r'Messwerte rechts')
+plt.plot(f2(x), dr, 'r.', label = r'Messwerte rechts')
 
 # Ausgleichsgerade:
 def g(x, a):
     return a*x
 
-lpar, lcov = curve_fit(g, dl, f2(x))
-rpar, rcov = curve_fit(g, dr, f2(x))
-u = np.linspace(0,0.00145)
+lpar, lcov = curve_fit(g, f2(x), dl)
+rpar, rcov = curve_fit(g, f2(x), dr)
+u = np.linspace(0,0.167)
 plt.plot(u, g(u,*lpar),'k-', label = r'Ausgleichsgerade links')
 plt.plot(u, g(u,*rpar),'r-', label = r'Ausgleichsgerade rechts')
 
@@ -38,12 +38,13 @@ lerr = np.sqrt(np.diag(lcov))
 rerr = np.sqrt(np.diag(rcov))
 
 print(
-'Steigung,Fehler links:',lpar, lerr,
-'Steigung,Fehler rechts',lpar, rerr
+'Steigung,Fehler,Abweichung links:',lpar, lerr, lerr/lpar,
+'Steigung,Fehler,Abweichung rechts',rpar, rerr, rerr/rpar
 )
 
 # Rest:
-plt.xlim(0, 0.00145)
+plt.xlim(0, 0.167)
+plt.ylim(0, 0.0016)
 plt.xlabel(r'$f(x)/\si{\meter}$')
 plt.ylabel(r'$D/\si{\meter}$')
 plt.legend(loc = 'best')
