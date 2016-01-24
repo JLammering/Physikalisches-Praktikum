@@ -27,7 +27,7 @@ print('Steigung, Fehler, Abweichung:', a, err, err/a)
 #Rest:
 plt.xlim(0, 0.07)
 plt.ylim(0,0.004)
-plt.xlabel(r'$f(x)/\si{\meter}$')
+plt.xlabel(r'$f(x)/\si{\cubic\meter}$')
 plt.ylabel(r'$D/\si{\meter}$')
 plt.legend(loc = 'best')
 plt.grid()
