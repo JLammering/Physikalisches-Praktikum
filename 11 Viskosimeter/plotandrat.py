@@ -46,6 +46,10 @@ params, cov = curve_fit(f, T, n)
 errors = np.sqrt(np.diag(cov))
 print('Parameter A und B:', *params)
 print('Fehler vom CurveFit:', errors)
+print('Tabellenwerte:',
+'Eta:', n*1000,
+'ln(Eta):', np.log(n),
+'1/T:', 1/T)
 
 plt.plot(1/T, np.log(n), 'kx', label = r'Messwerte')
 T = np.linspace(280, 350,1000)
