@@ -1,0 +1,448 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+
+\subsection{Runder Stab}
+
+\subsubsection{Bestimmung der Dichte und des Flächenträgheitsmoments}
+
+In Tabelle \ref{tab:Dichterund} sind Messwerte für die Länge $l_\text{r}$ und
+den Durchmesser $d_\text{r}$ des Stabes mit
+kreisförmigem Querschnitt dargestellt.
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte für den runden Stab.}
+  \label{tab:Dichterund}
+  \begin{tabular}{c c}
+    \toprule
+    $l_\text{r}$/\si{\meter} & $d_\text{r}/\si{\milli\meter}$ \\
+    \midrule
+    0.580 & 10.00 \\
+    0.579 & 10.00 \\
+    0.580 & 10.00 \\
+    0.579 & 10.00 \\
+    0.579 & 10.00 \\
+    0.579 & 10.10 \\
+    0.579 & 10.14 \\
+    0.580 & 10.02 \\
+    0.579 & 10.00 \\
+    0.579 & 10.02 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Daraus ergeben sich die Mittelwerte und Standardabweichungen
+
+\begin{align}
+  l_\text{r} & = \SI{0.5793(5)}{\meter} & d_\text{r} & = \SI{10.03(5)e-03}{\meter}.
+\end{align}
+Über das Volumen
+
+\begin{equation}
+  V_\text{r} = \frac{\pi d_\text{r}^2}{4} l_\text{r} = \SI{4.58(5)e-05}{\cubic\meter}
+\end{equation}
+und die Masse
+
+\begin{equation}
+  m_\text{r} = \SI{0.3564}{\kilo\gram}
+\end{equation}
+folgt die Dichte des runden Stabes
+
+\begin{equation}
+  \rho_\text{r} = \SI{7.79(8)e03}{\kilo\gram\per\cubic\meter}.
+\end{equation}
+Aus der Formel \eqref{eqn:} ergibt sich das Flächenträgheitsmoment des runden
+Stabes
+
+\begin{equation}
+  I_\text{r} = \int_{0}^{2\pi}\int_{0}^{R} r^3 \sin^2(\varphi) \symup{d}r
+  \symup{d}\varphi = \frac{\pi R^4}{3} = \frac{\pi d_\text{r}^4}{48} =
+  \SI{6.6(3)e-10}{\meter\tothe{4}}.
+\end{equation}
+
+\subsubsection{Bestimmung des Elastizitätsmoduls bei einseitiger Einspanung}
+
+In Tabelle \ref{tab:Rundein} sind die Messwerte der Durchbiegungsmessung am
+einseitig eingespannten, runden Stab dargestellt.
+Dabei ist $x_\text{1,r}$ die Position auf dem Stab, von der eingespannten Seite
+aus gesehen, und
+
+\begin{equation}
+  D_\text{1,r,a} - D_\text{1,r,b} = D_\text{1,r}
+\end{equation}
+die Auslenkung des Stabes aus seiner Anfangsposition, in der er nicht belastet
+wird. In Tabelle \ref{tab:Rundeinleff} sind die Messwerte für die effektive
+Länge des eingespannten runden Stabes aufgeführt.
+
+\begin{table}[H]
+  \centering
+  \caption{Effektive Länge des einfach eingespannten, runden Stabes.}
+  \label{tab:Rundeinleff}
+  \begin{tabular}{c}
+    \toprule
+    $L_\text{eff,1,r}/\si{\meter}$ \\
+    \midrule
+    0.462 \\
+    0.462 \\
+    0.462 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Es ergibt sich der Mittelwert
+
+\begin{equation}
+  L_\text{eff,1,r} = \SI{0.462}{\meter}.
+\end{equation}
+Mit der Masse
+
+\begin{equation}
+  M_\text{1,r} = \SI{1.1831}{\kilo\gram}
+\end{equation}
+des benutzten Gewichts und der Erdbeschleunigung \cite{gWert}
+
+\begin{equation}
+  g = \SI{9.81}{\meter\per\second\squared}
+  \label{eqn:Erdbeschl}
+\end{equation}
+folgt die am Stab angreifende Gewichtskraft
+
+\begin{equation}
+  F_\text{1,r} = \SI{11.606}{\newton}.
+\end{equation}
+Mit den berechneten Werten kann die Ausgleichsfunktion \eqref{eqn:} der Biegung
+des runden Stabes und somit der Elastizitätsmodul $E$ bestimmt werden.
+In Abbildung \ref{fig:Stab1einfach} sind sowohl die Messwerte, als auch die
+Ausgleichsfunktion $D_\text{1,e}(x)$ abgebildet.
+Aus dem Funktionsparameter folgt der Elastizitätsmodul des runden Stabes
+
+\begin{equation}
+  E_\text{1,r} = \SI{1433(4)e08}{\newton\per\meter\squared}.
+\end{equation}
+
+\subsection{Quadratischer Stab}
+
+\subsubsection{Bestimmung der Dichte und des Flächenträgheismoments}
+
+In Tabelle \ref{tab:Dichtequad} sind Messwerte für die Länge $l_\text{q}$ und
+den Durchmesser $d_\text{q}$ des Stabes mit
+quadratischem Querschnitt dargestellt.
+Daraus ergeben sich die Mittelwerte und Standardabweichungen
+
+\begin{align}
+  l_\text{q} & = \SI{0.5911(3)}{\meter} & d_\text{q} & = \SI{9.97(3)e-03}{\meter}.
+\end{align}
+Über das Volumen
+
+\begin{equation}
+  V_\text{q} = d_\text{q}^2 \cdot l_\text{q} = \SI{5.87(3)e-05}{\cubic\meter}
+\end{equation}
+und die Masse
+
+\begin{equation}
+  m_\text{q} = \SI{0.1641}{\kilo\gram}
+\end{equation}
+folgt die Dichte des quadratischen Stabes
+
+\begin{equation}
+  \rho_\text{q} = \SI{2.79(1)e03}{\kilo\gram\per\cubic\meter}.
+\end{equation}
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte für den quadratischen Stab.}
+  \label{tab:Dichtequad}
+  \begin{tabular}{c c}
+    \toprule
+    $l_\text{q}$/\si{\meter} & $d_\text{q}/\si{\milli\meter}$ \\
+    \midrule
+    0.591 & 10.00 \\
+    0.591 & 9.96 \\
+    0.591 & 9.98 \\
+    0.591 & 10.00 \\
+    0.592 & 9.96 \\
+    0.591 & 9.96 \\
+    0.591 & 9.92 \\
+    0.591 & 9.98 \\
+    0.591 & 9.98 \\
+    0.591 & 9.94 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Über die Formel \eqref{eqn:} ergibt sich das Flächenträgheitsmoment des
+quadratischen Stabes
+
+\begin{equation}
+  I_\text{q} = \int_{-\frac{D}{2}}^{\frac{D}{2}}
+  \int_{-\frac{D}{2}}^{\frac{D}{2}} x^2 \symup{d}x \symup{d}y = \frac{D^4}{12} =
+  \frac{d_\text{q}^4}{12} = \SI{8.23(8)e-10}{\meter\tothe{4}}.
+\end{equation}
+
+\subsubsection{Bestimmung des Elastizitätsmoduls bei einseitiger Einspannung}
+
+In Tabelle \ref{tab:Quadein} sind die Messwerte der Durchbiegungsmessung am
+einseitig eingespannten, quadratischen Stab dargestellt.
+Dabei ist wieder $x_\text{1,q}$ die Entfernung von der eingespannten Seite
+und
+
+\begin{equation}
+  D_\text{1,q,a} - D_\text{1,q,b} = D_\text{1,q}
+\end{equation}
+die Biegung des Stabes.
+In Tabelle \ref{tab:Quadeinleff} sind die Messwerte für die effektive
+Länge des eingespannten quadratischen Stabes aufgeführt.
+
+\begin{table}[H]
+  \centering
+  \caption{Effektive Länge des einfach eingespannten, quadratischen Stabes.}
+  \label{tab:Quadeinleff}
+  \begin{tabular}{c}
+    \toprule
+    $L_\text{eff,1,q}/\si{\meter}$ \\
+    \midrule
+    0.482 \\
+    0.4815 \\
+    0.482 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Es ergibt sich der Mittelwert
+
+\begin{equation}
+  L_\text{eff,1,q} = \SI{0.4818(3)}{\meter}.
+\end{equation}
+Über die Masse
+
+\begin{equation}
+  M_\text{1,q} =  \SI{0.5395}{\kilo\gram}
+\end{equation}
+des benutzten Gewichts
+und die Erdbeschleunigung \eqref{eqn:Erdbeschl}
+folgt die am quadratischen Stab angreifende Gewichtskraft
+
+\begin{equation}
+  F_\text{1,q} = \SI{5.293}{\newton}.
+\end{equation}
+Aus diesen Werten wird die Ausgleichsfunktion \eqref{eqn:} und der
+Elastizitätsmodul $E$ bestimmt. Die Messwerte und der Fit sind in Abbildung
+\ref{fig:Stab2einfach} abgebildet und der Elastizitätsmodul des quadratischen
+Stabes lautet
+
+\begin{equation}
+  E_\text{1,q} = \SI{640(2)e08}{\newton\per\meter\squared}.
+\end{equation}
+
+\subsubsection{Bestimmung des Elastizitätsmoduls bei doppelseitiger Auflage}
+
+In Tabelle \ref{tab:Quadzwei} sind die Messwerte der Durchbiegungsmessung am
+doppelt aufgelegten, quadratischen Stab abgebildet. Da das Gewicht bei dieser
+Messung in der Mitte hängt, müssen Messwerte für beide Seiten getrennt
+aufgenommen werden. Die effektive Länge des aufgelegten Stabes beträgt
+
+\begin{equation}
+  L_\text{eff,2,q} = \SI{0.55}{\meter},
+\end{equation}
+womit der Aufhängepunkt des Gewichtes in der Mitte bei $\SI{0.275}{\meter}$
+liegt. Die Werte $x_\text{2,q}$ sind die jeweiligen Abstände der
+betrachteten Stellen von dem Aufhängepunkt. Diese werden
+für die Ausgleichsrechnungen so umgerechnet, dass sie die Abstände der
+der jeweiligen betrachteten Stellen von der linken Auflagestelle beschreiben.
+Somit sind die Abstandswerte für die Biegungswerte an der linken Seite
+
+\begin{equation}
+  x_\text{2,q,l} = x_\text{2,q},
+\end{equation}
+mit umgedrehter Zuordnung, und an der rechten Seite
+
+\begin{equation}
+  x_\text{2,q,r} = x_\text{2,q} + \SI{0.275}{\meter}.
+\end{equation}
+Die Biegung des Stabes an der linken Seite ist
+
+\begin{equation}
+  D_\text{2,q,l,a} - D_\text{2,q,l,b} = D_\text{2,q,l}
+\end{equation}
+und die an der rechten Seite
+
+\begin{equation}
+  D_\text{2,q,r,a} - D_\text{2,q,r,b} = D_\text{2,q,r}.
+\end{equation}
+Die Gewichtskraft, die am Stab angreift, ist mit der Masse
+
+\begin{equation}
+  M_\text{2,q} = \SI{4.7094}{\kilo\gram}
+\end{equation}
+und der Erdbeschleunigung \eqref{eqn:Erdbeschl}
+
+\begin{equation}
+  F_\text{2,q} = \SI{46.20}{\newton}
+\end{equation}
+Es werden zwei Ausgleichsfunktionen \eqref{eqn:} und \eqref{eqn:} und somit
+auch zwei Elastizitätsmodule bestimmt.
+Die Messwerte für den linken und den rechten Teil des Stabes und die jeweiligen
+Fits sind in den Abbildungen \ref{fig:Stab2doppeltlinks} und
+\ref{fig:Stab2doppeltrechts} dargestellt.
+Aus den daraus resultierenden Elastizitätsmodulen
+
+\begin{equation}
+  E_\text{2,q,l} = \SI{109(7)e09}{\newton\meter\squared}
+\end{equation}
+und
+
+\begin{equation}
+  E_\text{2,q,r} = \SI{131(1)e09}{\newton\meter\squared}
+\end{equation}
+folgt der Mittelwert
+
+\begin{equation}
+  E_\text{2,q} = \SI{120(4)e09}{\newton\meter\squared}.
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics{Stab1einfach.pdf}
+  \caption{Messwerte und Fit $D_\text{1,e}(x)$ der Abstandsmessung am einseitig
+  eingespannten, runden Stab.}
+  \label{fig:Stab1einfach}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{Stab2einfach.pdf}
+  \caption{Messwerte und Fit $D_\text{2e}(x)$ der Abstandsmessung am einseitig
+  eingespannten, quadratischen Stab.}
+  \label{fig:Stab2einfach}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{Stab2doppeltl.pdf}
+  \caption{Messwerte und Fit $D_\text{2d,l}(x)$ der Abstandsmessung am
+  linken Teil des einseitig eingespannten, quadratischen Stabes.}
+  \label{fig:Stab2doppeltlinks}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{Stab2doppeltr.pdf}
+  \caption{Messwerte und Fit $D_\text{2d,l}(x)$ der Abstandsmessung am
+  rechten Teil des einseitig eingespannten, quadratischen Stabes.}
+  \label{fig:Stab2doppeltrechts}
+\end{figure}
+
+\begin{table}[h]
+  \centering
+  \caption{Messwerte für den einfach eingespannten, runden Stab.}
+  \label{tab:Rundein}
+  \begin{tabular}{c c c}
+    \toprule
+    $x_\text{1,r}/\si{\meter}$ & $D_\text{1,r,a}/\si{\milli\meter}$ &
+    $D_\text{1,r,b}/\si{\milli\meter}$ \\
+    \midrule
+    0.449 & 9.61 & 5.80 \\
+    0.444 & 9.62 & 5.88 \\
+    0.439 & 9.62 & 5.95 \\
+    0.434 & 9.63 & 6.01 \\
+    0.429 & 9.64 & 6.05 \\
+    0.424 & 9.64 & 6.14 \\
+    0.419 & 9.65 & 6.22 \\
+    0.414 & 9.65 & 6.26 \\
+    0.409 & 9.66 & 6.35 \\
+    0.404 & 9.66 & 6.40 \\
+    0.395 & 9.68 & 6.52 \\
+    0.385 & 9.69 & 6.67 \\
+    0.375 & 9.69 & 6.80 \\
+    0.365 & 9.70 & 6.90 \\
+    0.355 & 9.70 & 7.03 \\
+    0.345 & 9.71 & 7.15 \\
+    0.335 & 9.71 & 7.27 \\
+    0.325 & 9.70 & 7.38 \\
+    0.315 & 9.71 & 7.50 \\
+    0.300 & 9.71 & 7.68 \\
+    0.280 & 9.72 & 7.89 \\
+    0.260 & 9.72 & 8.12 \\
+    0.240 & 9.72 & 8.33 \\
+    0.220 & 9.72 & 8.52 \\
+    0.200 & 9.73 & 8.71 \\
+    0.160 & 9.73 & 9.04 \\
+    0.120 & 9.71 & 9.30 \\
+    0.080 & 9.64 & 9.43 \\
+    0.060 & 9.60 & 9.46 \\
+    0.030 & 9.54 & 9.49 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{Messwerte für den einfach eingespannten, quadratischen Stab.}
+  \label{tab:Quadein}
+  \begin{tabular}{c c c}
+    \toprule
+    $x_\text{1,q}/\si{\meter}$ & $D_\text{1,q,a}/\si{\milli\meter}$ &
+    $D_\text{1,q,b}/\si{\milli\meter}$ \\
+    \midrule
+    47.0 & 10.42 & 6.87 \\
+    46.5 & 10.42 & 6.92 \\
+    46.0 & 10.46 & 7.01 \\
+    45.5 & 10.45 & 7.05 \\
+    45.0 & 10.45 & 7.12 \\
+    44.5 & 10.45 & 7.18 \\
+    44.0 & 10.45 & 7.23 \\
+    43.5 & 10.54 & 7.36 \\
+    42.0 & 10.51 & 7.51 \\
+    41.0 & 10.52 & 7.60 \\
+    40.0 & 10.50 & 7.68 \\
+    39.0 & 10.50 & 7.79 \\
+    38.0 & 10.49 & 7.89 \\
+    37.0 & 10.48 & 7.98 \\
+    36.0 & 10.47 & 8.07 \\
+    35.0 & 10.46 & 8.17 \\
+    34.0 & 10.45 & 8.28 \\
+    33.0 & 10.43 & 8.35 \\
+    32.0 & 10.41 & 8.44 \\
+    30.0 & 10.38 & 8.61 \\
+    28.0 & 10.35 & 8.75 \\
+    26.0 & 10.29 & 8.89 \\
+    24.0 & 10.25 & 9.03 \\
+    22.0 & 10.21 & 9.15 \\
+    20.0 & 10.13 & 9.23 \\
+    17.0 & 10.05 & 9.37 \\
+    14.0 & 9.95 & 9.46 \\
+    11.0 & 9.85 & 9.53 \\
+    8.0 & 9.71 & 9.54 \\
+    3.0 & 9.50 & 9.46 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{Messwerte für den doppelt aufgelegten, quadratischen Stab.}
+  \label{tab:Quadzwei}
+  \begin{tabular}{c c c c c}
+    \toprule
+    $x_\text{2,q}/\si{\centi\meter}$ & $D_\text{2,q,l,a}/\si{\milli\meter}$ &
+    $D_\text{2,q,r,a}/\si{\milli\meter}$ & $D_\text{2,q,l,b}/\si{\milli\meter}$
+    & $D_\text{2,q,r,b}/\si{\milli\meter}$\\
+    \midrule
+    1.0 & 8.49 & 9.03 & 7.07 & 7.65 \\
+    2.0 & 8.47 & 9.03 & 7.04 & 7.68 \\
+    3.0 & 8.37 & 9.04 & 7.00 & 7.71 \\
+    4.0 & 8.40 & 9.06 & 6.97 & 7.78 \\
+    5.0 & 8.38 & 9.08 & 6.96 & 7.84 \\
+    6.0 & 8.37 & 9.10 & 6.97 & 7.91 \\
+    7.0 & 8.37 & 9.12 & 7.00 & 8.00 \\
+    8.0 & 8.35 & 9.15 & 7.01 & 8.08 \\
+    9.0 & 8.33 & 9.17 & 7.03 & 8.16 \\
+    10.0 & 8.33 & 9.19 & 7.08 & 8.24 \\
+    12.5 & 8.27 & 9.25 & 7.13 & 8.46 \\
+    15.5 & 8.20 & 9.32 & 7.28 & 8.73 \\
+    18.5 & 8.15 & 9.35 & 7.39 & 8.95 \\
+    21.5 & 8.11 & 9.36 & 7.58 & 9.12 \\
+    24.5 & 8.08 & 9.37 & 7.79 & 9.27 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
