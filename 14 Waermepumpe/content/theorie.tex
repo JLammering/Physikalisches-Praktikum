@@ -27,4 +27,67 @@ die Standardabweichung des Mittelwerts wird jeweils mit der Gleichung
 mit den $N$ Messwerten $x_i$ berechnet.
 
 
+\subsection{Das Prinzip einer Wärmepumpe}
+
+Der erste Hauptsatz der Thermodynamik
+besagt im Wesentlichen, dass die Energie in einem
+abgeschlossenen System konstant ist. Demnach wäre es theoretisch möglich,
+Wärme von einem kälteren in ein wärmeres Reservoir zu übertragen, was
+erfahrungsgemäß aber nicht geschieht.
+Der zweite Hauptsatz löst dieses Problem auf, denn er besagt, dass diese
+Übertragung nur durch Zufuhr von zusätzlicher mechanischer Energie
+mittels einer Wärmepumpe möglich ist. In diesem Fall ergibt sich wegen der
+Energieerhaltung die Beziehung
+\begin{equation}
+  Q_1 = Q_2 + A
+  \label{eqn:Energieerhaltung}
+\end{equation}
+mit der vom wärmeren Reservoir aufgenommenen Wärmemenge $Q_1$, der vom kälteren
+Reservoir abgegebenen Wärmemenge $Q_2$ und der, von der Wärmepumpe aufgewandten,
+mechanischen Arbeit $A$.
+Aus den Hauptsätzen folgt außerdem für die zugehörigen Temperaturen $T_1$ und
+$T_2$ im Idealfall
+\begin{equation}
+  \frac{Q_1}{T_1} - \frac{Q_2}{T_2} = 0.
+  \label{eqn:TempWaermeIdeal}
+\end{equation}
+Dabei wird aber davon ausgegangen, dass es sich um einen reversiblen Prozess
+handelt. Gleichung \eqref{eqn:TempWaermeIdeal} gilt also nur, wenn die vom
+kälteren Reservoir abgegebene Wärme $Q_2$ und die mechanische Arbeit $A$
+jederzeit wieder in einem umgekehrten Prozess vollständig zurückgewonnen werden
+kann. Da man praktisch nie von einem abgeschlossenen System ausgehen kann, da
+beispielsweise immer ein Wärmeaustausch mit der Umgebung stattfindet, muss
+Gleichung \eqref{eqn:TempWaermeIdeal} zu
+\begin{equation}
+  \frac{Q_1}{T_1} - \frac{Q_2}{T_2} > 0
+  \label{eqn:TempWaermeReal}
+\end{equation}
+abgewandelt werden.
+Das Verhätnis zwischen der vom wärmeren Reservoir aufgenommenen Wärmemenge $Q_1$
+zwischen der geleisteten mechanischen Arbeit bezeichnet man als Güteziffer $\nu$
+der Wärmepumpe. Diese gibt an, wie günstig die Wärmepumpe arbeitet, also wie
+wenig Arbeitsaufwand für die Übertragung der Wärme notwendig ist.
+Mit den Gleichungen \eqref{eqn:Energieerhaltung}, \eqref{eqn:TempWaermeIdeal}
+und \eqref{eqn:TempWaermeReal} ergibt sich die Güteziffer einer idealen
+Wärmepumpe
+\begin{equation}
+  \nu_\text{id} = \frac{Q_1}{A} = \frac{T_1}{T_1-T_2}
+\end{equation}
+und die einer realen Wärmepumpe
+\begin{equation}
+  \nu_\text{re} < \frac{T_1}{T_1-T_2}.
+\end{equation}
+An diesen Gleichungen ist erkennbar, dass eine Wärmepumpe umso günstiger
+arbeitet, wenn die Temperaturdifferenz $T_1-T_2$ zwischen den beiden Reservoiren
+gering ist.
+Der Vorteil der Wärmegewinnung mit einer Wärmepumpe gegenüber Verfahren, in
+denen mechanische Arbeit direkt in Wärme umgewandelt wird, besteht darin, dass
+die gewonnene Wärmemenge $Q_1$ hierbei auch größer als die aufgewandte Arbeit
+$A$ sein kann.
+
+\subsection{Die Arbeitsweise einer Wärmepumpe}
+
+
+
+
 \cite{anleitung}
