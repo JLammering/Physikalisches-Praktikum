@@ -1,33 +1,331 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{build/plotdampfdruck.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+\subsection{Benutzte Literaturwerte}
 
-\subsection{Benutzte Naturkonstanten \cite{codata}}
+Zur Rechnung wurden folgende Literaturwerte benutzt:
 
 \begin{align*}
-  R &= \SI{8.3144598(48)}{\joule\per\mol\per\kelvin}
+  R &= \SI{8.3144598(48)}{\joule\per\mol\per\kelvin} \\
+  \rho_{\text{Wasser}} &= \SI{0.998203}{\gram\per\cubic\centi\meter}\\
+  M_{\g{CCl}_2\g{F}_2} &= \SI{120.91}{\gram\per\mol}\\
+  c_{\text{w}} &=  \SI{4.138(41)}{\joule\per\gram\kelvin}.
 \end{align*}
 
-Tabelle:
+%& \cite{codata}
+% & \cite{dichte}
+% & \cite{molaremasse}
+% & \cite{spezifisch}
+\nocite{*}
+
+\subsection{Temperaturverläufe}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S}
+    \toprule
+    {$T_1\:/\:\si{\celsius}$}& {$T_2\:/\:\si{\celsius}$} & {$t\:/\:\si{\minute}$}\\
+    \midrule
+    21.4 & 21.3 & 0\\
+    22.2 & 21.3 & 1\\
+    23.1 & 21.2 & 2\\
+    24.3 & 20.1 & 3\\
+    25.9 & 18.4 & 4\\
+    27.8 & 16.6 & 5\\
+    29.8 & 14.8 & 6\\
+    31.7 & 13.0 & 7\\
+    33.5 & 11.2 & 8\\
+    35.4 & 9.6 & 9\\
+    37.2 & 8.0 & 10\\
+    38.8 & 6.3 & 11\\
+    40.6 & 4.8 & 12\\
+    42.2 & 3.4 & 13\\
+    43.8 & 2.0 & 14\\
+    45.3 & 0.8 & 15\\
+    46.7 & 0.0 & 16\\
+    48.1 & -0.5 & 17\\
+    49.1 & -0.9 & 18\\
+    50.6 & -1.1 & 19\\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der Temperaturen.}
+  \label{tab:tempmess}
+\end{table}
+
+Die gemessenen Temperaturen aus Tabelle \ref{tab:tempmess} wurden in Abbildung
+\ref{fig:templot} eingetragen.
+Um die Ausgleichskurven zu finden wurde die Funktion \eqref{eqn:ausgleich} an die
+Messwerte mit der Funktion $curve-fit$ aus $scipy$ \cite{scipy} gefittet.
+
+\begin{equation}
+  T(t) = \g{A}t^2 + \g{B}t + \g{C}
+  \label{eqn:ausgleich}
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{build/plottemp.pdf}
+  \caption{Temperaturverlauf mit Ausgleichsrechnung.}
+  \label{fig:templot}
+\end{figure}
+
+Fehlerbalken wurden weggelassen, da sie keinen Mehrwert bringen.
+Die Ausgleichsrechnung liefert folgende Parameter:
+
+\begin{align*}
+  A_1 &= \SI{-1 +- 1 e6}{\kelvin\per\second\squared} &B_1 &= \SI{2.9(2)e-2}{\kelvin\per\second}\\
+  C_1 &= \SI{293.1 +- 0.4}{\kelvin}\\
+  A_2 &= \SI{5 +- 2 e6}{\kelvin\per\second\squared} &B_2 &= \SI{-2.9(3)e-2}{\kelvin\per\second}\\
+  C_2 &= \SI{296.9(7)}{\kelvin}
+\end{align*}
+
+\subsection{Differentialquotienten $\g{d}T_1/\g{d}t$ und $\g{d}T_2/\g{d}t$}
+
+Um die Differentialquotienten der Ausgleichskurven $T_1(t)$ und $T_2(t)$ müssen
+die Funktionen abgeleitet werden zu der Form aus Gleichung \eqref{eqn:ableitung}.
+
+\begin{equation}
+  \frac{\g{d}T(t)}{\g{d}t} = 2 \g{A} t + \g{B}
+  \label{eqn:ableitung}
+\end{equation}
+
+Zur Berechnung der folgenden Werte wurden diese vier Zeiten gewählt:
+
+\begin{align*}
+  t_1 &= \SI{4}{\minute} & t_2 &= \SI{8}{\minute} & t_3 &= \SI{12}{\minute} & t_4 &= \SI{16}{\minute}
+\end{align*}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S}
+    \toprule
+    {$\g{d}T_1(t)/\g{d}t\:/\:\si{\kelvin\per\second}$} & {$\g{d}T_2(t)/\g{d}t\:/\:\si{\kelvin\per\second}$} & {$t\:/\:\si{\second}$}\\
+    \midrule
+    0.029(2) & -0.027(3) & 240\\
+    0.028(2) & -0.024(4) & 480\\
+    0.028(3) & -0.022(4) & 720\\
+    0.027(3) & -0.019(5) & 960\\
+    \bottomrule
+  \end{tabular}
+  \caption{Die berechneten Differentialquotienten.}
+  \label{tab:diff}
+\end{table}
+
+%Die Berechnung der Fehler wurde mit Formel \eqref{eqn:fehlerdiff}
+%vorgenommen.
+
+%\begin{equation}
+%  \sigma_{\g{d}T_1(t)/\g{d}t} = \sqrt{4 \sigma_{A_{1}}^{2} t^{2} + \sigma_{B_{1}}^{2}}
+%  \label{eqn:fehlerdiff}
+%\end{equation}
+
+\subsection{Güteziffer}
+
+Die Güteziffer $\nu$ wird mit Formel \eqref{eqn:gueteziff} berechnet.
+
+\begin{equation}
+  \nu = (m_1 c_{\text{w}} + m_{\text{k}} c_{\text{k}}) \frac{\g{d}T_1(t)}{\g{d}t} \cdot \frac{1}{N}
+  \label{eqn:gueteziff}
+\end{equation}
+
+Die Masse $m_1$ des Wassers wird mit Formel \eqref{eqn:masswass} und der Fehlerformel
+\eqref{eqn:fehlermasswass} bestimmt.
+
+\begin{align}
+  m_1 &= \rho_{\text{Wasser}} \cdot V_1 = \SI{0.998203}{\gram\per\cubic\centi\meter}~\SI{3000 +- 1.2}{\cubic\centi\meter} = \SI{2994.6 +- 1.2}{\gram}\label{eqn:masswass}\\
+  \sigma_{m_1} &= \sqrt{V_1^2\sigma_{\rho_{\text{Wasser}}}^2 + \rho_{\text{Wasser}}^2 \sigma_{V_1}^2} \label{eqn:fehlermasswass}
+\end{align}
+
+Um $N$ zu bestimmen werden die gemessenen Werte für die
+Leistung $P$ aus Tabelle \ref{tab:leistung} gemittelt.
+
 \begin{table}[h]
   \centering
   \begin{tabular}{S S}
     \toprule
-    {$k$} & {$U\:/\:\si{\milli\volt}$}\\
+    {$P\:/\:\si{\watt}$} & {$t\:/\:\si{\minute}$}\\
     \midrule
-    1 & 637.2\\
-    3 & 212.4\\
-    5 & 127.4\\
-    7 & 91.03\\
-    9 & 70.8\\
+    0 & 0\\
+    170 & 1\\
+    180 & 2\\
+    190 & 3\\
+    197 & 4\\
+    203 & 5\\
+    198 & 6\\
+    205 & 7\\
+    204 & 8\\
+    207 & 9\\
+    210 & 10\\
+    211 & 11\\
+    211 & 12\\
+    209 & 13\\
+    210 & 14\\
+    210 & 15\\
+    210 & 16\\
+    210 & 17\\
+    209 & 18\\
+    206 & 19\\
     \bottomrule
   \end{tabular}
-  \caption{Amplituden Rechteckspannung.}
-  \label{tab:rechtampl}
+  \caption{Messwerte der Leistung.}
+  \label{tab:leistung}
+\end{table}
+
+\begin{equation*}
+  N = \SI{193 +- 1}{\watt}
+\end{equation*}
+
+Die Ergebnisse sind dann in Tabelle \ref{tab:gueteziff}
+zu sehen.
+
+%Die Berechnung des Fehlers wurde mit Formel \eqref{eqn:fehlerguete}
+%vorgenommen.
+
+%\begin{align}
+%  \sigma_{\nu} = & \left(\frac{c_{w}^{2} \sigma_{m_{1}}^{2}}{N^{2}} \left(2 A_{1} t + B_{1}\right)^{2} + \frac{4 \sigma_{A_{1}}^{2}}{N^{2}} t^{2} \left(c_{w} m_{1} + m_k c_k \right)^{2}\\
+%  & + \frac{\sigma_{B_{1}}^{2}}{N^{2}} \left(c_{w} m_{1} + m_k c_k\right)^{2} + \frac{\sigma_{c_{w}}^{2} m_{1}^{2}}{N^{2}} \left(2 A_{1} t + B_{1}\right)^{2} + \frac{\sigma_{m_k c_k}^{2}}{N^{2}} \left(2 A_{1} t + B_{1}\right)^{2}\\
+%  & + \frac{\sigma_{N}^{2}}{N^{4}} \left(2 A_{1} t + B_{1}\right)^{2} \left(c_{w} m_{1} + m_k c_k\right)^{2}\right)^{1/2}\label{eqn:fehlerguete}
+%\end{align}
+
+%theoretische Werte einfügen
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S S}
+    \toprule
+    {$\nu\:/\:\si{\joule\second\squared\per\kilo\gram\meter\squared}$} & {$t\:/\:\si{\second}$} & {$\nu_{\text{ideal}}\:/\:\si{\joule\second\squared\per\kilo\gram\meter\squared}$} & {$\text{Abweichung}\:/\:\si{\percent}$}\\
+    \midrule
+    1.93(14) & 240 & 39.9(7) & 95.2\\
+    1.90(15) & 480 & 20.3(2) & 90.6\\
+    1.87(17) & 720 & 8.76(3) & 79.0\\
+    1.84(19) & 960 & 6.85(2) & 73.1\\
+    \bottomrule
+  \end{tabular}
+  \caption{Die berechneten Güteziffern.}
+  \label{tab:gueteziff}
+\end{table}
+
+\subsection{Massendurchsatz}%Fehlerbalken Dampfdruck
+
+Zur Bestimmung des Massendurchsatzes werden die Formeln
+\eqref{eqn:waerme2} und \eqref{eqn:massendurch} verwendet.
+
+Die Verdampfungswärme $L$ wird aus einer linearen Ausgleichsrechnung
+wie in V203 bestimmt. Die Werte zur Aufstellung der Dampfdruckkurve
+sind in Tabelle \ref{tab:dampfdruck} zu sehen.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$p\:/\:\si{\bar}$} & {$T\:/\:\si{\celsius}$}\\
+    \midrule
+    0.37 & -50\\
+    0.99 & -30\\
+    2.15 & -10\\
+    3.04 & 0\\
+    4.20 & 10\\
+    4.93 & 15\\
+    5.61 & 20\\
+    6.51 & 25\\
+    7.40 & 30\\
+    8.49 & 35\\
+    9.55 & 40\\
+    10.77 & 45\\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte zur Dampfdruckkurve.}
+  \label{tab:dampfdruck}
+\end{table}
+
+Die Messwerte werden dann an die Gleichung \eqref{eqn:dampfdruck}
+mit $curve-fit$ gefittet.
+
+\begin{equation}
+  \mathrm{ln}(p) = -\frac{\g{L}}{\g{R}}\cdot \frac{1}{T} + const.
+  \label{eqn:dampfdruck}
+\end{equation}
+
+Der Graph mit Messwerten und Ausgleichskurve ist in Abbildung
+\ref{fig:dampfdruck} zu sehen.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width = \textwidth]{build/plotdampfdruck.pdf}
+  \caption{Die Dampfdruckkurve.}
+  \label{fig:dampfdruck}
+\end{figure}
+
+Das entnommene $L$ ist dann:
+
+\begin{equation*}
+  L = \SI{2.09(1)e4}{\joule}.
+\end{equation*}
+
+Die damit berechneten Massendurchsätze sind aber bei Betrachtung der
+Einheiten noch ein Stoffmengendurchsatz. Durch Multiplikation mit der molaren
+Masse $M_{\g{CCl}_2\g{F}_2}$ ergibt sich der Massendurchsatz. Die Ergebnisse sind
+dann in Tabelle \ref{tab:massig} zu sehen.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S}
+    \toprule
+    {$\g{d}m_{\text{mol}}(t)/\g{d}t\:/\:\si{\milli\mol\per\second}$} & {$\g{d}m_{\si{\gram}}(t)/\g{d}t\:/\:\si{\gram\per\second}$} & {$t\:/\:\si{\second}$}\\
+    \midrule
+    -0.017(2) & -2.0(2) & 240\\
+    -0.015(2) & -1.8(3) & 480\\
+    -0.014(3) & -1.7(3) & 720\\
+    -0.012(3) & -1.5(4) & 960\\
+    \bottomrule
+  \end{tabular}
+  \caption{Die berechneten Massendurchsätze.}
+  \label{tab:massig}
+\end{table}
+
+\subsection{Mechanische Kompressorleistung}
+
+Zur Berechnung der mechanischen Kompressorleistung wird Formel \eqref{eqn:mechaleist}
+genutzt.
+Nun muss das darin enthaltende $\rho$ bestimmt werden.
+
+Ausgehend von der idealen Gasgleichung:
+
+\begin{align*}%dringend formatieren
+  pV &= n\g{R}T\\
+  \iff \frac{pV}{T} &= n\g{R}\\
+  \intertext{mit} n_1 R &= n_2 R :\\
+  \implies \frac{p_0V_0}{T_0} &= \frac{p_2V_2}{T_2}\\
+  \intertext{mit} \rho V = m &\iff V =\frac{m}{\rho} :\\
+  \frac{p_0 m}{\rho_0 T_0} &= \frac{p_2 m}{\rho_2 T_2}\\
+  \intertext{mit} \rho_2 &= \rho \intertext{und}\\
+  p_2 &= p_a\\
+  \rho &= \frac{\rho_0 T_0 p_a}{T_2 p_0}
+\end{align*}
+
+Daraus folgt nun für $N_\text{mech}$ die Gleichung \eqref{eqn:leistungend}.
+
+\begin{equation}
+  N_\text{mech} =
+  \frac{1}{\kappa - 1} \Bigl(p_\text{b} \sqrt[\kappa]{\frac{p_\text{a}}
+  {p_\text{b}}} - p_\text{a} \Bigr) \frac{T_2 p_0}{\rho_0 T_0 p_a} \frac{\g{d} m}
+  {\g{d} t}
+  \label{eqn:leistungend}
+\end{equation}
+
+Damit ergeben sich dann die Werte aus Tabelle \ref{tab:leistungsvoll}.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$N_{\text{mech}}\:/\:\si{\watt}$} & {$t\:/\:\si{\second}$}\\
+    \midrule
+    -35 +- 5 & 240\\
+    -41 +- 6 & 480\\
+    -45 +- 6 & 720\\
+    -49 +- 6 & 960\\
+    \bottomrule
+  \end{tabular}
+  \caption{Die berechneten mechanischen Kompressorleistungen.}
+  \label{tab:leistungsvoll}
 \end{table}

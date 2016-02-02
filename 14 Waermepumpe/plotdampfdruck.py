@@ -1,13 +1,10 @@
 
-# V203
-# Graph von Temperatur und Druck (< 1bar)
-# Lineare Regression: Angabe von Steigung, Abschnitt und Fehler
-# Messwerte aus der Datei 'V203Daten1.txt'
 
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
 from uncertainties import ufloat
+from scipy.stats import linregress
 
 # Messwerte:
 y, x = np.genfromtxt('Daten/datendampfdruck.txt', unpack=True)
@@ -32,7 +29,14 @@ plt.plot(x_plot, f(x_plot, *params), 'b-', label = 'Ausgleichsgerade')
 slope = ufloat(params[0], errors[0])
 R = ufloat(8.3144598, 0.0000048)
 L = - slope * R
-np.savetxt('build/dampfdruck.txt', np.column_stack([slope.n, R.n, L.n, slope.s, R.s, L.s]), header = "Steigung, R, L, Fehler Steigung, Fehler R, Fehler L")
+np.savetxt('build/dampfdruckcurve.txt', np.column_stack([slope.n, R.n, L.n, params[1], slope.s, R.s, L.s, errors[1]]), header = "Steigung, R, L, b, Fehler Steigung, Fehler R, Fehler L, Fehler b")
+
+#linreg
+slope, intercept, r_value, p_value, std_err = linregress(x, y)
+data_x = np.linspace(0.003, 0.0046, 1000)
+error_b = std_err*np.mean(x**2)
+#plt.plot(data_x, slope*data_x+intercept, 'r-', label = 'Ausgleichsgerade')
+np.savetxt('build/dampfdrucklinreg.txt', np.column_stack([slope, intercept, r_value, std_err, error_b]), header = "slope, y-Achsenab, r, Fehler Steigung, Fehler b")
 
 # Ausgabe:
 
