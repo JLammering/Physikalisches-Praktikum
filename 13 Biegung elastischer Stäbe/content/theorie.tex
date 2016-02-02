@@ -1,31 +1,6 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\subsection{Fehlerrechnung}
-
-Für die Fehlerfortpflanzung bei Gleichungen mit $N$ fehlerbehafteten Größen
-wird jeweils die Formel zur Gaußschen Fehlerfortpflanzung
-
-\begin{equation}
-  \sigma = \sqrt{\sum_{i=1}^{N}\biggl(\frac{\partial f(x_i)}{\partial x_i}
-  \sigma_i\biggr)^2}
-\end{equation}
-mit der jeweiligen Funktion $f(x_i)$, den Messgrößen $x_i$ und den
-zugehörigen Fehlern $\sigma_i$ verwendet.
-Zur Berechnung des arithmetischen Mittels von $N$ Messwerten wird jeweils die
-Formel
-
-\begin{equation}
-  \bar{x} = \frac{1}{N}\sum_{i=1}^{N}x_i
-\end{equation}
-mit den Messwerten $x_i$ benutzt.
-die Standardabweichung des Mittelwerts wird jeweils mit der Gleichung
-
-\begin{equation}
-  \bar{\sigma} = \sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(x_i - \bar{x})^2}
-\end{equation}
-mit den $N$ Messwerten $x_i$ berechnet.
-
 \subsection{Problemstellung}
 
 Ein Körper an den Kräfte angreifen kann dadurch eine Volumenänderung oder eine
@@ -77,7 +52,7 @@ enthalten.
 In Abbildung \ref{fig:biegungeinseit} ist die Biegung nach $D(x)$ gegeben. Zu
 erkennen ist auch die Querschnittsfläche $Q$, die aus ihrer vertikalen Position
 verdreht ist. Dies geschieht auf Grund von Kräftepaaren, die entgegengesetzt
-oben und unten an $Q$ angreifen. Dann müssen das Drehmoment betrachtet werden.
+oben und unten an $Q$ angreifen. Dann muss das Drehmoment betrachtet werden.
 
 Wenn der Stab in Schichten aufgeteilt wird, haben die Oberen Zugspannung und die
 Unteren Druckspannung. Die Schicht ohne jegliche Spannung, die auch die
@@ -103,7 +78,7 @@ Dabei ist y der Abstand der Abstand zur neutralen Faser.
 wird die Momentengleichung \eqref{eqn:momenten} hergeleitet.
 
 \begin{align}
-  \intertext{mit}\\
+  \intertext{mit}
   \g{M}_{\text{F}} = F (\g{L} - x)
   \label{eqn:aussenkraft}\\
   \symup{M}_{\text{F}} = \symup{M}_{\text{\sigma}}
@@ -113,7 +88,7 @@ wird die Momentengleichung \eqref{eqn:momenten} hergeleitet.
   \label{eqn:momenten}
 \end{align}
 
-Das markierte $\g{I}$ ist der Flächenträgheitsmoment. Nach Ausführen der
+Das markierte $\g{I}$ ist das Flächenträgheitsmoment. Nach Ausführen der
 Integration ergibt sich für die Durchbiegung in Abhängigkeit von x, dem
 Abstand zur Einspannung, Gleichung \eqref{eqn:durchbiegeinseit}.
 
