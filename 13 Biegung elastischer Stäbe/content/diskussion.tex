@@ -1,0 +1,176 @@
+\section{Diskussion}
+\label{sec:Diskussion}
+
+\subsection{Runder Stab}
+
+\subsubsection{Bestimmung des Materials anhand der Dichte}
+
+Mit der berechneten Dichte des runden Stabes kann durch einen
+Vergleich mit einer Auswahl an Werkstoffen und deren zugehöriger
+Dichte \cite{Metallwerte} das benutzte Material bestimmt werden.
+Die aus den Messwerten berechete Dichte des runden Stabes beträgt
+\begin{equation}
+  \rho_\text{r} = \SI{7.79(8)e03}{\kilo\gram\per\cubic\meter}.
+\end{equation}
+Am nächsten kommt diesem Wert die Dichte von Eisen \cite{Metallwerte}
+\begin{equation}
+  \rho_\text{Fe} = \SI{7.87e03}{\kilo\gram\per\cubic\meter}.
+\end{equation}
+Die Abweichung zwischen Mess- und Literaturwert ist mit
+\begin{equation}
+  1-\frac{\rho_\text{r}}{\rho_\text{Fe}} = \SI{1.02}{\percent}
+\end{equation}
+gering.
+
+\subsubsection{Elastizitätsmodul}
+
+Das berecheten Elastizitätsmodul für den runden Eisen-Stab beträgt
+\begin{equation}
+  E_\text{1,r} = \SI{1433(4)e08}{\newton\per\meter\squared}
+\end{equation}
+und der Literaturwert \cite{Metallwerte}
+\begin{equation}
+  E_\text{Fe} = \SI{2197e08}{\newton\per\meter\squared}
+\end{equation}
+Die Abweichung
+\begin{equation}
+  1-\frac{E_\text{1,r}}{E_\text{Fe}} = \SI{34.79}{\percent}
+\end{equation}
+ist gering.
+
+\subsection{Quadratischer Stab}
+
+\subsubsection{Bestimmung des Materials anhand der Dichte}
+
+Die aus den Messwerten berechete Dichte des quadratischen Stabes beträgt
+\begin{equation}
+  \rho_\text{q} = \SI{2.79(1)e03}{\kilo\gram\per\cubic\meter}.
+\end{equation}
+Am nächsten kommt diesem Wert die Dichte von Aluminium \cite{Metallwerte}
+\begin{equation}
+  \rho_\text{Al} = \SI{2.70e03}{\kilo\gram\per\cubic\meter}.
+\end{equation}
+Die Abweichung zwischen Mess- und Literaturwert ist mit
+\begin{equation}
+  1-\frac{\rho_\text{q}}{\rho_\text{Al}} = -\SI{3.33}{\percent}
+\end{equation}
+gering.
+
+\subsubsection{Elastizitätsmodul}
+
+Die berechneten Elastizitätsmodule des Aluminium-Stabes betragen
+\begin{equation}
+  E_\text{1,q} = \SI{640(2)e08}{\newton\per\meter\squared}
+\end{equation}
+bei der ersten und
+\begin{equation}
+  E_\text{2,q} = \SI{120(4)e09}{\newton\meter\squared}
+\end{equation}
+bei der zweiten Messung.
+Die Abweichung des Elastizitätsmoduls, das beim einseitig eingespannten Stab
+bestimmt wurde, von dem Literaturwert \cite{Metallwerte}
+\begin{equation}
+  E_\text{Al} = \SI{688e08}{\newton\per\meter\squared}
+  \label{eqn:EAlu}
+\end{equation}
+ist mit
+\begin{equation}
+  1 - \frac{E_\text{1,q}}{E_\text{Al}} = \SI{6.98}{\percent}
+\end{equation}
+sehr gering.
+Die Abweichung des Elastizitätsmoduls, das beim doppelt aufgelegten Stab
+bestimmt wurde, von dem Literaturwert \eqref{eqn:EAlu} ist mit
+\begin{equation}
+  1 - \frac{E_\text{2,q}}{E_\text{Al}} = -\SI{74.4}{\percent}
+  \label{eqn:AbwE2}
+\end{equation}
+sehr groß. Die Erklärung dafür folgt in Kapitel \ref{sec:SysAbwDoppAuf}.
+
+\subsection{Systematische Abweichungen von den Theoriegleichungen}
+
+\subsubsection{Einseitig eingespannter Stab}
+
+Die Gleichung \eqref{eqn:durchbiegeinseit} für die Durchbiegung des einseitig
+eingespannten Stabes in Abhängigkeit von der Entfernung zur eingespannten
+Seite beinhaltet die Proportionalität zwischen der Funktion
+\begin{equation}
+  f_1(x) = Lx^2 - \frac{x^3}{3}
+  \label{eqn:f1}
+\end{equation}
+und $D_1(x)$. In den Abbildungen \ref{fig:Stab1einfachFehler} und
+\ref{fig:Stab2einfachFehler} sind jeweils die
+Messwerte für die Biegung des einfach eingespannten runden und quadratischen
+Stabes $D_1$ gegen die Funktion $f_1(x)$ des gemessenen Abstandes $x_1$
+aufgetragen. Zusätzlich werden die Werte jeweils durch eine Ausgleichsgerade
+approximiert. Die Abweichung der Steigung
+\begin{equation}
+  \frac{0.0002}{0.0598} = \SI{0.32}{\percent}
+\end{equation}
+bei dem runden Stab und
+\begin{equation}
+  \frac{0.0002}{0.0488} = \SI{0.44}{\percent}
+\end{equation}
+bei dem quadratischen Stab ist sehr gering, die Theoriegleichung \eqref{eqn:f1}
+für einen einfach eingespannten Stab beschreibt das elastische Verhalten
+also sehr gut.
+
+\subsubsection{Zweiseitig aufgelegter Stab}
+\label{sec:SysAbwDoppAuf}
+
+Aus der Gleichung \eqref{eqn:durchbieg2seit1} folgt die Proportionalität
+zwischen
+\begin{equation}
+  f_2(x) = 3L^2x - 4x^3
+  \label{eqn:f2}
+\end{equation}
+und $D_2(x)$. In Abbildung \ref{fig:Stab2doppeltFehler} sind die
+Biegungsmesswerte $D_2$ für die rechte und linke Seite des doppelt
+aufgelegten Stabes gegen $f_2(x_2)$ mit den Abstandsmesswerten $x_2$
+aufgetragen. Durch die Messwerte für die rechte und linke Seite des Stabes
+wird jeweils eine Ausgleichsgerade gelegt.
+Die Abweichung der Steigung ist mit
+\begin{equation}
+  \frac{0.0012}{0.0122} = \SI{10.15}{\percent}
+\end{equation}
+für die linke Seite und
+\begin{equation}
+  \frac{0.0007}{0.0107} = \SI{6.79}{\percent}
+\end{equation}
+für die rechte Seite sehr groß.
+Das bedeutet nicht zwangsweise, dass die Theoriegleichung \eqref{eqn:f2}
+ungeeignet ist, da es bei der doppelseitigen Auflage des Stabes einige
+Fehlerquellen gibt. Mit einem fast vier mal so großen Gewicht wie bei
+der einseitigen Einspannung entstehen nur etwa halb so große Biegungen
+am Stab. Dadurch haben kleine unerwünschte Verbiegungen am Stab deutlich größere
+Auswirkungen auf die Messwerte. Daraus, dass die Messwerte für die linke und
+rechte Seite jeweils unterschiedlich verlaufen, lässt sich schließen, dass
+der Stab entweder nicht gerade ist, oder das angreifende Gewicht nicht exakt
+in der Mitte hängt. Das hat zur Folge, dass das zweite bestimmte
+Elastizitätsmodul $E_\text{2,q}$ auch stark von dem Literaturwert abweicht wie
+an \eqref{eqn:AbwE2} zu sehen ist.
+
+\begin{figure}
+  \centering
+  \includegraphics{Stab1einfachFehler.pdf}
+  \caption{Biegungsmesswerte $D_\text{1,r}$ des einfach eingespannten, runden
+  Stabes gegen $f_1(x_\text{1,r})$ aufgetragen und lineare Regression.}
+  \label{fig:Stab1einfachFehler}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{Stab2einfachFehler.pdf}
+  \caption{Biegungsmesswerte $D_\text{1,q}$ des einfach eingespannten,
+  quadratischen
+  Stabes gegen $f_1(x_\text{1,q})$ aufgetragen und lineare Regression.}
+  \label{fig:Stab2einfachFehler}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{Stab2doppeltFehler.pdf}
+  \caption{Biegungsmesswerte $D_\text{2,q,l}$ und $D_\text{2,q,r}$ des doppelt
+  aufgelegten, quadratischen Stabes gegen $f_1(x_\text{2,q})$ aufgetragen und
+  lineare Regression für beide Seiten.}
+  \label{fig:Stab2doppeltFehler}
+\end{figure}
