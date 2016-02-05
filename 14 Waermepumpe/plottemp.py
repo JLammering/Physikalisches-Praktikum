@@ -17,8 +17,8 @@ plt.plot(t, T1, 'kx', label = 'Messwerte T1')
 plt.plot(t, T2, 'bx', label = 'Messwerte T2')
 
 #Ausgleichsrechnung
-def f(t, A, B, C):
-    return A*t**2 + B*t + C
+def f(t, A, B, C, D):
+    return A*t**3 + B*t**2 + C*t + D
 
 params1, covariance1 = curve_fit(f, t, T1)
 errors1 = np.sqrt(np.diag(covariance1))
@@ -29,10 +29,10 @@ errors2 = np.sqrt(np.diag(covariance2))
 x_plot = np.linspace(0, 1200, 10000)
 plt.plot(x_plot, f(x_plot, *params1), 'r-', label = 'Ausgleichskurve T1')
 plt.plot(x_plot, f(x_plot, *params2), 'g-', label = 'Ausgleichskurve T2')
-np.savetxt('build/tempcurve.txt', np.column_stack([params1[0], params1[1], params1[2],
-errors1[0], errors1[1], errors1[2],
-params2[0], params2[1], params2[2], errors2[0], errors2[1], errors2[2]]),
-header = "A1, B1, C1, dA1, dB1, dC1, A2, B2, C2, dA2, dB2, dC2")
+np.savetxt('build/tempcurve.txt', np.column_stack([params1[0], params1[1], params1[2], params1[3],
+errors1[0], errors1[1], errors1[2], errors1[3],
+params2[0], params2[1], params2[2], params2[3], errors2[0], errors2[1], errors2[2], errors2[3]]),
+header = "A1, B1, C1, D1, dA1, dB1, dC1, dD1, A2, B2, C2, D2, dA2, dB2, dC2, dD2")
 
 plt.ylabel(r'$T\:/\:\si{\kelvin}$')
 plt.xlabel(r'$t\:/\:\si{\second}$')
