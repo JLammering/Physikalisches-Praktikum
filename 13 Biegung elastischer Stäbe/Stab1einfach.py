@@ -16,7 +16,7 @@ F = m*g
 # Trägheitsmoment, Radius, Länge des Stabes:
 L = 0.462
 R = ufloat(0.01003,0.00005)*0.5
-I = (np.pi*R**4)/3
+I = (np.pi*R**4)/4
 
 # Plot der Messwerte:
 plt.plot(x, 1000*d, 'k.', label = r'Messwerte')
