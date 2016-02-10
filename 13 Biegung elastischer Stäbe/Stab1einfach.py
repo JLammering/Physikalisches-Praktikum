@@ -34,6 +34,8 @@ plt.plot(a, 1000*D(a,*params), 'b-', label = r'Ausgleichsfunktion')
 E_error = np.sqrt(np.diag(cov))
 E_value = params
 
+print("Trägheitsmoment:", I)
+
 print(
 'rund1:',
 'Masse:', m,
