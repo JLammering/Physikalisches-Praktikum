@@ -26,7 +26,8 @@ Der Sollwert für das Maximum lautet
 
 \subsection{Das Emissionsspektrum einer CU-Röntgenröhre}
 
-In Tabelle \ref{tab:emission} sind die Messwerte zur Bestimmung des
+In Tabelle \ref{tab:emission1} und \ref{tab:emission2} sind die Messwerte zur
+Bestimmung des
 Emissionsspektrum einer CU-Röntgenröhre abgebildet. Der zugehörige Graph ist
 ist in Abbildung \ref{fig:emission} dargestellt.
 Der Grenzwinkel befindet sich bei
@@ -41,6 +42,35 @@ bzw. die maximale Energie, bei der die Elektronen vollständig abgebremst werden
 \begin{equation}
   E_\text{CU} = \SI{20.1197}{\kilo\electronvolt}.
 \end{equation}
+In den Abbildungen \ref{fig:emissionkalpha} und \ref{fig:emissionkbeta} sind
+jeweils die Messwerte an der $K_\alpha$- und $K_\beta$- Linie des
+Emissionsspektrums abgebildet. Diese werden jeweils durch ein Polynom zweiten
+Grades angenähert.
+Die Hochpunkte der Parabeln sind bei
+\begin{align}
+  \theta_\alpha = & \SI{44.2196}{\degree} \\
+  \theta_\beta = & \SI{39.6213}{\degree}.
+\end{align}
+Daraus folgen die Halbwerte
+\begin{align}
+  \theta_{\alpha 1} = & \SI{43.7517}{\degree} \\
+  \theta_{\alpha 2} = & \SI{44.6875}{\degree} \\
+  \theta_{\beta 1} = & \SI{39.0093}{\degree} \\
+  \theta_{\beta 2} = & \SI{40.2333}{\degree}.
+\end{align}
+Durch bilden der Differenzen ergeben sich die Halbwertsbreiten der
+$K_\alpha$- und $K_\beta$- Linie
+\begin{align}
+  \increment \theta_\alpha = & \SI{0.9358}{\degree} \\
+  \increment \theta_\beta = & \SI{1.2240}{\degree}.
+\end{align}
+Die Energieauflösung ergibt sich aus dem Mittelwert der Energieauflösungen
+der $K_\alpha$- und $K_\beta$- Linie
+\begin{equation}
+  \increment E = \frac{1}{2}(\increment E_\alpha + \increment E_\beta) \pm
+  \sqrt{(\increment E_\alpha - \bar{E})^2 + (\increment E_\beta - \bar{E})^2}
+  = \SI{172(138)}{\electronvolt}.
+\end{equation}
 
 \begin{figure}
   \centering
@@ -50,11 +80,30 @@ bzw. die maximale Energie, bei der die Elektronen vollständig abgebremst werden
   \label{fig:emission}
 \end{figure}
 
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{build/emissionsspektrumKbetha.pdf}
+  \caption{Messwerte der $K_\alpha$-Linie des Emissionsspektrums der
+  CU-Röntgenröhre und Ausgleichspolynom. Es sind die
+  Impulse pro Sekunde gegen den Winkel aufgetragen.}
+  \label{fig:emissionkalpha}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{build/emissionsspektrumKalpha.pdf}
+  \caption{Messwerte der $K_\beta$-Linie des Emissionsspektrums der
+  CU-Röntgenröhre und Ausgleichspolynom. Es sind die Impulse pro Sekunde
+  gegen den Winkel aufgetragen.}
+  \label{fig:emissionkbeta}
+\end{figure}
+
 \subsection{Absorptionsspektren verschiedener Stoffe}
 
 \subsubsection{Germanium}
 
-Die Messwerte der Germaniumprobe sind in Tabelle \ref{tab:germanium} abgebildet
+Die Messwerte der Germaniumprobe sind in Tabelle \ref{tab:germanium1} und
+\ref{tab:germanium2} abgebildet
 und als Graph in Abbildung \ref{fig:germanium} aufgetragen.
 Die gemessene K-Kante befindet sich bei
 \begin{equation}
@@ -77,7 +126,8 @@ folgt der Energiewert an der K-Kante für Germanium
 
 \subsubsection{Brom}
 
-Die Messwerte der Bromprobe sind in Tabelle \ref{tab:brom} dargestellt und als
+Die Messwerte der Bromprobe sind in Tabelle \ref{tab:brom1} und \ref{tab:brom2}
+dargestellt und als
 Graph in der Abbildung \ref{fig:brom} aufgetragen.
 Die gemessene K-Kante befindet sich bei
 \begin{equation}
@@ -104,9 +154,13 @@ Die K-Kante wird bei
 \end{equation}
 gemessen.
 
+18.8  190.0
+
+
 \subsubsection{Bismut}
 
-In Tabelle \ref{tab:bismuth} sind die Messwerte der Bismutprobe abgebildet.
+In Tabelle \ref{tab:bismuth1} und \ref{tab:bismuth2} sind die Messwerte der
+Bismutprobe abgebildet.
 Diese sind in Abbildung \ref{fig:bismuth} als Graph aufgetragen.
 Die Messung ergibt einen Winkel von
 \begin{equation}
@@ -121,6 +175,15 @@ Mit \eqref{eqn:energielambda} folgt der Energiewert an der K-Kante von Bismut
 \begin{equation}
   E_\text{Bi,mess} = \SI{15.9879}{\kilo\electronvolt}.
 \end{equation}
+
+\subsection{Das Moseleysche Gesetz}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{build/Moseley.pdf}
+  \caption{a.}
+  \label{fig:Moseley}
+\end{figure}
 
 
 Tabelle für copy and paste:
@@ -263,6 +326,19 @@ h
     29.2 & 215.0\\
     29.6 & 208.0\\
     30.0 & 205.0\\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte zur Bestimmung des Emissionsspektrums (1). Es sind die
+  Impulse pro Sekunde gegen den Winkel aufgetragen.}
+  \label{tab:emission1}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$\theta/\si{\degree}$} & {$Imp\si{\second}$}\\
+    \midrule
     30.4 & 202.0\\
     30.8 & 180.0\\
     31.2 & 189.0\\
@@ -320,9 +396,9 @@ h
     52.0 & 56.0\\
     \bottomrule
   \end{tabular}
-  \caption{Messwerte zur Bestimmung des Emissionsspektrums. Es sind die
+  \caption{Messwerte zur Bestimmung des Emissionsspektrums (2). Es sind die
   Impulse pro Sekunde gegen den Winkel aufgetragen.}
-  \label{tab:emission}
+  \label{tab:emission2}
 \end{table}
 
 \begin{table}[h]
@@ -452,36 +528,6 @@ h
     20.6 & 276.0\\
     20.8 & 280.0\\
     21.0 & 275.0\\
-    21.2 & 279.0\\
-    21.4 & 268.0\\
-    21.6 & 269.0\\
-    21.7 & 260.0\\
-    22.0 & 254.0\\
-    22.2 & 252.0\\
-    22.4 & 242.0\\
-    22.6 & 234.0\\
-    22.8 & 239.0\\
-    23.0 & 223.0\\
-    23.2 & 222.0\\
-    23.4 & 221.0\\
-    23.6 & 213.0\\
-    23.8 & 215.0\\
-    24.0 & 204.0\\
-    24.2 & 205.0\\
-    24.4 & 199.0\\
-    24.6 & 202.0\\
-    24.7 & 197.0\\
-    25.0 & 191.0\\
-    25.2 & 190.0\\
-    25.4 & 178.0\\
-    25.6 & 166.0\\
-    25.8 & 159.0\\
-    26.0 & 155.0\\
-    26.2 & 144.0\\
-    26.4 & 134.0\\
-    26.6 & 130.0\\
-    26.8 & 128.0\\
-    27.0 & 123.0\\
     \bottomrule
   \end{tabular}
   \caption{Messwerte der Zirkoniumprobe (1). Es sind die
@@ -530,4 +576,88 @@ h
   \caption{Messwerte der Zirkoniumprobe (2). Es sind die
   Impulse pro Sekunde gegen den Winkel aufgetragen.}
   \label{tab:zirkonium2}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$\theta/\si{\degree}$} & {$Imp/\si{\second}$}\\
+    \midrule
+    15.8 & 142.0 \\
+    16.0 & 147.0 \\
+    16.2 & 152.0 \\
+    16.4 & 144.0 \\
+    16.6 & 149.0 \\
+    16.7 & 143.0 \\
+    17.0 & 143.0 \\
+    17.2 & 145.0 \\
+    17.4 & 141.0 \\
+    17.6 & 143.0 \\
+    17.7 & 140.0 \\
+    18.0 & 140.0 \\
+    18.2 & 136.0 \\
+    18.4 & 130.0 \\
+    18.6 & 133.0 \\
+    18.8 & 132.0 \\
+    19.0 & 125.0 \\
+    19.2 & 127.0 \\
+    19.4 & 121.0 \\
+    19.6 & 121.0 \\
+    19.8 & 119.0 \\
+    20.0 & 117.0 \\
+    20.2 & 111.0 \\
+    20.4 & 117.0 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der Bismuthprobe (1). Es sind die
+  Impulse pro Sekunde gegen den Winkel aufgetragen.}
+  \label{tab:bismuth1}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$\theta/\si{\degree}$} & {$Imp/\si{\second}$}\\
+    \midrule
+    20.6 & 120.0 \\
+    20.8 & 112.0 \\
+    21.0 & 118.0 \\
+    21.2 & 117.0 \\
+    21.4 & 125.0 \\
+    21.6 & 128.0 \\
+    21.7 & 134.0 \\
+    22.0 & 134.0 \\
+    22.2 & 0.0 \\
+    22.4 & 133.0 \\
+    22.6 & 127.0 \\
+    22.8 & 128.0 \\
+    23.0 & 120.0 \\
+    23.2 & 121.0 \\
+    23.4 & 113.0 \\
+    23.6 & 116.0 \\
+    23.8 & 111.0 \\
+    24.0 & 108.0 \\
+    24.2 & 108.0 \\
+    24.4 & 103.0 \\
+    24.6 & 101.0 \\
+    24.7 & 100.0 \\
+    25.0 & 99.0 \\
+    25.2 & 98.0 \\
+    25.4 & 109.0 \\
+    25.6 & 117.0 \\
+    25.8 & 123.0 \\
+    26.0 & 128.0 \\
+    26.2 & 133.0 \\
+    26.4 & 128.0 \\
+    26.6 & 127.0 \\
+    26.8 & 117.0 \\
+    27.0 & 118.0 \\
+    27.2 & 118.0 \\    
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der Bismuthprobe (2). Es sind die
+  Impulse pro Sekunde gegen den Winkel aufgetragen.}
+  \label{tab:bismuth2}
 \end{table}

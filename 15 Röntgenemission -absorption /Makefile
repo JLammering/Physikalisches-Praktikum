@@ -20,8 +20,11 @@ build/emissionsspektrumKalpha.pdf: emissionsspektrumKalpha.py matplotlibrc heade
 build/emissionsspektrumKbetha.pdf: emissionsspektrumKbetha.py matplotlibrc header-matplotlib.tex Daten/emissionsspektrumKbetha.txt| build
 	TEXINPUTS="$(call translate,$(pwd):)" python emissionsspektrumKbetha.py
 
+build/Moseley.pdf: Moseley.py matplotlibrc header-matplotlib.tex Daten/Moseley.txt | build
+	TEXINPUTS="$(call translate,$(pwd):)" python Moseley.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot.pdf build/emissionsspektrumKalpha.pdf build/emissionsspektrumKbetha.pdf
+build/main.pdf: build/plot.pdf build/emissionsspektrumKalpha.pdf build/emissionsspektrumKbetha.pdf build/Moseley.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
