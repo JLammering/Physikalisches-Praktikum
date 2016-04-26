@@ -1,2 +1,71 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+\subsection{Überprüfung der Bragg Bedingung}
+
+Der gemessene Wert zur Überprüfung der Braggbedingung
+\begin{align}
+  \theta_\text{mess} = \SI{28.4}{\degree}
+\end{align}
+weicht um
+\begin{align}
+  \increment \theta = \SI{1.43}{\percent}
+\end{align}
+vom Sollwert
+\begin{align}
+  \theta_\text{soll} = \SI{28}{\degree}
+\end{align}
+ab. Die Braggbedingung wurde also erfolgreich überprüft.
+
+\subsection{Absorptionsspektren verschiedener Stoffe}
+
+Die Mess- und Literaturwerte der Abschirmkonstanten sind in Tabelle
+\ref{tab:litwerte} abgebildet.
+Die Abweichungen bei Brom und Zirkonium sind mit
+\begin{align}
+  \increment \sigma_\text{Br} = \SI{19.07}{\percent}
+  \increment \sigma_\text{Zr} = \SI{26.58}{\percent}
+\end{align}
+groß. Das hat unter Anderem mit dem Auflösungsvermögen der Apparatur
+\begin{align}
+  \increment E = \SI{172(138)}{\electronvolt}
+\end{align}
+zu tun. Abweichungen in der Größenordnung $10^2$ bei den Energiewerten haben
+wegen der komplexen Gleichungen zur Bestimmung der Abschirmkonstanten bereits
+ausschlaggebenden Einfluss.
+
+\begin{table}
+  \centering
+  \begin{tabular}{S S S S S S}
+    \toprule
+    {Element} & {$Z$} & {$E_\text{K,lit}/\si{\kilo\electronvolt}$} & {$\theta_\text{K,lit}/\si{\degree}$}
+    & {$\sigma_\text{K,lit}$} & {$\sigma_\text{K,mess}$} \\
+    \midrule
+    \text{Ge} & 32 & 11.2036 & 16.1 & 3.6718 & 3.7639 \\
+    \text{Br} & 35 & 13.4741 & 13.2 & 3.8429 & 3.2274 \\
+    \text{Zr} & 40 & 17.9962 & 9.8 & 4.0950 & 3.2352 \\
+    \text{Bi} & 83 & 16.3900 & 10.8 & \text{ } & 0.9265 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Literaturwerte und berechnete Werte für die benutzten Elemente. \cite{NIST}}
+  \label{tab:litwerte}
+\end{table}
+
+\subsection{Moseleysches Gesetz}
+
+Die aus den Messungen berechnete Rydbergkonstante
+\begin{align}
+  R_\text{\infty, mess} = \SI{22(2)}{\per\meter}
+\end{align}
+weicht mit
+\begin{align}
+  \increment R_\text{\infty} = \SI{61.76}{\percent}
+\end{align}
+sehr stark vom Literaturwert \cite{anleitung}
+\begin{align}
+  R_\text{\infty, mess} = \SI{13.6}{\per\meter}
+\end{align}
+ab. Das lässt sich darauf zurückführen, dass zur Bestimmung der
+Ausgleichsgerade, aus deren Steigung die Konstante bestimmt werden kann, nur
+drei Messwerte zur Verfügung standen. Kleine Abweichungen bei diesen haben also
+sehr große Auswirkungen auf das Ergebnis.

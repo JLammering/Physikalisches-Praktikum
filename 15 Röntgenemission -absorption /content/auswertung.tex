@@ -1,34 +1,33 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Literaturwerte}
+
+Die Ordnungszahlen der Stoffe, die im Versuch untersucht werden sind in
+Tabelle \ref{tab:litwerte} aufgezählt.
+Die Werte für die Lichtgeschwindigkeit $c$, die Elementarladung $e$, die
+Feinstrukturkonstante $\alpha$ und das Plancksche Wirkungsquantum $h$ werden aus
+\cite{Codata} entnommen.
+
 \subsection{Überprüfung der Bragg Bedingung}
 
 In Tabelle \ref{tab:braggbed} sind die Messwerte zur Überprüfung der braggschen
 Bedingung dargestellt. Diese sind in Abbildung \ref{fig:braggbed} als Graph
 aufgetragen.
 Das Maximum der Kurve liegt bei
-\begin{equation}
+\begin{align}
   \theta_\text{mess} = \SI{28.4}{\degree}.
-\end{equation}
-
+\end{align}
 Der Sollwert für das Maximum lautet
 \begin{equation}
   \theta_\text{soll} = \SI{28}{\degree}.
 \end{equation}
 
-\begin{figure}
-  \centering
-  \includegraphics[height=8cm]{Daten/braggbedingung.png}
-  \caption{Graph zur Überprüfung der Bragg Bedingung. Es sind die Impulse pro
-  Sekunde gegen den Winkel aufgetragen.}
-  \label{fig:braggbed}
-\end{figure}
-
 \subsection{Das Emissionsspektrum einer CU-Röntgenröhre}
 
-In Tabelle \ref{tab:emission1} und \ref{tab:emission2} sind die Messwerte zur
-Bestimmung des
-Emissionsspektrum einer CU-Röntgenröhre abgebildet. Der zugehörige Graph ist
+In Tabelle \ref{tab:emission1}, \ref{tab:emission2}, \ref{tab:emission3} und
+\ref{tab:emission4} sind die Messwerte zur Bestimmung des
+Emissionsspektrum der CU-Röntgenröhre abgebildet. Der zugehörige Graph ist
 ist in Abbildung \ref{fig:emission} dargestellt.
 Der Grenzwinkel befindet sich bei
 \begin{equation}
@@ -71,6 +70,151 @@ der $K_\alpha$- und $K_\beta$- Linie
   \sqrt{(\increment E_\alpha - \bar{E})^2 + (\increment E_\beta - \bar{E})^2}
   = \SI{172(138)}{\electronvolt}.
 \end{equation}
+Die Differenz der Energien an der $K_\alpha$- und $K_\beta$-Linien ist
+\begin{align}
+  E_\text{CU,mess} = \SI{0.9041}{\kilo\electronvolt}.
+\end{align}
+Daraus folgt mit
+\begin{align}
+  \sigma_K = Z - \sqrt{\frac{E}{R_\infty}- \frac{\alpha^2}{4}z^4}
+  \label{eqn:sigmaK}
+\end{align}
+die Abschirmkonstante an der K-Kante von Kupfer
+\begin{align}
+  \sigma_\text{K,CU,mess} = 21.4460
+\end{align}
+
+\subsection{Absorptionsspektren verschiedener Stoffe}
+
+\subsubsection{Germanium}
+
+Die Messwerte der Germaniumprobe sind in Tabelle \ref{tab:germanium1} und
+\ref{tab:germanium2} abgebildet
+und als Graph in Abbildung \ref{fig:germanium} aufgetragen.
+Die gemessene K-Kante befindet sich bei
+\begin{equation}
+  2\theta_\text{Ge} = \SI{32.4}{\degree}.
+\end{equation}
+Mit der Bragg'schen Bedingung \eqref{eqn:braggbed} folgt dann für die
+Wellenlänge
+\begin{equation}
+  \lambda_\text{Ge} = \SI{0.1124}{\nano\meter}.
+\end{equation}
+Mit der Formel
+\begin{equation}
+  E = \frac{c h}{\lambda}
+  \label{eqn:energielambda}
+\end{equation}
+folgt der Energiewert an der K-Kante für Germanium
+\begin{equation}
+  E_\text{Ge,mess} = \SI{11.0328}{\kilo\electronvolt}.
+\end{equation}
+Mit \eqref{eqn:sigmaK} folgt die Abschirmzahl an der K-Kante von Germanium
+\begin{align}
+  \sigma_\text{K,Ge,mess} = 3.7639.
+\end{align}
+
+\subsubsection{Brom}
+
+Die Messwerte der Bromprobe sind in Tabelle \ref{tab:brom1} und \ref{tab:brom2}
+dargestellt und als
+Graph in der Abbildung \ref{fig:brom} aufgetragen.
+Die gemessene K-Kante befindet sich bei
+\begin{equation}
+  2\theta_\text{Br} = 25.4 .
+\end{equation}
+Für die Wellenlänge folgt mit \eqref{eqn:braggbed}
+\begin{equation}
+  \lambda_\text{Br} = \SI{0.0886}{\nano\meter}.
+\end{equation}
+Daraus ergibt sich mit Hilfe der Formel \eqref{eqn:energielambda}
+der Wert am Energieübergang
+\begin{equation}
+  E_\text{Br,mess} = \SI{14.0008}{\kilo\electronvolt}.
+\end{equation}
+Mit \eqref{eqn:sigmaK} folgt die Abschirmkonstante an der K-Kante von Brom
+\begin{align}
+  \sigma_\text{K,Br,mess} = 3.2274.
+\end{align}
+
+\subsubsection{Zirkonium}
+
+Die Messwerte für Zirkonium sind in den Tabellen \ref{tab:zirkonium1} und
+\ref{tab:zirkonium2} dargestellt und
+in Abbildung \ref{fig:zirkonium} als Graph aufgetragen.
+Die K-Kante wird bei
+\begin{equation}
+  2\theta_\text{Zr} = \SI{18.8}{\degree}
+\end{equation}
+gemessen.
+Daraus folgt mit \eqref{eqn:braggbed} die Wellenlänge
+\begin{equation}
+  \lambda_\text{Zr} = \SI{0.0658}{\nano\meter}.
+\end{equation}
+Mit \eqref{eqn:energielambda} folgt der Energiewert von Zirkonium an der
+K-Kante
+\begin{align}
+  E_\text{Zr,mess} = \SI{18.8459}{\kilo\electronvolt}.
+\end{align}
+Die Abschirmkostante ergibt sich mit der Formel \eqref{eqn:sigmaK}
+\begin{align}
+  \sigma_\text{K,Zr,mess} = 3.2352.
+\end{align}
+
+\subsubsection{Bismuth}
+
+In Tabelle \ref{tab:bismuth1} und \ref{tab:bismuth2} sind die Messwerte der
+Bismuthprobe abgebildet.
+Diese sind in Abbildung \ref{fig:bismuth} als Graph aufgetragen.
+Die Messung ergibt einen Winkel von
+\begin{align}
+  2\theta_\text{Bi,LII} = \SI{21.4}{\degree}
+\end{align}
+an der LII-Kante und einen Winkel von
+\begin{align}
+  2\theta_\text{Bi,LIII} = \SI{25.6}{\degree}
+\end{align}
+an der LIII-Kante.
+Daraus ergeben sich mit \eqref{eqn:braggbed} die Wellenlängen
+\begin{align}
+  \lambda_\text{Bi,LII} = \SI{0.0748}{\nano\meter}
+\end{align}
+und
+\begin{align}
+  \lambda_\text{Bi,LIII} = \SI{0.0892}{\nano\meter}.
+\end{align}
+Mit \eqref{eqn:energielambda} folgt der Energiedifferenzwert der L-Kanten von
+Bismuth
+\begin{align}
+  E_\text{Bi,mess} = \SI{2.7850}{\kilo\electronvolt}.
+\end{align}
+Daraus ergibt sich mit \eqref{eqn:sigmal} die Abschirmkonstante der L-Schale
+von Bismuth
+\begin{align}
+  \sigma_\text{L,Bi,mess} = 0.9265.
+\end{align}
+
+\subsection{Das Moseleysche Gesetz}
+
+In Abbildung \ref{fig:moseley} sind die berechneten Absorptionsenergien und die
+Kernladungszahlen für Germanium, Brom und Zirkonium in einem
+$\sqrt{E_k}-Z$-Diagramm dargestellt. Durch die Werte wird eine Ausgleichsgerade
+gelegt, die ausgegebene Steigung beträgt
+\begin{align}
+  m = \num{0.25(1)}.
+\end{align}
+Daraus ergibt sich die Rydbergkonstante
+\begin{align}
+  R_\text{\infty, mess} = \SI{22(2)}{\per\meter}.
+\end{align}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=9cm]{Daten/braggbedingung.png}
+  \caption{Graph zur Überprüfung der Bragg Bedingung. Es sind die Impulse pro
+  Sekunde gegen den Winkel aufgetragen.}
+  \label{fig:braggbed}
+\end{figure}
 
 \begin{figure}
   \centering
@@ -98,117 +242,45 @@ der $K_\alpha$- und $K_\beta$- Linie
   \label{fig:emissionkbeta}
 \end{figure}
 
-\subsection{Absorptionsspektren verschiedener Stoffe}
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{Daten/germanium.png}
+  \caption{Graph der Messwerte des Absorptionsspektrums der Germaniumprobe. Es
+  sind die Impulse pro Sekunde gegen den Winkel aufgetragen.}
+  \label{fig:germanium}
+\end{figure}
 
-\subsubsection{Germanium}
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{Daten/brom.png}
+  \caption{Graph der Messwerte des Absorptionsspektrums der Bromprobe. Es
+  sind die Impulse pro Sekunde gegen den Winkel aufgetragen.}
+  \label{fig:brom}
+\end{figure}
 
-Die Messwerte der Germaniumprobe sind in Tabelle \ref{tab:germanium1} und
-\ref{tab:germanium2} abgebildet
-und als Graph in Abbildung \ref{fig:germanium} aufgetragen.
-Die gemessene K-Kante befindet sich bei
-\begin{equation}
-  2\theta_\text{Ge} = \SI{32.4}{\degree}.
-\end{equation}
-Mit der Bragg'schen Bedingung \eqref{eqn:braggbed} folgt dann für die
-Wellenlänge
-\begin{equation}
-  \lambda_\text{Ge} = \SI{0.1124}{\nano\meter}.
-\end{equation}
-Mit der Formel
-\begin{equation}
-  E = \frac{c h}{\lambda}
-  \label{eqn:energielambda}
-\end{equation}
-folgt der Energiewert an der K-Kante für Germanium
-\begin{equation}
-  E_\text{Ge,mess} = \SI{11.0328}{\kilo\electronvolt}.
-\end{equation}
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{Daten/zirkonium.png}
+  \caption{Graph der Messwerte des Absorptionsspektrums der Zirkoniumprobe. Es
+  sind die Impulse pro Sekunde gegen den Winkel aufgetragen.}
+  \label{fig:zirkonium}
+\end{figure}
 
-\subsubsection{Brom}
-
-Die Messwerte der Bromprobe sind in Tabelle \ref{tab:brom1} und \ref{tab:brom2}
-dargestellt und als
-Graph in der Abbildung \ref{fig:brom} aufgetragen.
-Die gemessene K-Kante befindet sich bei
-\begin{equation}
-  2\theta_\text{Br} = 25.4 .
-\end{equation}
-Für die Wellenlänge folgt mit \eqref{eqn:braggbed}
-\begin{equation}
-  \lambda_\text{Br} = \SI{0.0886}{\nano\meter}.
-\end{equation}
-Daraus ergibt sich mit Hilfe der Formel \eqref{eqn:energielambda}
-der Wert am Energieübergang
-\begin{equation}
-  E_\text{Br,mess} = \SI{14.0008}{\kilo\electronvolt}.
-\end{equation}
-
-\subsubsection{Zirkonium}
-
-Die Messwerte für Zirkonium sind in den Tabellen \ref{tab:zirkonium1} und
-\ref{tab:zirkonium2} dargestellt und
-in Abbildung \ref{fig:zirkonium} als Graph aufgetragen.
-Die K-Kante wird bei
-\begin{equation}
-  2\theta_\text{Zr} =
-\end{equation}
-gemessen.
-
-18.8  190.0
-
-
-\subsubsection{Bismut}
-
-In Tabelle \ref{tab:bismuth1} und \ref{tab:bismuth2} sind die Messwerte der
-Bismutprobe abgebildet.
-Diese sind in Abbildung \ref{fig:bismuth} als Graph aufgetragen.
-Die Messung ergibt einen Winkel von
-\begin{equation}
-  2\theta_\text{Bi} = 22.2
-\end{equation}
-an der K-Kante.
-Daraus ergibt sich mit \eqref{eqn:braggbed} die Wellenlänge
-\begin{equation}
-  \lambda_\text{Bi} = \SI{0.0775}{\nano\meter}.
-\end{equation}
-Mit \eqref{eqn:energielambda} folgt der Energiewert an der K-Kante von Bismut
-\begin{equation}
-  E_\text{Bi,mess} = \SI{15.9879}{\kilo\electronvolt}.
-\end{equation}
-
-\subsection{Das Moseleysche Gesetz}
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{Daten/bismuth.png}
+  \caption{Graph der Messwerte des Absorptionsspektrums der Bismuthprobe. Es
+  sind die Impulse pro Sekunde gegen den Winkel aufgetragen.}
+  \label{fig:bismuth}
+\end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[height=8cm]{build/Moseley.pdf}
-  \caption{a.}
-  \label{fig:Moseley}
+  \caption{Graph zur Bestimmung der Rydbergkonstante. Es ist $\sqrt{E_k}$ gegen
+  Z aufgetragen.}
+  \label{fig:moseley}
 \end{figure}
-
-
-Tabelle für copy and paste:
-\begin{table}[h]
-  \centering
-  \begin{tabular}{S S}
-    \toprule
-    {$k$} & {$U\:/\:\si{\milli\volt}$}\\
-    \midrule
-    1 & 637.2\\
-    3 & 212.4\\
-    5 & 127.4\\
-    7 & 91.03\\
-    9 & 70.8\\
-    \bottomrule
-  \end{tabular}
-  \caption{Amplituden Rechteckspannung.}
-  \label{tab:rechtampl}
-\end{table}
-
-Literaturwerte:
-Atommassen Z
-c
-e
-h
 
 \begin{table}[h]
   \centering
@@ -298,6 +370,19 @@ h
     18.0 & 367.0\\
     18.4 & 376.0\\
     18.8 & 372.0\\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte zur Bestimmung des Emissionsspektrums (1). Es sind die
+  Impulse pro Sekunde gegen den Winkel aufgetragen.}
+  \label{tab:emission1}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$\theta/\si{\degree}$} & {$Imp\si{\second}$}\\
+    \midrule
     19.2 & 391.0\\
     19.6 & 394.0\\
     20.0 & 402.0\\
@@ -328,10 +413,11 @@ h
     30.0 & 205.0\\
     \bottomrule
   \end{tabular}
-  \caption{Messwerte zur Bestimmung des Emissionsspektrums (1). Es sind die
+  \caption{Messwerte zur Bestimmung des Emissionsspektrums (2). Es sind die
   Impulse pro Sekunde gegen den Winkel aufgetragen.}
-  \label{tab:emission1}
+  \label{tab:emission2}
 \end{table}
+
 
 \begin{table}[h]
   \centering
@@ -366,6 +452,19 @@ h
     40.0 & 938.0\\
     40.4 & 212.0\\
     40.8 & 158.0\\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte zur Bestimmung des Emissionsspektrums (3). Es sind die
+  Impulse pro Sekunde gegen den Winkel aufgetragen.}
+  \label{tab:emission3}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$\theta/\si{\degree}$} & {$Imp\si{\second}$}\\
+    \midrule
     41.2 & 158.0\\
     41.5 & 142.0\\
     42.0 & 135.0\\
@@ -396,9 +495,99 @@ h
     52.0 & 56.0\\
     \bottomrule
   \end{tabular}
-  \caption{Messwerte zur Bestimmung des Emissionsspektrums (2). Es sind die
+  \caption{Messwerte zur Bestimmung des Emissionsspektrums (4). Es sind die
   Impulse pro Sekunde gegen den Winkel aufgetragen.}
-  \label{tab:emission2}
+  \label{tab:emission4}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$\theta/\si{\degree}$} & {$Imp/\si{\second}$}\\
+    \midrule
+    26.0 & 25.0 \\
+    26.2 & 26.0 \\
+    26.4 & 26.0 \\
+    26.6 & 23.0 \\
+    26.8 & 25.0 \\
+    27.0 & 24.0 \\
+    27.2 & 23.0 \\
+    27.4 & 22.0 \\
+    27.6 & 22.0 \\
+    27.8 & 20.0 \\
+    28.0 & 20.0 \\
+    28.2 & 20.0 \\
+    28.4 & 19.0 \\
+    28.6 & 21.0 \\
+    28.8 & 21.0 \\
+    29.0 & 18.0 \\
+    29.2 & 19.0 \\
+    29.4 & 18.0 \\
+    29.6 & 17.0 \\
+    29.8 & 17.0 \\
+    30.0 & 19.0 \\
+    30.2 & 18.0 \\
+    30.4 & 16.0 \\
+    30.6 & 18.0 \\
+    30.8 & 19.0 \\
+    31.0 & 18.0 \\
+    31.2 & 23.0 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der Germaniumprobe (1). Es sind die
+  Impulse pro Sekunde gegen den Winkel aufgetragen.}
+  \label{tab:germanium1}
+\end{table}
+
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$\theta/\si{\degree}$} & {$Imp/\si{\second}$}\\
+    \midrule
+    31.4 & 28.0 \\
+    31.6 & 34.0 \\
+    31.8 & 40.0 \\
+    32.0 & 42.0 \\
+    32.2 & 42.0 \\
+    32.4 & 39.0 \\
+    32.5 & 36.0 \\
+    32.8 & 35.0 \\
+    33.0 & 37.0 \\
+    33.2 & 36.0 \\
+    33.4 & 35.0 \\
+    33.6 & 32.0 \\
+    33.8 & 31.0 \\
+    34.0 & 32.0 \\
+    34.2 & 29.0 \\
+    34.4 & 28.0 \\
+    34.5 & 30.0 \\
+    34.8 & 29.0 \\
+    35.0 & 26.0 \\
+    35.2 & 26.0 \\
+    35.4 & 26.0 \\
+    35.5 & 26.0 \\
+    35.8 & 23.0 \\
+    36.0 & 22.0 \\
+    36.2 & 22.0 \\
+    36.4 & 20.0 \\
+    36.5 & 20.0 \\
+    36.8 & 19.0 \\
+    37.0 & 19.0 \\
+    37.2 & 19.0 \\
+    37.4 & 18.0 \\
+    37.5 & 17.0 \\
+    37.8 & 17.0 \\
+    38.0 & 17.0 \\
+    38.2 & 17.0 \\
+    38.4 & 15.0 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der Germaniumprobe (2). Es sind die
+  Impulse pro Sekunde gegen den Winkel aufgetragen.}
+  \label{tab:germanium2}
 \end{table}
 
 \begin{table}[h]
@@ -654,7 +843,7 @@ h
     26.6 & 127.0 \\
     26.8 & 117.0 \\
     27.0 & 118.0 \\
-    27.2 & 118.0 \\    
+    27.2 & 118.0 \\
     \bottomrule
   \end{tabular}
   \caption{Messwerte der Bismuthprobe (2). Es sind die

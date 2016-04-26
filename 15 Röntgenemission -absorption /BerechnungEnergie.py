@@ -13,7 +13,8 @@ tKa = 39.6213/2
 tKb = 44.2196/2
 tGe = 16.2
 tBr = 12.7
-tBi = 11.1
+tBi1 = 10.7
+tBi2 = 12.8
 tZr = 9.4
 
 #Wellenlänge:
@@ -22,7 +23,8 @@ lKa = np.sin(tKa*2*np.pi/360)*dLiF*2
 lKb = np.sin(tKb*2*np.pi/360)*dLiF*2
 lGe = np.sin(tGe*2*np.pi/360)*dLiF*2
 lBr = np.sin(tBr*2*np.pi/360)*dLiF*2
-lBi = np.sin(tBi*2*np.pi/360)*dLiF*2
+lBi1 = np.sin(tBi1*2*np.pi/360)*dLiF*2
+lBi2 = np.sin(tBi2*2*np.pi/360)*dLiF*2
 lZr = np.sin(tZr*2*np.pi/360)*dLiF*2
 
 #Energie in keV:
@@ -31,10 +33,9 @@ EKa = c*h/(lKa*e)
 EKb = c*h/(lKb*e)
 EGe = c*h/(lGe*e)
 EBr = c*h/(lBr*e)
-EBi = c*h/(lBi*e)
+EBi1 = c*h/(lBi1*e)
+EBi2 = c*h/(lBi2*e)
 EZr = c*h/(lZr*e)
-
-a1 = -np.sqrt(EBr/13.6) + 35
 
 #Ausgabe:
 print(
@@ -44,7 +45,8 @@ print(
 "CU-Kbeta:", lKb, EKb,
 "Germanium:", lGe, EGe,
 "Brom:", lBr, EBr,
-"Bismuth:", lBi, EBi,
+"Bismuth1:", lBi1, EBi1,
+"Bismuth2:", lBi2, EBi2,
 "Zirkonium:", lZr, EZr,
-"Abschirmzahl:", a1, a2
+"Energiedifferenz Kupfer:", EKa-EKb
 )
