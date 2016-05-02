@@ -1,27 +1,212 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Die genutzten Naturkonstanten sind:
+
+\begin{align*}
+  h = \SI{6.626070040(81)e-34}{\joule\second}
+  c = \SI{299792458}{\meter\per\second}
+  e = \SI{1.6021766208(98)e-19}{\coulomb}
+  R_{\infty} = \SI{13.605693009(84)}{\electronvolt}
+  \alpha = 7.2973525664(17)e-3
+\end{align*}
+
+\subsection{Bestimmung der Gitterkonstante}
+\label{sec:gitterkonstante}
+
+In Tabelle \ref{tab:gitterdaten} sind die gemssenen Ablenkwinkel ausgehend
+von der 0. Ordnung sowie die zugehörigen Wellenlängen der Spektrallinien eingetragen.
+Die Beziehung der beiden Größen ist in Formel \eqref{eqn:Gitter} gezeigt.              %verlinken
+
+In Abbildung \ref{fig:plotgitterkonstante} ist $sin(\phi)$ gegen die Wellenlänge
+aufgetragen. Außerdem wurde einen lineare Ausgleichsrechnung gemacht und die Ausgleichsgerade
+eingezeichnet.
+
+Die ausgegebene Steigung der Geraden ist
+\begin{align*}
+  m = \SI{9.78(3)e-4}{\per\nano\meter}.\\
+  \intertext{daraus ergibt sich die Gitterkonstante:}\\
+  g = \SI{1.022(3)}{\micro\meter}
+\end{align*}
+
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics{plotgitterkonstante.pdf}
+  \caption{Plot von $sin(\phi)$ gegen $\lambda$.}
+  \label{fig:plotgitterkonstante}
 \end{figure}
 
-Tabelle für copy and paste:
 \begin{table}[h]
   \centering
   \begin{tabular}{S S}
     \toprule
-    {$k$} & {$U\:/\:\si{\milli\volt}$}\\
+    {$\lambda\:/\: \si{\nano\meter}$} & {$\phi\:/\:\si{\degree}$}\\
     \midrule
-    1 & 637.2\\
-    3 & 212.4\\
-    5 & 127.4\\
-    7 & 91.03\\
-    9 & 70.8\\
+    447.1 & 26.3\\
+    471.3 & 27.9\\
+    492.2 & 29.2\\
+    501.6 & 29.8\\
+    504.8 & 30.1\\
+    587.6 & 35.6\\
+    667.8 & 41.3\\
+    706.5 & 44.2\\
     \bottomrule
   \end{tabular}
-  \caption{Amplituden Rechteckspannung.}
-  \label{tab:rechtampl}
+  \caption{Die gegebenen Werte für $\lambda$ und der gemessene Ablenkwinkel
+  $\phi$.}
+  \label{tab:gitterdaten}
+\end{table}
+
+\subsection{Bestimmung der Eichgröße}
+\label{sec:eichgroesse}
+
+Die Eichgröße $\psi$ wird zwei mal anhand unterschiedlicher Spektrallinien
+bestimmt.
+
+Die Formel lautet:
+
+\begin{equation}
+  \psi = \frac{\lambda_1-\lambda_2}{\Delta t cos(\bar{\phi}_{12}) }
+\end{equation}
+
+Die berechneten Eichgrößen und die zugehörigen Messdaten sind in Tabelle
+\ref{tab:eichgroesse} zu finden.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S
+    S[table-format=1.3]
+    @{${}\pm{}$}
+    S[table-format=1.3]
+    S
+    S[table-format=1.3]
+    @{${}\pm{}$}
+    S[table-format=1.3]}
+    \toprule
+    {$\lambda_1\:/\: \si{\nano\meter}$} & {$\lambda_2\:/\: \si{\nano\meter}$} &
+    {$\lambda_1-\lambda_2\:/\: \si{\nano\meter}$} & \multicolumn{2}{c}{$\bar{\phi}_{12}\:/\:\si{\radian}$}
+     & {$\Delta t\:/\:Skt$} & \multicolumn{2}{c}{$\psi\:/\:\si{10^{-11}\meter}Skt^{-1}$}\\
+    \midrule
+    501.6 & 492.2 & 9.4 & 0.515 & 0.005 & 373 & 2.045 & 0.006\\
+    504.8 & 501.6 & 3.2 & 0.523 & 0.003 & 125 & 2.218 & 0.003\\
+    \bottomrule
+  \end{tabular}
+  \caption{Die Eichgöße \psi mit den zugehörigen Messdaten.}
+  \label{tab:eichgroesse}
+\end{table}
+
+Die gemittelte Eichgröße beträgt:
+
+\begin{align*}
+  \psi = \SI{2.131(3)e-11}{\meter}\g{Skt}^{-1}
+\end{align*}
+
+\subsection{Abschirmkonstante}
+
+Nun wird im letzten Teil die Abschirmkonstante bestimmt. %Dazu müssen aber zunächst einige andere Werte bestimmt werden.
+Aus Formel \eqref{eqn:lamda} lässt sich mit der Gitterkonstante aus Kapitel
+\ref{sec:gitterkonstante} und den gemittelten Winkeln der Dublettlinien die Wellenlänge
+$\lambda$ herausfinden. $\Delta \lambda$ wird mit Formel \eqref{eqn:dellamda} berechnet,
+wobei die Eichgröße aus Kapitel \ref{sec:eichgroesse} eingesetzt wird.
+Dann kann mit $\lambda$, $\Delta \lambda$ und Formel \eqref{eqn:delEd} die Energie $\Delta \g{E}_{\g{D}}$
+berechnet werden. Eingesetzt in Formel \eqref{eqn:abschirm} ergibt sich dann zusammen mit der passenden Ordnungszahl
+$z$ und der Hauptquantenzahl $n$ die Abschirmkonstante $\sigma_2$. Mit $l=1$ gilt:
+
+\begin{equation}
+  \sigma_2 = z - \sqrt[4]{2 \Delta\g{E}_{\g{D}} \frac{n^3}{R_{\infty}\alpha^2}}.
+  \label{eqn:abschirm}
+\end{equation}
+
+In den Tabellen \ref{tab:abschirmna}, \ref{tab:abschirmka} und \ref{tab:abschirmru} sind
+die Zwischen- und Endergebnisse zur Berechnung der
+Abschirmzahlen $\sigma(n,l)=\sigma(n,1)$ gegeben.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{
+    S
+    S[table-format=3]
+    @{${}\pm{}$}
+    S[table-format=1]
+    S[table-format=1.4]
+    @{${}\pm{}$}
+    S[table-format=1.4]
+    S[table-format=1.6]
+    @{${}\pm{}$}
+    S[table-format=1.6]
+    S[table-format=1.3]
+    @{${}\pm{}$}
+    S[table-format=1.3]}
+    \toprule
+    {$\phi\:/\:\si{\radian}$} & \multicolumn{2}{c}{$\lambda\:/\: \si{\nano\meter}$} & \multicolumn{2}{c}{$\Delta\lambda\:/\:\si{\nano\meter}$}
+     & \multicolumn{2}{c}{$\Delta\g{E}_{\g{D}}\:/\:\si{\electronvolt}$} & \multicolumn{2}{c}{$\sigma_2$}\\
+    \midrule
+    0.656 & 624 & 2 & 0.4559 & 0.0006 & 0.001454 & 0.000009 & 7.774 & 0.004\\
+    0.623 & 596 & 2 & 0.5192 & 0.0007 & 0.00181 & 0.00001 & 7.592 & 0.005\\
+    0.599 & 576 & 2 & 0.4225 & 0.0006 & 0.00158 & 0.00001 & 7.706 & 0.004\\
+    \bottomrule
+  \end{tabular}
+  \caption{Die Abschirmkonstanten bei Natrium mit $z=11$ und $n=3$.}
+  \label{tab:abschirmna}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{
+    S[table-format=1.4]
+    @{${}\pm{}$}
+    S[table-format=1.4]
+    S[table-format=3]
+    @{${}\pm{}$}
+    S[table-format=1]
+    S[table-format=1.4]
+    @{${}\pm{}$}
+    S[table-format=1.4]
+    S[table-format=1.6]
+    @{${}\pm{}$}
+    S[table-format=1.6]
+    S[table-format=2.3]
+    @{${}\pm{}$}
+    S[table-format=1.3]}
+    \toprule
+    \multicolumn{2}{c}{$\phi\:/\:\si{\radian}$} & \multicolumn{2}{c}{$\lambda\:/\: \si{\nano\meter}$} & \multicolumn{2}{c}{$\Delta\lambda\:/\:\si{\nano\meter}$}
+     & \multicolumn{2}{c}{$\Delta\g{E}_{\g{D}}\:/\:\si{\electronvolt}$} & \multicolumn{2}{c}{$\sigma_2$}\\
+    \midrule
+    0.6082 & 0.0009 & 584 & 2 & 1.486 & 0.002 & 0.00540 & 0.00004 & 13.441 & 0.001\\
+    0.6100 & 0.0009 & 585 & 2 & 0.2620 & 0.0004 & 0.000948 & 0.000006 & 15.403 & 0.006\\
+    0.5524 & 0.0009 & 536 & 2 & 1.469 & 0.002 & 0.00633 & 0.00004 & 13.216 & 0.001\\
+    0.5559 & 0.0009 & 539 & 2 & 1.213 & 0.002 & 0.00517 & 0.00004 & 13.503 & 0.001\\
+    \bottomrule
+  \end{tabular}
+  \caption{Die Abschirmkonstanten bei Kalium mit $z=19$ und $n=4$.}
+  \label{tab:abschirmka}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{
+    S[table-format=1.3]
+    @{${}\pm{}$}
+    S[table-format=1.3]
+    S[table-format=3]
+    @{${}\pm{}$}
+    S[table-format=1]
+    S[table-format=1.3]
+    @{${}\pm{}$}
+    S[table-format=1.3]
+    S[table-format=1.5]
+    @{${}\pm{}$}
+    S[table-format=1.5]
+    S[table-format=2.2]
+    @{${}\pm{}$}
+    S[table-format=1.2]}
+    \toprule
+    \multicolumn{2}{c}{$\phi\:/\:\si{\radian}$} & \multicolumn{2}{c}{$\lambda\:/\: \si{\nano\meter}$} & \multicolumn{2}{c}{$\Delta\lambda\:/\:\si{\nano\meter}$}
+     & \multicolumn{2}{c}{$\Delta\g{E}_{\g{D}}\:/\:\si{\electronvolt}$} & \multicolumn{2}{c}{$\sigma_2$}\\
+    \midrule
+    0.668 & 0.006 & 633 & 5 & 0.452 & 0.005 & 0.00140 & 0.00003 & 32.31 & 0.02\\
+    \bottomrule
+  \end{tabular}
+  \caption{Die Abschirmkonstanten bei Rubidium mit $z=37$ und $n=5$.}
+  \label{tab:abschirmru}
 \end{table}
