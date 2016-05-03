@@ -176,10 +176,12 @@ Die Eigenenergiegleichung \eqref{eqn:SommerFormel} wird nun zu
   E_{n,j} = -R_\infty \biggl(\frac{(z-\sigma_1)^2}{n^2} +
   \alpha^2 \frac{(z-\sigma_2)^4}{n^3}
   \Bigl(\frac{1}{j+\frac{1}{2}} - \frac{3}{4n}\Bigr)\biggr)
+  \label{eqn:abschirm}
 \end{align}
 umgeformt und es folgt die genäherte Beziehung
 \begin{align}
   \increment E_\text{Dublett} = h c \frac{\increment \lambda}{\lambda^2}.
+  \label{eqn:delEd}
 \end{align}
 Dabei ist $\lambda$ die gemessene Wellenlänge und $\increment \lambda$ die
 Wellenlängendifferenz der beiden Linien eines Dupletts.
@@ -221,7 +223,9 @@ die lokalen Minima.
 Die Hauptmaxima, die bei genügend vielen Gitteröffnungen deutlich von den
 Nebenmaxima zu unterscheiden sind, befinden sich bei
 \begin{align}
-  y = \pi k.
+  y = & \pi k \\
+  \sin(\varphi) = & k \frac{\lambda}{g} \\
+  \label{eqn:Gitter}
 \end{align}
 In Abbildung \ref{fig:Intens} ist der grobe Verlauf der Intensitätsverteilung
 abgebildet.
@@ -267,6 +271,7 @@ wobei $\bar{\varphi}$ der gemittelte Wert zwischen beiden Dublettlinien ist.
 \begin{align}
   \increment \lambda = \frac{\cos \bar{\varphi}}{\cos \bar{\varphi}_{1,2}}
   \frac{\increment s}{\increment t} (\lambda_1 - \lambda_2).
+  \label{eqn:dellamda}
 \end{align}
 
 \begin{figure}
