@@ -1,0 +1,12 @@
+# Messwerte A-Scan2 in Microsekunden und Literaturstrecken in Centimetern
+44.3 6.020
+45.4 6.200
+10.4 1.610
+16.5 2.400
+22.7 3.170
+29.1 4.030
+34.9 4.780
+40.8 5.600
+46.6 6.400
+0 7.185
+11.7 1.980

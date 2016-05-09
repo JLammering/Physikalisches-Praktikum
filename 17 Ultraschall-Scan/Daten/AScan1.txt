@@ -1,0 +1,12 @@
+# Messwerte A-Scan1 in Microsekunden und Literaturdurchmesser in Centimetern
+15.0 0.180
+13.7 0.180
+45.4 0.600
+40.0 0.500
+34.6 0.425
+29.1 0.325
+23.2 0.330
+17.4 0.325
+11.5 0.320
+6.5 0.320
+41.3 1.030

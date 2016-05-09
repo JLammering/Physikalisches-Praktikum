@@ -1,0 +1,13 @@
+# mit der Schieblehre gemessene Abstände
+# Abstand zur Kante, Durchmesser der Löcher
+6.020 0.180
+6.200 0.180
+1.610 0.600
+2.400 0.500
+3.170 0.425
+4.030 0.325
+4.780 0.330
+5.600 0.325
+6.400 0.320
+7.185 0.320
+1.980 1.030
