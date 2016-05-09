@@ -55,4 +55,40 @@ genau bestimmt werden.
 Die relativen Fehler zwischen den Messwerten für die Positionen und Durchmesser
 der Störstellen, aufgenommen mit dem B-Scan \ref{tab:BScanZeitenStreckenDicken},
 und den mit der Schieblehre bestimmten \ref{tab:AbmessungenAcryl} sind in
-Tabelle \ref{tab:BScanVGL} aufgezählt.
+Tabelle \ref{tab:BScanVGL} aufgezählt. Die Fehler für die Positionen sind
+zum Großteil gering, bis auf $a_1$ und $b$. Abweichungen lassen sich dadurch
+erklären, dass die Flecken auf dem B-Scan-Schnittbild zum Teil sehr groß
+sind und es nicht möglich ist, einen genauen Wert aufzunehmen.
+Die Fehler für die Durchmesser der Störstellen sind ohne Ausnahme sehr groß.
+Ein Grund dafür ist, dass die Flecken auf dem B-Scan-Schnittbild sichtbar
+mit der Tiefe abnehmen. Das ist beispielsweise daran erkennbar, dass auf dem
+ersten Bild bei $c_1$ und $c_2$ jeweils eine deutlich größere rote Fläche
+abgebildet ist, als bei $b$, obwohl $b$ einen über 5-mal so großen
+Durchmesser hat. Der B-Scan ist eine schnelle Methode, Messwerte aufzunehmen,
+aber die statistischen Fehler sind sehr groß, wenn nur eine Messung
+durchgeführt wird.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S}
+    \toprule
+    {Störstelle} & {$\delta s_\text{B}/\si{\percent}$} & {$\delta d_\text{B}/
+    \si{\percent}$} \\
+    \midrule
+    \text{c1} & 9.3 & 575.0\\
+    \text{c2} & 9.7 & 499.2\\
+    \text{a1} & 40.7 & 125.3\\
+    \text{a2} & 20.4 & 115.7\\
+    \text{a3} & 18.2 & 185.9\\
+    \text{a4} & 11.9 & 189.8\\
+    \text{a5} & 11.5 & 226.8\\
+    \text{a6} & 9.8 & 231.8\\
+    \text{a7} & 8.3 & 237.0\\
+    \text{a8} & \text{ } & \text{ }\\
+    \text{b} & 44.8 & 71.0\\
+    \bottomrule
+  \end{tabular}
+  \caption{Relative Fehler zwischen $s_\text{B,2}$ und $s_\text{lit}$ und
+  $d_\text{B}$ und $d_\text{lit}$.}
+  \label{tab:BScanVGL}
+\end{table}

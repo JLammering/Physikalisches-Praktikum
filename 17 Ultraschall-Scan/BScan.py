@@ -10,7 +10,7 @@ c = 2730
 h = 8.04
 
 #Laufzeiten/us:
-t1, t2 = np.genfromtxt('Daten/BScanLz.txt', unpack = 'True')
+t1, t2, slit ,dlit = np.genfromtxt('Daten/BScanLz.txt', unpack = 'True')
 t1 = (t1-3)/2
 t2 = (t2-3)/2
 
@@ -26,4 +26,12 @@ print(
 'Strecken1:',s1,
 'Strecken2:',s2,
 'Durchmesser:',d
+)
+
+#VGL mit Litwerten:
+deltas = np.abs(100*(slit-s2)/slit)
+deltad = np.abs(100*(dlit-d)/dlit)
+print(
+'relativer Fehler(Strecke BScan):', deltas,
+'relativer Fehler(Dicke BScan):', deltad
 )
