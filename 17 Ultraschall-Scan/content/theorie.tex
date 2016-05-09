@@ -29,7 +29,7 @@ mit den $N$ Messwerten $x_i$ berechnet.
 \subsection{Grundlagen}
 
 Der Frequenzbereich des Schalls lässt sich grob in 4 Bereiche einteilen.
-Bis ca. \SI{16}{\hertz} wird von Infraschall gesprochen; von ca. 16 bis \SI{20}{\kilo}{\hertz}
+Bis ca. \SI{16}{\hertz} wird von Infraschall gesprochen; von ca. 16 bis \SI{20}{\kilo\hertz}
 kann der Schall von Menschen gehört werden. Darüber bis ca. \SI{1}{\giga\hertz}
 heißt er Ultraschall, mit dem in diesem Versuch gearbeitet wird. Ab ca. \SI{1}{\giga\hertz}
 tritt Hyperschall auf.
@@ -52,8 +52,8 @@ $c$ berechnet sich bei Flüssigkeiten und Gasen, wo nur longitudinale Wellen auf
 auftreten über Formel \eqref{eqn:cfest}.
 
 \begin{align}
-  c_{\g{Fl}} &= \sqrt{\frac{1}{\kappa \cdot \rho}}\\ \label{eqn:cfluessig}
-  c_{\g{Fe}} &= \sqrt{\frac{E}{\rho}}} \label{eqn:cfest}.
+  c_{\g{Fl}} &= \sqrt{\frac{1}{\kappa \cdot \rho}} \label{eqn:cfluessig}\\
+  c_{\g{Fe}} &= \sqrt{\frac{E}{\rho}} \label{eqn:cfest}.
 \end{align}
 
 Dabei sind die Schallwellen Richtungsabhängig. Durch Absorption nimmt die Intensität exponentiell ab:
@@ -98,9 +98,20 @@ der Laufzeit kann dann nach Formel \eqref{eqn:laufzeit} die Lage bestimmt werden
 %subfigure
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[height=4cm]{Pics/durchschall.pdf}
+    \caption{Das Durchschallungsverfahren.}
+    \label{fig:durchschall}
+  \end{subfigure}
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[height=4cm]{Pics/Impuls-Echo.pdf}
+    \caption{Das Impuls-Echo-Verfahren.}
+    \label{fig:impuls_echo}
+  \end{subfigure}
+  %\caption{Plot.}
+  %\label{fig:plot}
 \end{figure}
 
 \begin{equation}
