@@ -56,7 +56,7 @@ auftreten über Formel \eqref{eqn:cfest}.
   c_{\g{Fe}} &= \sqrt{\frac{E}{\rho}} \label{eqn:cfest}.
 \end{align}
 
-Dabei sind die Schallwellen Richtungsabhängig. Durch Absorption nimmt die Intensität exponentiell ab:
+Dabei sind die Schallwellen richtungsabhängig. Durch Absorption nimmt die Intensität exponentiell ab:
 
 \begin{equation}
   I(x) = I_0 \cdot e^{\alpha x} .
@@ -71,7 +71,7 @@ $Z_1$ und $Z_2$ der
 angrenzenden Materialien ab.
 
 \begin{equation}
-  R = (\frac{Z_1 - Z_2}{Z_1 + Z_2})^2
+  R = \left(\frac{Z_1 - Z_2}{Z_1 + Z_2} \right)^2
   \label{eqn:reflexion}
 \end{equation}
 
@@ -94,24 +94,26 @@ gesagt werden, ob sich eine Fehlstelle in dem Körper befindet.
 Das Impuls-Echo-Verfahren kann im Gegensatz dazu die Position der Fehlstelle bestimmen.
 Hier wird ein Impuls gesendet und dann das reflektierte Signal aufgenommen. Aus
 der Laufzeit kann dann nach Formel \eqref{eqn:laufzeit} die Lage bestimmt werden.
+Die beiden Verfahren sind in den Abbildungen \ref{fig:verfahren}\subref{fig:durchschall}
+und \ref{fig:verfahren}\subref{fig:impuls_echo} zu sehen.
 
 %subfigure
 \begin{figure}
   \centering
   \begin{subfigure}{0.48\textwidth}
     \centering
-    \includegraphics[height=4cm]{Pics/durchschall.pdf}
-    \caption{Das Durchschallungsverfahren.}
+    \includegraphics[height=7cm]{Pics/durchschall.pdf}
+    \caption{Das Durchschallungsverfahren.\cite{anleitung}}
     \label{fig:durchschall}
   \end{subfigure}
   \begin{subfigure}{0.48\textwidth}
     \centering
-    \includegraphics[height=4cm]{Pics/Impuls-Echo.pdf}
-    \caption{Das Impuls-Echo-Verfahren.}
+    \includegraphics[height=7cm]{Pics/Impuls-Echo.pdf}
+    \caption{Das Impuls-Echo-Verfahren.\cite{anleitung}}
     \label{fig:impuls_echo}
   \end{subfigure}
-  %\caption{Plot.}
-  %\label{fig:plot}
+  \caption{Die beiden Arten die Laufzeit des Ultraschalls zu messen.}
+  \label{fig:verfahren}
 \end{figure}
 
 \begin{equation}
@@ -133,6 +135,3 @@ Die Darstellung der Laufzeitmessung kann anwendungsspezifisch variiert werden.
   \item Der TM-Scan (Time-Motion Scan) zeigt eine zeitliche Bildfolge. Es sind also hintereinander
   aufgenommene B-Scans.
 \end{itemize}
-
-
-\cite{anleitung}
