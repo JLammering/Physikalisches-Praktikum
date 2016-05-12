@@ -13,6 +13,16 @@ alpha = ufloat(7.2973525664e-3, 0.0000000017e-3)
 def sigma2(delEd, n, z):
     return z-(delEd*2*(n**3/(Rinfty*alpha**2)))**(1/4)
 
+def mittelwert(sigma):
+    l = len(sigma)
+    sum = ufloat(0, 0)
+    for i in range(0, l):
+        sum += sigma[i]
+    return (1/l)*sum
+
+test = [1, 2, 3]
+testmit = mittelwert(test)
+print('test', testmit)
 #natrium
 #rot, gelb, gruengelb
 
@@ -25,6 +35,8 @@ dellamda_na = eichgroesse * unp.cos(phi_na) * dels_na
 delEd_na = h*c*(dellamda_na/lamda_na**2)
 delEd_na /= e #in eV umrechnen
 sigma_na = sigma2(delEd_na, 3, 11)
+sigma_nagemit = mittelwert(sigma_na)
+
 
 print('natrium: ')
 print('phi_na: ', phi_na)
@@ -32,14 +44,11 @@ print('lamda_na:', lamda_na)
 print('dellamda_na: ', dellamda_na)
 print('delEd_na: ', delEd_na)
 print('sigma_na: ', sigma_na)
+print('sigma_nagemit: ', sigma_nagemit)
+
 
 #Kalium
 #Reihenfloge gelb1, gelb2, grün1, grün2
-def mittelwert(phi_1, phi_2):
-    a = np.array([phi_1, phi_2])
-    x = np.mean(a)
-    y = np.std(a)
-    return ufloat(x, y)
 
 phi_kagelb1 = np.array([270.5, 270.4])
 phi_kagelb2 = np.array([270.3, 270.4])
@@ -55,6 +64,7 @@ dellamda_ka = eichgroesse * unp.cos(phi_ka) * dels_ka
 delEd_ka = h*c*(dellamda_ka/lamda_ka**2)
 delEd_ka /= e #in eV umrechnen
 sigma_ka = sigma2(delEd_ka, 4, 19)
+sigma_kagemit = mittelwert(sigma_ka)
 
 print('Kalium: ')
 print('phi_ka: ', phi_ka)
@@ -62,6 +72,7 @@ print('lamda_ka:', lamda_ka)
 print('dellamda_ka: ', dellamda_ka)
 print('delEd_ka: ', delEd_ka)
 print('sigma_ka: ', sigma_ka)
+print('sigma_kagemit: ', sigma_kagemit)
 
 
 #Rubidium
@@ -71,7 +82,7 @@ phi_ru1 = np.array([267.4, 266.7])
 phi_ru = unp.uarray([np.mean(phi_ru1)], [np.std(phi_ru1)])
 phi_ru = 305.3 - phi_ru
 phi_ru *= (1/360)*2*np.pi
-dels_ru = np.array([27])
+dels_ru = np.array([408])
 lamda_ru = unp.sin(phi_ru)*g
 dellamda_ru = eichgroesse * unp.cos(phi_ru) * dels_ru
 delEd_ru = h*c*(dellamda_ru/lamda_ru**2)
