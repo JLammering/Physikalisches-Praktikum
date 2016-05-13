@@ -135,3 +135,14 @@ Die Darstellung der Laufzeitmessung kann anwendungsspezifisch variiert werden.
   \item Der TM-Scan (Time-Motion Scan) zeigt eine zeitliche Bildfolge. Es sind also hintereinander
   aufgenommene B-Scans.
 \end{itemize}
+
+Mit dem TM-Scan kann beispielsweise eine Herzfrequenz $\nu_\text{Herz}$ gemessen
+werden. Werden Werte für das enddiastolische Volumen EDV, das ist das verdrängte
+Volumen des entspannten Herzmuskels, und das endsystolische Volumen EDS, also
+das verdrängte Volumen des maximal gespannten Herzmuskels, aufgenommen,
+so kann mit der Frequenz das Herzminutenvolumen mit
+\begin{align}
+  \text{HZV} = (\text{EDS}-\text{EDV}) \nu_\text{Herz}
+  \label{eqn:HZV}
+\end{align}
+bestimmt werden.
