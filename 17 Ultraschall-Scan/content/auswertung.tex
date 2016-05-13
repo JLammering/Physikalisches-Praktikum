@@ -30,6 +30,94 @@ unteren Kante des Acrylblocks zur Mitte des jeweiligen Lochs gemessen wird.
 Die aufgenommenen Längen dafür, sowie für die Größe der Löcher sind in
 Tabelle \ref{tab:AbmessungenAcryl} abgebildet.
 
+\subsection{Untersuchung des Acrylblocks mit dem A-Scan}
+
+Die gemessenen Laufzeiten der Schallwellen am Acrylblock bis zu den jeweiligen
+Störstellen und zurück zum Sender sind in Tabelle \ref{tab:AScanZeiten} dargestellt.
+Der Wert für $a_8$ in der zweiten Messung kann mit dem AScan nicht festgestellt
+werden und daher auch nicht die zugehörige Breite der Störstelle.
+Nachdem die Laufzeitkorrektur
+\begin{align}
+  t_\text{l,A} = \SI{0.5}{\micro\second}
+\end{align}
+von den Werten abgezogen wird, wird mit der Formel \eqref{eqn:SchallStrecke}
+jeweils die Strecke zu jeder Störstelle bestimmt.
+Die berechneten Werte sind in Tabelle \ref{tab:AScanStrecken}
+abgebildet.
+Aus diesen Daten wird die Dicke der einzelnen Störstellen jeweils mit
+\begin{align}
+  d_\text{A} & = h - s_\text{A,1} - s_\text{A,2}
+  \label{eqn:Dicke}
+\end{align}
+bestimmt. Die Ergebnisse sind in Tabelle \ref{tab:AScanDicken} aufgelistet.
+
+\subsection{Untersuchung des Acrylblocks mit dem B-Scan}
+
+Die Ergebnisse der Untersuchungen mit dem B-Scan sind in den Abbildungen
+\ref{fig:BScan1} und \ref{fig:BScan2} dargestellt.
+Daraus werden jeweils die Laufzeiten, abzüglich der Laufzeitkorrektur
+\begin{align}
+  t_\text{l,B} = \SI{3}{\micro\second},
+\end{align}
+und damit mit der Formel
+\ref{eqn:SchallStrecke} die Strecken zu den
+jeweiligen Störstellen bestimmt. Der Durchmesser wird dann wie beim A-Scan mit
+\eqref{eqn:Dicke} ausgerechnet
+Die Werte dafür sind in Tabelle \ref{tab:BScanZeitenStreckenDicken}
+dargestellt. Bei dem zweiten Scan kann erneut kein Messwert für die Laufzeit
+zu $a_8$ aufgenommen werden und daher auch kein Durchmesser für diese
+Störstelle.
+
+\subsection{Untersuchung eines Herzmodells mit dem TM-Scan}
+
+In Abbildung \ref{fig:TMScan} ist das Ergebnis der Untersuchung mit dem TM-Scan
+abgebildet. Über einen Zeitraum von
+\begin{align}
+  t_\text{TM} = \SI{18.5}{\second}
+\end{align}
+sind insgesamt 20 Peaks erkennbar.
+Daraus ergibt sich die Herzfrequenz
+\begin{align}
+  \nu_\text{Herz} = \SI{1.081}{\hertz}.
+\end{align}
+Für den Radius der benutzten Membran wird mit der Schieblehre
+\begin{align}
+  r_\text{M} = \SI{4.84}{\centi\meter}
+\end{align}
+gemessen.
+Das enddiastolische Volumen EDV ist Null, da die Membran in entspannter
+Lage kein Volumen verdrängt.
+Das endsystolische Volumen EDS entspricht der ausgelenkten Membran. Diese
+wird als Halbkugel angenähert und es folgt
+\begin{align}
+  \text{EDS} = \frac{2}{3} \pi r_\text{M}^3 = \SI{237.462}{\cubic\centi\meter}.
+\end{align}
+Mit der Formel \eqref{eqn:HZV} folgt das Herzminutenvolumen
+\begin{align}
+  \text{HZV} = \SI{0.015}{\cubic\meter\per\minute}.
+\end{align}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=13cm]{Daten/B-Scan1.png}
+  \caption{Zweidimensionales Schnittbild vom ersten B-Scan.}
+  \label{fig:BScan1}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=13cm]{Daten/B-Scan2.png}
+  \caption{Zweidimensionales Schnittbild vom zweiten B-Scan.}
+  \label{fig:BScan2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=13cm]{Daten/TM-Scan.png}
+  \caption{TM-Scan.}
+  \label{fig:TMScan}
+\end{figure}
+
 \begin{table}[h]
   \centering
   \begin{tabular}{S S S}
@@ -55,27 +143,6 @@ Tabelle \ref{tab:AbmessungenAcryl} abgebildet.
   der Löcher am Acrylblock.}
   \label{tab:AbmessungenAcryl}
 \end{table}
-
-\subsection{Untersuchung des Acrylblocks mit dem A-Scan}
-
-Die gemessenen Laufzeiten der Schallwellen am Acrylblock bis zu den jeweiligen
-Störstellen und zurück zum Sender sind in Tabelle \ref{tab:AScanZeiten} dargestellt.
-Der Wert für $a_8$ in der zweiten Messung kann mit dem AScan nicht festgestellt
-werden und daher auch nicht die zugehörige Breite der Störstelle.
-Nachdem die Laufzeitkorrektur
-\begin{align}
-  t_\text{l,A} = \SI{0.5}{\micro\second}
-\end{align}
-von den Werten abgezogen wird, wird mit der Formel \eqref{eqn:SchallStrecke}
-jeweils die Strecke zu jeder Störstelle bestimmt.
-Die berechneten Werte sind in Tabelle \ref{tab:AScanStrecken}
-abgebildet.
-Aus diesen Daten wird die Dicke der einzelnen Störstellen jeweils mit
-\begin{align}
-  d_\text{A} & = h - s_\text{A,1} - s_\text{A,2}
-  \label{eqn:Dicke}
-\end{align}
-bestimmt. Die Ergebnisse sind in Tabelle \ref{tab:AScanDicken} aufgelistet.
 
 \begin{table}[h]
   \centering
@@ -151,37 +218,6 @@ bestimmt. Die Ergebnisse sind in Tabelle \ref{tab:AScanDicken} aufgelistet.
   \label{tab:AScanDicken}
 \end{table}
 
-\subsection{Untersuchung des Acrylblocks mit dem B-Scan}
-
-Die Ergebnisse der Untersuchungen mit dem B-Scan sind in den Abbildungen
-\ref{fig:BScan1} und \ref{fig:BScan2} dargestellt.
-Daraus werden jeweils die Laufzeiten, abzüglich der Laufzeitkorrektur
-\begin{align}
-  t_\text{l,B} = \SI{3}{\micro\second},
-\end{align}
-und damit mit der Formel
-\ref{eqn:SchallStrecke} die Strecken zu den
-jeweiligen Störstellen bestimmt. Der Durchmesser wird dann wie beim A-Scan mit
-\eqref{eqn:Dicke} ausgerechnet
-Die Werte dafür sind in Tabelle \ref{tab:BScanZeitenStreckenDicken}
-dargestellt. Bei dem zweiten Scan kann erneut kein Messwert für die Laufzeit
-zu $a_8$ aufgenommen werden und daher auch kein Durchmesser für diese
-Störstelle.
-
-\begin{figure}
-  \centering
-  \includegraphics[height=13cm]{Daten/B-Scan1.png}
-  \caption{Zweidimensionales Schnittbild vom ersten B-Scan.}
-  \label{fig:BScan1}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[height=13cm]{Daten/B-Scan2.png}
-  \caption{Zweidimensionales Schnittbild vom zweiten B-Scan.}
-  \label{fig:BScan2}
-\end{figure}
-
 \begin{table}[h]
   \centering
   \begin{tabular}{S S S S S S}
@@ -211,23 +247,3 @@ Störstelle.
   Löcher.}
   \label{tab:BScanZeitenStreckenDicken}
 \end{table}
-
-\subsection{Untersuchung eines Herzmodells mit dem TM-Scan}
-
-In Abbildung \ref{fig:TMScan} ist das Ergebnis der Untersuchung mit dem TM-Scan
-abgebildet. Über einen Zeitraum von
-\begin{align}
-  t_\text{TM} = \SI{18.5}{\second}
-\end{align}
-sind insgesamt 20 Peaks erkennbar.
-Daraus ergibt sich die Herzfrequenz
-\begin{align}
-  \nu_\text{Herz} = \SI{1.081}{\hertz}.
-\end{align}
-
-\begin{figure}
-  \centering
-  \includegraphics[height=13cm]{Daten/TM-Scan.png}
-  \caption{TM-Scan.}
-  \label{fig:TMScan}
-\end{figure}
