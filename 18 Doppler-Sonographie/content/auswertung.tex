@@ -1,6 +1,8 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Mit Formel
+
 \begin{figure}
   \centering
   \includegraphics{plot.pdf}
@@ -11,17 +13,18 @@
 Tabelle für copy and paste:
 \begin{table}[h]
   \centering
-  \begin{tabular}{S S}
+  \begin{tabular}{S S S S}
     \toprule
-    {$k$} & {$U\:/\:\si{\milli\volt}$}\\
+    {$v\:/\:\si{\percent}$} & {$v_{\SI{15}{\degree}}\:/\: \si{\meter\per\second}$} & {$v_{\SI{30}{\degree}}\:/\: \si{\meter\per\second}$} &
+    {$v_{\SI{60}{\degree}}\:/\: \si{\meter\per\second}$}\\
     \midrule
-    1 & 637.2\\
-    3 & 212.4\\
-    5 & 127.4\\
-    7 & 91.03\\
-    9 & 70.8\\
+    40 & 0.271 & 0.189 & 0.160\\
+    45 & 0.334 & 0.231 & 0.190\\
+    50 & 0.391 & 0.277 & 0.238\\
+    55 & 0.446 & 0.332 & 0.291\\
+    60 & 0.514 & 0.398 & 0.335\\
     \bottomrule
   \end{tabular}
-  \caption{Amplituden Rechteckspannung.}
-  \label{tab:rechtampl}
+  \caption{Strömungsgeschwindigkeiten $v$ im Rohr mit $d=\SI{16}{\milli\meter}$.}
+  \label{tab:v16mm}
 \end{table}

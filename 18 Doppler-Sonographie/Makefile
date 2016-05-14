@@ -14,8 +14,18 @@ all: build/main.pdf
 build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python plot.py
 
+build/plotvwinkel15.pdf: v_winkel15.py matplotlibrc header-matplotlib.tex daten/v_winkel15.txt| build
+	TEXINPUTS="$(call translate,$(pwd):)" python v_winkel15.py
+
+build/plotvwinkel30.pdf: v_winkel30.py matplotlibrc header-matplotlib.tex daten/v_winkel30.txt| build
+	TEXINPUTS="$(call translate,$(pwd):)" python v_winkel30.py
+
+build/plotvwinkel60.pdf: v_winkel60.py matplotlibrc header-matplotlib.tex daten/v_winkel60.txt| build
+	TEXINPUTS="$(call translate,$(pwd):)" python v_winkel60.py
+
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot.pdf
+build/main.pdf: build/plot.pdf build/plotvwinkel15.pdf build/plotvwinkel30.pdf build/plotvwinkel60.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
