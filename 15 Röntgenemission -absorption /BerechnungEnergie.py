@@ -6,11 +6,12 @@ e = 1.6022*10**(-19)
 c = 299792458
 h = 6.6261 * 10**(-34)
 dLiF = 201.4 * 10**(-12)
+Rinf = 13.6
 
 #Winkel:
-tCU = 8.8
-tKa = 39.6213/2
-tKb = 44.2196/2
+tCU = 8.8/2
+tKa = 44.2196/2
+tKb = 39.6213/2
 tGe = 16.2
 tBr = 12.7
 tBi1 = 10.7
@@ -37,6 +38,9 @@ EBi1 = c*h/(lBi1*e)
 EBi2 = c*h/(lBi2*e)
 EZr = c*h/(lZr*e)
 
+oCU1 = 29 - np.sqrt(EKb/Rinf)
+oCU2 = 29 - 2*np.sqrt((29-oCU1)**2-EKa/Rinf)
+
 #Ausgabe:
 print(
 "Wellenlänge, Energie:",
@@ -48,5 +52,6 @@ print(
 "Bismuth1:", lBi1, EBi1,
 "Bismuth2:", lBi2, EBi2,
 "Zirkonium:", lZr, EZr,
-"Energiedifferenz Kupfer:", EKa-EKb
+"Energiedifferenz Kupfer:", EKb-EKa,
+"Abschirmkonstanten Kupfer:", oCU1, oCU2
 )

@@ -37,7 +37,7 @@ sigmaBrlit = Zbr - np.sqrt((EBrlit)/R - alpha**2/4 * Zbr**4)
 sigmaZr = Zzr - np.sqrt((Ezr)/R - alpha**2/4 * Zzr**4)
 sigmaZrlit = Zzr - np.sqrt((EZrlit)/R - alpha**2/4 * Zzr**4)
 
-sigmaBi = Zbi - np.sqrt((4/alpha * np.sqrt(Ebi/R) - 5*Ebi/R)*np.sqrt(1+ 19/32 * alpha**2 *Ebi/R))
+sigmaBi = Zbi - np.sqrt((4/alpha * np.sqrt(Ebi/R) - 5*Ebi/R))*np.sqrt(1+ 19/32 * alpha**2 *Ebi/R)
 #sigmaBilit = Zbi - np.sqrt((4/alpha * np.sqrt(EBilit/R) - 5*EBilit/R)*np.sqrt(1+ 19/32 * alpha**2 *EBilit/R))
 
 print(
