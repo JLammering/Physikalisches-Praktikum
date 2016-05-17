@@ -47,6 +47,7 @@ plt.plot(x, y,'kx', label='Messwerte')
 plt.plot(x_plot, m*x_plot+y_achs, 'b-', label='Ausgleichsgerade')
 plt.xlabel(r'$v \:/\: \si{\meter\per\second}$')
 plt.ylabel(r'$\Delta \nu/\cos(\alpha) \:/\: \si{\hertz}/\cos(\si{\radian})$')
+plt.ylim(0, 15000)
 plt.legend(loc='best')
 
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)

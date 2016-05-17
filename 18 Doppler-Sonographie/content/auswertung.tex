@@ -1,16 +1,34 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-Mit Formel
+\subsection{Strömungsgeschwindigkeit}
 
-\begin{figure}
+Mit Formel \eqref{eqn:???} wird der zum Prismawinkel $\theta$ passende Dopplerwinkel $\alpha$
+bestimmt. Die Ergebnisse sind in Tabelle \ref{tab:doppler} zu sehen.
+%alpha = np.array([80.06, 70.53, 54.74])
+
+
+\begin{table}[h]
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+  \begin{tabular}{S S}
+    \toprule
+    {$\theta\:/\:\si{\degree}$} & {$\alpha\:/\: \si{\degree}$}\\
+    \midrule
+    15 & 80.06\\
+    30 & 70.53\\
+    60 & 54.74\\
+    \bottomrule
+  \end{tabular}
+  \caption{Prismawinkel $\theta$ und der dazu passende Dopplerwinkel $\alpha$.}
+  \label{tab:doppler}
+\end{table}
 
-Tabelle für copy and paste:
+Mit den Dopplerwinkeln und Formel \eqref{eqn:???} wird dann aus den gemessenen Frequenzverschiebungen
+$\Delta\nu$ an jedem Rohr die Geschwindigkeit bestimmt. Die bestimmten Strömungsgeschwindigkeiten
+sind dann in den Tabellen \ref{tab:v16mm}, \ref{tab:v10mm} und \ref{tab:v7mm} für das jeweilige Rohr
+mit unterschiedlichem Innendurchmesser $d$ zu sehen.
+
+%Tabelle für copy and paste:
 \begin{table}[h]
   \centering
   \begin{tabular}{S S S S}
@@ -28,3 +46,106 @@ Tabelle für copy and paste:
   \caption{Strömungsgeschwindigkeiten $v$ im Rohr mit $d=\SI{16}{\milli\meter}$.}
   \label{tab:v16mm}
 \end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S S}
+    \toprule
+    {$v\:/\:\si{\percent}$} & {$v_{\SI{15}{\degree}}\:/\: \si{\meter\per\second}$} & {$v_{\SI{30}{\degree}}\:/\: \si{\meter\per\second}$} &
+    {$v_{\SI{60}{\degree}}\:/\: \si{\meter\per\second}$}\\
+    \midrule
+    40 & 0.508 & 0.462 & 0.457\\
+    45 & 0.589 & 0.567 & 0.528\\
+    50 & 0.701 & 0.675 & 0.647\\
+    55 & 0.795 & 0.759 & 0.756\\
+    60 & 0.923 & 0.857 & 0.857\\
+    \bottomrule
+  \end{tabular}
+  \caption{Strömungsgeschwindigkeiten $v$ im Rohr mit $d=\SI{10}{\milli\meter}$.}
+  \label{tab:v10mm}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S S}
+    \toprule
+    {$v\:/\:\si{\percent}$} & {$v_{\SI{15}{\degree}}\:/\: \si{\meter\per\second}$} & {$v_{\SI{30}{\degree}}\:/\: \si{\meter\per\second}$} &
+    {$v_{\SI{60}{\degree}}\:/\: \si{\meter\per\second}$}\\
+    \midrule
+    40 & 1.051 & 1.038 & 0.893\\
+    45 & 1.225 & 1.237 & 1.094\\
+    50 & 1.447 & 1.396 & 1.282\\
+    55 & 1.624 & 1.654 & 1.477\\
+    60 & 1.851 & 1.879 & 1.713\\
+    \bottomrule
+  \end{tabular}
+  \caption{Strömungsgeschwindigkeiten $v$ im Rohr mit $d=\SI{7}{\milli\meter}$.}
+  \label{tab:v7mm}
+\end{table}
+
+In den folgenden Diagrammen ist nun $\Delta\nu / \cos(\alpha)$ als Funktion der Strömungsgeschwindigkeit $v$
+aufgetragen. Dies wurde in den Abbildungen \ref{fig:plotvwinkel15}, \ref{fig:plotvwinkel30} und
+\ref{fig:plotvwinkel60} aufgetragen und durch eine Ausgleichsgerade der lineare
+Zusammenhang verdeutlicht.
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{build/plotvwinkel15.pdf}
+  \caption{Zusammenhang von $v$ und $\Delta\nu / \cos(\alpha)$ bei Dopplerwinkel $\alpha = \SI{15}{\degree}$.}
+  \label{fig:plotvwinkel15}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{build/plotvwinkel30.pdf}
+  \caption{Zusammenhang von $v$ und $\Delta\nu / \cos(\alpha)$ bei Dopplerwinkel $\alpha = \SI{30}{\degree}$.}
+  \label{fig:plotvwinkel30}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{build/plotvwinkel60.pdf}
+  \caption{Zusammenhang von $v$ und $\Delta\nu / \cos(\alpha)$ bei Dopplerwinkel $\alpha = \SI{60}{\degree}$.}
+  \label{fig:plotvwinkel60}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Strömungsprofil}
+
+Das Strömungsprofil wird am Rohr mit Durchmesser $d = \SI{10}{\milli\meter}$ aufgenommen.
+Aus den Werten von $\Delta\nu$ wird wie im vorangegangenen Kapitel die Strömungsgeschwindigkeit
+bestimmt.
+Die Intensität wird direkt im Diagramm gegen die Tiefe aufgetragen.
+Für die Geschwindigkeit $v = \SI{70}{\percent}$ sind die Diagramme in den
+Abbildungen \ref{fig:vprofil70} und \ref{fig:intprofil70} zu sehen.
+Die Abbildungen \ref{fig:vprofil45} und \ref{fig:intprofil45} passen dann zur
+Geschwindigkeit $v = \SI{45}{\percent}$.
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{build/plotvprofil70.pdf}
+  \caption{Geschwindigkeitsprofil bei $v = \SI{70}{\percent}$.}
+  \label{fig:vprofil70}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{build/plotintensprofil70.pdf}
+  \caption{Intensitätsprofil bei $v = \SI{70}{\percent}$.}
+  \label{fig:intprofil70}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{build/plotvprofil45.pdf}
+  \caption{Geschwindigkeitsprofil bei $v = \SI{45}{\percent}$.}
+  \label{fig:vprofil45}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{build/plotintensprofil45.pdf}
+  \caption{Intensitätsprofil bei $v = \SI{45}{\percent}$.}
+  \label{fig:intprofil45}
+\end{figure}
