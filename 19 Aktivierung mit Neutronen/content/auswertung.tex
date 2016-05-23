@@ -1,27 +1,259 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Für den Nulleffekt werden folgende Messwerte für die vom Zählrohr detektierten
+Impulse in einer Zeitspanne von
+jeweils 900 Sekunden aufgenommen:
+\begin{align*}
+  P_\text{offset} = [195,202].
+\end{align*}
+Daraus ergibt sich der Mittelwert und die Standardabweichung vom Nulleffekt
+\begin{align*}
+  E_\text{offset} = \SI{0.221(6)}{\per\second}.
+\end{align*}
+
+\subsection{Zerfallskurve und Halbwertszeit eines Iod-Isotops}
+
+Die Messwerte zur Bestimmung der Zerfallskurve und Halbwertszeit von
+$\ce{^{128}_{53}I}$ sind in Tabelle \ref{tab:Iod} dargestellt.
+In Abbildung \ref{fig:Iod} sind die Impulsmesswerte gegen die Zeit und die
+zugehörige Exponentialfunktion in einem halblogarithmischen Diagramm aufgetragen.
+Dabei wird der Nullwert für ein 200-Sekunden-Intervall
+\begin{align}
+  E_{\text{offset},200} = \SI{44(1)}{\per\second}
+\end{align}
+bereits von
+den Impulsmesswerten abgezogen. Es werden keine Fehlerbalken eingetragen,
+da die relativen Abweichungen durch den fehlerbehafteten Offset sehr gering sind.
+Bei der linearen Regression der logarithmierten Messdaten werden folgende Werte
+für Steigung $m_\text{I}$ und Verschiebung $b_\text{I}$ berechnet:
+\begin{align*}
+  m_\text{I} & = -\num{4.8(4)e-4}\\
+  b_\text{I} & = \num{6.28(6)}\\
+\end{align*}
+Aus der Steigung $m_\text{I}$ und der Verschiebung $b_\text{I}$ ergibt sich der Faktor
+\begin{align}
+  N_\text{I}(0)(1-\symup{e}^{-\increment t \lambda_\text{I}}) = \symup{e}^{b_\text{I}} (1-\symup{e}^{200 {m_\text{I}}})
+  = \num{49(3)}
+\end{align}
+und mit \eqref{eqn:HalbwertszeitSteigung} die Halbwertszeit des Iod-Isotops
+\begin{align*}
+  T_{\frac{1}{2},\text{Iod}} = \SI{1441(110)}{\second}.
+\end{align*}
+
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics{build/Jod.pdf}
+  \caption{Messwerte der Iodmessung und Ausgleichsfunktion. Es sind
+  die Impulse halblogarithmisch gegen die Zeit aufgetragen.}
+  \label{fig:Iod}
 \end{figure}
 
-Tabelle für copy and paste:
+\subsection{Zerfallskurve und Halbwertszeit eines Rhodium-Isotops}
+
+In den Tabellen \ref{tab:Rhodium} und \ref{tab:Rhodium2} sind die Messwerte
+zur Bestimmung der Halbwertszeit von Rhodium abgebildet.
+Diese sind in Abbildung \ref{fig:RhodiumM} als halblogarithmischer Graph
+aufgetragen, wobei der Nullwert für ein 20-Sekunden-Intervall
+\begin{align}
+  E_\text{offset,20} = \SI{4.4(1)}{\per\second}
+\end{align}
+bereits abgezogen wird.
+Bei
+\begin{align}
+  t^* = \SI{400}{\second}
+\end{align}
+wird das erste Isotop $\ce{^{104}_{45}Rh}$ als vollständig zerfallen angenommen, da die
+Messwerte etwa ab dieser Stelle eine flachere Gerade bilden.
+Mit den logarithmierten Messpunkten für $t_i \geq t^*$ wird eine
+lineare Ausgleichsrechnung durchgeführt.
+Der Graph dafür ist in einem halblogarithmischen Diagramm in Abbildung
+\ref{fig:Rhodium2} dargestellt und die Regressionsparameter lauten
+\begin{align}
+  m_\text{R,L} & = -\num{2.1(9)e-3} \\
+  b_\text{R,L} & = \num{4.1(5)}.
+\end{align}
+Daraus ergeben sich die Einträge für die Funktionsgleichung des angeregten
+Rhodiumisotops
+\begin{align}
+  N_{\increment t,\text{R,L}} (t) = N_\text{0,R,L}(1-
+  \symup{e}^{-\lambda_\text{R,L}\increment t})\symup{e}^{-\lambda_\text{R,L}t}
+  \label{eqn:RhodiumL}
+\end{align}
+mit
+\begin{align}
+  N_\text{0,R,L}(1-\symup{e}^{-\lambda_\text{R,L}\increment t}) =
+  \symup{e}^{b_\text{R,L}} = \num{61(30)}
+\end{align}
+und
+\begin{align}
+  \lambda_\text{R,L} = -m_\text{R,L} = \num{2.1(9)e-3}.
+\end{align}
+Mit \eqref{eqn:HalbwertszeitSteigung} folgt die Halbwertszeit von $\ce{^{104i}_{45}Rh}$
+\begin{align}
+  T_{\frac{1}{2},\text{Rh,L}} = \SI{320(130)}{\second}.
+\end{align}
+Zur Bestimmung der Zerfallskurve des nicht-angeregten Rhodiumisotops
+$\ce{^{104}_{45}Rh}$ werden zunächst die Funktionswerte der für das angeregte
+Isotop berechneten Funktion \eqref{eqn:RhodiumL} an der jeweiligen Stelle
+$t_i \leq t^*$
+abgezogen.
+Es wird ein
+\begin{align}
+  t_\text{max} = \SI{320}{\second}
+\end{align}
+gewählt, ab welchem die Messpunkte abgeschnitten werden, da die Werte an den
+darauffolgenden Stellen durch die statistischen Schwankungen nach Abzug
+der Funktionsgleichung negativ sind.
+Mit den logarithmierten übrigen Messdaten wird eine lineare Regression
+durchgeführt, bei der folgende Werte ausgegeben werden:
+\begin{align}
+  m_\text{R,K} & = -\num{0.015(1)} \\
+  b_\text{R,K} & = \num{6.7(3)}.
+\end{align}
+Es folgen die Parameter der Funktionsgleichung des nicht-angeregten
+Rhodiumisotops
+\begin{align}
+  N_\text{0,R,K}(1-\symup{e}^{-\lambda_\text{R,K}\increment t}) =
+  \symup{e}^{b_\text{R,K}} = \num{81(21)e1}
+\end{align}
+und
+\begin{align}
+  \lambda_\text{R,K} = -m_\text{R,K} = \num{0.015(1)}.
+\end{align}
+Daraus ergibt sich die Halbwertszeit des Rhodiumisotops $\ce{^{104}_{45}Rh}$
+mit \eqref{eqn:RhodiumL}
+\begin{align}
+  T_{\frac{1}{2},\text{Rh,K}} = \SI{46(4)}{\second}.
+\end{align}
+In Abbildung \ref{fig:RhodiumE} sind die berechneten Zerfallskurven und die
+summierte Zerfallskurve dargestellt.
+An der Stelle $t^*$ lauten die
+Funtkionswerte
+\begin{align}
+  N_{\increment t,\text{R,K}} (t^*) = \num{2(1)}
+\end{align}
+und
+\begin{align}
+  N_{\increment t,\text{R,L}} (t^*) = \num{26(19)}.
+\end{align}
+
+\begin{figure}
+  \centering
+  \includegraphics{build/RhodiumM.pdf}
+  \caption{Messwerte der Rhodiummessung und Grenze $t^*$ zur Unterteilung in
+  zwei Zerfallskurven. Es sind die Impulse halblogarithmisch gegen die Zeit
+  aufgetragen.}
+  \label{fig:RhodiumM}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{build/Rhodium2.pdf}
+  \caption{Messwerte und Ausgleichsfunktion des angeregten Rhodiumisotops.
+  Es sind die Impulse halblogarithmisch gegen die Zeit aufgetragen.}
+  \label{fig:Rhodium2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{build/Rhodium.pdf}
+  \caption{Messwerte und Ausgleichsfunktion des nicht-angeregten Rhodiumisotops.
+  Es sind die Impulse halblogarithmisch gegen die Zeit aufgetragen.}
+  \label{fig:Rhodium}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{build/RhodiumE.pdf}
+  \caption{Messwerte und Ausgleichsfunktionen des Rhodiumisotops. Es sind die
+  Impulse halblogarithmisch gegen die Zeit aufgetragen.}
+  \label{fig:RhodiumE}
+\end{figure}
+
 \begin{table}[h]
   \centering
   \begin{tabular}{S S}
     \toprule
-    {$k$} & {$U\:/\:\si{\milli\volt}$}\\
+    {$t/\si{\second}$} & {$P$}\\
     \midrule
-    1 & 637.2\\
-    3 & 212.4\\
-    5 & 127.4\\
-    7 & 91.03\\
-    9 & 70.8\\
+    200  & 648\\
+    400  & 487\\
+    600  & 444\\
+    800  & 381\\
+    1000 & 366\\
+    1200 & 316\\
+    1400 & 287\\
+    1600 & 275\\
+    1800 & 252\\
+    2000 & 262\\
+    2200 & 245\\
+    2400 & 220\\
+    2600 & 209\\
     \bottomrule
   \end{tabular}
-  \caption{Amplituden Rechteckspannung.}
-  \label{tab:rechtampl}
+  \caption{Messwerte zur Untersuchung der Halbwertszeit und Zerfallskurve von
+  $\ce{^{128}_{53}I}$.}
+  \label{tab:Iod}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$t/\si{\second}$} & {$P$}\\
+    \midrule
+    20  & 817 \\
+    40  & 595 \\
+    60  & 417 \\
+    80  & 303 \\
+    100  & 265 \\
+    120  & 191 \\
+    140  & 136 \\
+    160  & 116 \\
+    180  & 99 \\
+    200 &  86 \\
+    220 &  78 \\
+    240 &  56 \\
+    260 &  63 \\
+    280 &  49 \\
+    300 &  49 \\
+    320 &  44 \\
+    340 &  36 \\
+    360 &  36 \\
+    380 &  46 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte zur Untersuchung der Halbwertszeit und Zerfallskurve von
+  $\ce{^{104}_{45}Rh}$.}
+  \label{tab:Rhodium}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$t/\si{\second}$} & {$P$}\\
+    \midrule
+    400 & 30 \\
+    420 & 32 \\
+    440 & 28 \\
+    460 & 21 \\
+    480 & 25 \\
+    500 & 33 \\
+    520 & 22 \\
+    540 & 23 \\
+    560 & 22 \\
+    580 & 27 \\
+    600 & 25 \\
+    620 & 28 \\
+    640 & 12 \\
+    660 & 19 \\
+    680 & 10 \\
+    700 & 19 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte zur Untersuchung der Halbwertszeit und Zerfallskurve von
+  $\ce{^{104i}_{45}Rh}$.}
+  \label{tab:Rhodium2}
 \end{table}

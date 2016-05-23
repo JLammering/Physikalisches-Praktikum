@@ -14,8 +14,23 @@ all: build/main.pdf
 build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python plot.py
 
+build/Jod.pdf: Jod.py matplotlibrc header-matplotlib.tex Daten/Jod.txt | build
+	TEXINPUTS="$(call translate,$(pwd):)" python Jod.py
+
+build/RhodiumM.pdf: RhodiumM.py matplotlibrc header-matplotlib.tex Daten/Rhodium.txt Daten/Rhodium2.txt| build
+	TEXINPUTS="$(call translate,$(pwd):)" python RhodiumM.py
+
+build/Rhodium.pdf: Rhodium.py matplotlibrc header-matplotlib.tex Daten/Rhodium.txt Daten/Rhodium2.txt| build
+	TEXINPUTS="$(call translate,$(pwd):)" python Rhodium.py
+
+build/Rhodium2.pdf: Rhodium2.py matplotlibrc header-matplotlib.tex Daten/Rhodium2.txt| build
+	TEXINPUTS="$(call translate,$(pwd):)" python Rhodium2.py
+
+build/RhodiumE.pdf: RhodiumE.py matplotlibrc header-matplotlib.tex Daten/Rhodium.txt Daten/Rhodium2.txt| build
+	TEXINPUTS="$(call translate,$(pwd):)" python RhodiumE.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot.pdf
+build/main.pdf: build/plot.pdf build/Jod.pdf build/RhodiumM.pdf build/Rhodium.pdf build/Rhodium2.pdf build/RhodiumE.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \

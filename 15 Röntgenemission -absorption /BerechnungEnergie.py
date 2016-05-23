@@ -53,5 +53,5 @@ print(
 "Bismuth2:", lBi2, EBi2,
 "Zirkonium:", lZr, EZr,
 "Energiedifferenz Kupfer:", EKb-EKa,
-"Abschirmkonstanten Kupfer:", oCU1, oCU2
+"Abschirmkonstanten Kupfer:", oCU1, oCU2, oCU3
 )
