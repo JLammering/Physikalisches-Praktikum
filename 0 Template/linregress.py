@@ -18,3 +18,10 @@ def linregress(x, y):
     B_error = sigma_y * np.sqrt(np.sum(x**2) / Delta)
 
     return A, A_error, B, B_error
+
+def mittelwert(sigma):#berechnet den mittelwert fehlerbehafteter Größen auf meine Weise :D
+    l = len(sigma)
+    sum = ufloat(0, 0)
+    for i in range(0, l):
+        sum += sigma[i]
+    return (1/l)*sum
