@@ -26,22 +26,18 @@ t2,I2 = np.genfromtxt('Daten/Rhodium2.txt',unpack='True')
 t2 = t2*20
 
 #Nullwert:
-N0a = 195
-N0b = 202
-N0  = (N0a+N0b)/2
-dN0 = np.sqrt((N0a-N0)**2 + (N0b-N0)**2)
+N0 = 195/900
 
 #Anpassung Nullwert (20 s):
-N0 = N0/45
-dN0 = dN0/45
+N0 = N0*20
 
 I2 = I2 - N0
 
-plt.plot(t2, I2, 'kx',label = r'Messwerte') #Messwerte
+plt.errorbar(t2, I2, xerr=0, yerr=np.sqrt(I2) ,fmt='kx',label = r'Messwerte') #Messwerte
 
 #lineare Regression:
 m2,dm2,b2,db2 = linregress(t2,np.log(I2))
-x = np.linspace(390,700)
+x = np.linspace(390,720)
 plt.plot(x,np.exp(m2*x+b2),'r-',label = r'Ausgleichsfunktion')
 
 B2 = ufloat(b2,db2)
@@ -53,11 +49,13 @@ print(
 'Verschiebung:',B2,
 'Vorfaktor:',N2,
 'Steigung:',M2,
-'Halbwertszeit:',T2
+'Halbwertszeit:',T2,
+'Messwerte mit Nulleffekt:',I2,
+'Poisson-Fehler:',np.sqrt(I2)
 )
 
 plt.legend(loc='best')
-plt.xlim(390,650)
+plt.xlim(390,720)
 plt.yscale('log')
 plt.grid()
 plt.xlabel(r't/\si{\second}')

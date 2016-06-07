@@ -31,14 +31,10 @@ t2 = t2*20
 
 
 #Nullwert:
-N0a = 195
-N0b = 202
-N0  = (N0a+N0b)/2
-dN0 = np.sqrt((N0a-N0)**2 + (N0b-N0)**2)
+N0 = 195/900
 
-#Anpassung Nullwert (20 s):
-N0 = N0/45
-dN0 = dN0/45
+#Anpassung Nullwert (20s):
+N0 = N0*20
 
 I1 = I1 - N0
 I2 = I2 - N0
@@ -46,20 +42,18 @@ I2 = I2 - N0
 #lineare Regression:
 m2,dm2,b2,db2 = linregress(t2,np.log(I2)) #zweites Isotop(wichtig für die Differenz)
 
-plt.plot(t1,I1,'kx')
+plt.errorbar(t1,I1,xerr=0 ,yerr=np.sqrt(I1) ,fmt='kx')
 I1 = I1 - np.exp(m2*t1+b2) #zweite e-Fkt wird abgezogen
 
 #zweite lineare Regression
 m1,dm1,b1,db1 = linregress(t1,np.log(I1))
 
-x = np.linspace(0,700)
+x = np.linspace(0,720)
 plt.plot(x,np.exp(m1*x+b1),'g-',label = r'kurze Ausgleichsfunktion')
 plt.plot(x,np.exp(m2*x+b2),'b-',label = r'lange Ausgleichsfunktion')
 plt.plot(x,np.exp(m1*x+b1)+np.exp(m2*x+b2),'k-',label = r'Summierte Ausgleichsfunktion')
-plt.plot(t2,I2,'kx',label = r'Messwerte')
+plt.errorbar(t2,I2, xerr=0, yerr=np.sqrt(I2) ,fmt = 'kx',label = r'Messwerte')
 plt.plot((400,400),(1,1000),'r--', label = r'Grenze') # t*
-
-
 
 B1 = ufloat(b1,db1)
 M1 = ufloat(m1,dm1)
@@ -78,7 +72,7 @@ plt.legend(loc = 'best')
 plt.xlabel(r't/\si{\second}')
 plt.ylabel(r'P')
 plt.grid()
-plt.xlim(0,660)
+plt.xlim(0,720)
 plt.ylim(1,1000)
 plt.yscale('log')
 plt.savefig('build/RhodiumE.pdf')

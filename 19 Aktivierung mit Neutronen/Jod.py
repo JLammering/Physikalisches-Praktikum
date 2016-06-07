@@ -25,18 +25,15 @@ t, I = np.genfromtxt('Daten/Jod.txt',unpack = 'True')
 t = t*200
 
 #Nullwert:
-N0a = 195
-N0b = 202
-N0  = (N0a+N0b)/2
-dN0 = np.sqrt((N0a-N0)**2 + (N0b-N0)**2)
+N0 = 195/900
 
 #Anpassung Nullwert (200 s):
-N0 = N0/4.5
-dN0 = dN0/4.5
+N0 = N0*200
 
 I = I - N0
 
-plt.plot(t, I,'kx', label = r'Messwerte')
+
+plt.errorbar(t, I, xerr = 0, yerr = np.sqrt(I), fmt = 'kx', label = r'Messwerte')
 m, dm, b, db = linregress(t, np.log(I))
 x = np.linspace(0,3000)
 plt.plot(x, np.exp(m*x+b), 'r-', label = r'Ausgleichsfunktion')
@@ -51,9 +48,11 @@ print(
 'Halbwertszeit:', T,
 'Steigung:',M,
 'Verschiebung:',B,
-'Nulleffekt', N0, dN0,
+'Nulleffekt', N0,
 'N(0):', Ne,
-'Vorfaktor', Nn
+'Vorfaktor', Nn,
+'Messwerte mit Nulleffekt:',I,
+'Poisson-Fehler:',np.sqrt(I)
 )
 
 plt.legend(loc='best')

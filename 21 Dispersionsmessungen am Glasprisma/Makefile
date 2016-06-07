@@ -14,8 +14,11 @@ all: build/main.pdf
 build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python plot.py
 
+build/dispersion.pdf: dispersion.py matplotlibrc header-matplotlib.tex Daten/Datenb.txt | build
+	TEXINPUTS="$(call translate,$(pwd):)" python dispersion.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot.pdf
+build/main.pdf: build/plot.pdf build/dispersion.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \

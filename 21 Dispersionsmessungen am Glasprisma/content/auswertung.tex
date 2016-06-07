@@ -1,27 +1,105 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Innenwinkel des Prismas}
+
+Zur Überprüfung des Innenwinkels am Prisma werden folgende Werte aufgenommen:
+\begin{align*}
+  \varphi_0 & = \SI{16.5}{\degree} \\
+  \varphi_\text{l} & = \SI{320.0}{\degree} \\
+  \varphi_\text{r} & = \SI{72.3}{\degree}.
+\end{align*}
+Daraus folgt mit
+\begin{align}
+  \varphi = \frac{(\varphi_\text{r} - \varphi_0)+(360 - \varphi_{l} + \varphi_0)}{2}
+\end{align}
+und der Standardabweichung \eqref{eqn:standard}
+der Innenwinkel
+\begin{align}
+  \varphi = \SI{56.1(5)}{\degree}.
+\end{align}
+
+\subsection{Dispersionskurve}
+
+Die Messwerte zur Bestimmung der Dispersionskurve und die daraus berechneten
+Brechungsindize sind in Tabelle \ref{tab:dispersion}
+aufgelistet.
+Mit den Werten $\frac{1}{\lambda^2}$ und $\lambda^2$ und jeweils $n^2$ wird
+eine lineare Regression durchgeführt. Dabei werden die Parameter
+\begin{align}
+  A_0 & = \num{2.712(2)} & A_2 & = \num{3.38(7)e4} \\
+  A_0' & = \num{2.93(1)} & A_2' & = -\num{3.2(3)e-7}
+\end{align}
+und die summierten Fehlerquadrate
+\begin{align}
+  s_\text{n}^2 & = \num{3.97e-6} \\
+  s_{\text{n}'}^2 & = \num{9.48e-5}
+\end{align}
+berechnet. Es folgt sofort, dass die erste Regression
+\begin{align}
+  n^2(\lambda) = A_0 + \frac{A_2}{\lambda^2}
+\end{align}
+die Messwerte besser beschreibt, da die summierten Fehlerquadrate kleiner sind.
+In Abbildung \ref{fig:dispersion} sind Messwerte und Regression aufgetragen.
+Aus den Regressionsparametern ergibt sich mit \eqref{eqn:abbe} die
+Abbesche Zahl
+\begin{align}
+  \nu = \num{35.1(7)}.
+\end{align}
+Mit der Ableitung
+\begin{align}
+  n'(\lambda) = \frac{-A_2}{\lambda^3}\Bigl(A_0 + \frac{A_2}{\lambda^2}\Bigr)^{-\frac{1}{2}}
+\end{align}
+und Gleichung \eqref{eqn:Aufloesung} folgt das Auflösungsvermögen des
+Prismenspektralapparats mit einer Basislänge
+\begin{align}
+  b = \SI{3}{\centi\meter}
+\end{align}
+bei $\lambda_\text{C}$
+\begin{align}
+  A_\text{C} = \num{2.15(4)e-6}
+\end{align}
+und bei $\lambda_\text{F}$
+\begin{align}
+  A_\text{F} = \num{5.2(1)e-6}.
+\end{align}
+Durch einen Koeffizientenvergleich von \eqref{eqn:a} und \eqref{eqn:b}
+folgt die Formel zur Bestimmung der Absorptionsstelle, die
+dem sichtbaren Spektrum am nächsten liegt,
+\begin{align}
+  \lambda_1 = \sqrt{\frac{A_2}{A_0 - 1}}.
+\end{align}
+Mit den berechneten Parametern ergibt sich
+\begin{align}
+  \lambda_1 = \SI{141(2)}{\nano\meter}.
+\end{align}
+
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics{dispersion.pdf}
+  \caption{Ausgleichsfunktion $n(\lambda)$ und Messwerte der Dispersion.
+  Es ist das
+  Quadrat der Brechungsindize $n$ gegen die Wellenlänge $\lambda$ aufgetragen.}
+  \label{fig:dispersion}
 \end{figure}
-
-Tabelle für copy and paste:
 \begin{table}[h]
+
   \centering
-  \begin{tabular}{S S}
+  \begin{tabular}{S S[table-format=2.1] S @{${}\pm{}$} S[table-format=1.1]}
     \toprule
-    {$k$} & {$U\:/\:\si{\milli\volt}$}\\
+    {$\lambda/\si{\nano\meter}$} & {$\eta/\si{\degree}$} &
+    \multicolumn{2}{c}{$n$}\\
     \midrule
-    1 & 637.2\\
-    3 & 212.4\\
-    5 & 127.4\\
-    7 & 91.03\\
-    9 & 70.8\\
+    706.5 & 47.2 & 1.667 & 0.008\\
+    667.8 & 47.5 & 1.670 & 0.008\\
+    587.6 & 48.0 & 1.676 & 0.008\\
+    501.6 & 48.9 & 1.686 & 0.008\\
+    492.2 & 49.1 & 1.689 & 0.008\\
+    471.3 & 49.5 & 1.693 & 0.008\\
+    447.1 & 49.9 & 1.698 & 0.008\\
     \bottomrule
   \end{tabular}
-  \caption{Amplituden Rechteckspannung.}
-  \label{tab:rechtampl}
+  \caption{Messwerte zur Bestimmung der Dispersionskurve und berechnete
+  Brechungsindize $n$.}
+  \label{tab:dispersion}
 \end{table}
