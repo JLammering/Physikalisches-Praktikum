@@ -23,19 +23,16 @@ def linregress(x, y):
     return A, A_error, B, B_error
 
 #Innenwinkel des Prismas:
-phin = 16.5
-phil = 72.3 - phin
-phir = 360 - 320 + phin
+phil = 320
+phir = 72.3
 
-phi = (phil+phir)/2
-dphi = np.sqrt((phil-phi)**2+(phir-phi)**2)
-PHI = ufloat(phi,dphi)
+phi = (360-phil+phir)/2
 
 #Daten:
 lamda, eta = np.genfromtxt('Daten/Datenb.txt',unpack=True)
 n = np.sin((eta+phi)*2*np.pi/720)/np.sin(phi*2*np.pi/720)
 n = n**2
-nausgabe = unp.sin((eta+PHI)*2*np.pi/720)/unp.sin(PHI*2*np.pi/720)
+nausgabe = unp.sin((eta+phi)*2*np.pi/720)/unp.sin(phi*2*np.pi/720)
 plt.plot(lamda,n,'kx', label = r'Messwerte')
 
 lc = 656
@@ -85,7 +82,8 @@ la1 = unp.sqrt(A2/(A1-1))
 print(
 'A1,A2:',A1,A2,
 'B1,B2:',B1,B2,
-'phi:',PHI,
+'phi:',phi,
+'Funktionswerte für Abbe:', nc, nd, nf,
 'AbbescheZahl:',nu,
 'Abweichungsquadrate:',s1,s2,
 'Auflösungsvermögen:',Ac,Af,
