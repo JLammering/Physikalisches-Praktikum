@@ -56,7 +56,7 @@ Die Wellenlänge des Lasers und der Abstand von Spalt zur Beobachtungsebene betr
 
 Die Messwerte der Intensitätsmessung sind in den Tabellen \ref{tab:einzelspaltelinks} und \ref{tab:einzelspalterechts}
 zu sehen. In den Graphen \ref{fig:einzelspalt1}, \ref{fig:einzelspalt2} und
-\ref{fig:einzelspalt3} sind die Messwerte und die nach Gleichung \eqref{eqn:???}
+\ref{fig:einzelspalt3} sind die Messwerte und die nach Gleichung \eqref{eqn:intensitaeteinzel}
 durchgeführte Ausgleichsrechnung aufgetragen.
 
 \begin{table}[h]
@@ -199,7 +199,7 @@ ergibt, sind in Tabelle
 
 Die Herstellerangaben des Doppelspalts betragen:
 \begin{align*}
-  b &= \SI{0.1}{\milli\meter}\text{~~~~} a = \SI{0.4}{\milli\meter}.
+  b &= \SI{0.1}{\milli\meter} & a &= \SI{0.4}{\milli\meter}.
 \end{align*}
 Wobei $b$ die Spaltbreite ist und $a$ den Abstand beider Spalte angibt.
 Somit beträgt:
@@ -218,7 +218,7 @@ Die Ergebnisse sind:
 \end{align*}
 Demnach ist $s$:
 \begin{align*}
-  s &= \SI{0.721}{\milli\meter} & \Delta s &= \SI{44.1}{\percent}
+  s &= \SI{0.721}{\milli\meter} & \Delta s &= \SI{44.1}{\percent}.
 \end{align*}
 
 \subsubsection{Bestimmung der Parameter per Intensitätsmessung}
@@ -328,16 +328,16 @@ Demnach ist $s$:
 \end{table}
 
 In Tabelle \ref{tab:doppelspalt} sind die Messwerte der Intensitätsmessung
-am Doppelspalt eingetragen. Mit Formel \eqref{eqn:???} wird dann eine Ausgleichsrechnung
+am Doppelspalt eingetragen. Mit Formel \eqref{eqn:intensdoppel} wird dann eine Ausgleichsrechnung
 durchgeführt. Allerdings wurde anstelle des Faktors "4" ein weiterer Fitparameter
 "$A_0$" eingeführt, um die Ausgangsamplitude zu berücksichtigen. Die Messwerte und die Ausgleichsrechnung sind in Abbildung
-\ref{fig:doppelspalt} abgebildet.
+\ref{fig:doppelspaltmessung} abgebildet.
 
 \begin{figure}
   \centering
   \includegraphics[width = \textwidth]{build/doppelspalt.pdf}
   \caption{Messwerte und Ausgleichsrechnung zum Doppelspalt.}
-  \label{fig:doppelspalt}
+  \label{fig:doppelspaltmessung}
 \end{figure}
 
 Die Ergebnisse aus der Ausgleichsrechnung sind:
@@ -345,7 +345,7 @@ Die Ergebnisse aus der Ausgleichsrechnung sind:
 \begin{align*}
   A_0 &=  \SI{3.681}{\micro\ampere} & &\\
   s &= \SI{0.483(6)}{\milli\meter} & \Delta s &= \SI{3.5}{\percent}\\
-  b &= \SI{0.101(6)}{\milli\meter} & \Delta b &= \SI{1.1}{\percent}
+  b &= \SI{0.101(6)}{\milli\meter} & \Delta b &= \SI{1.1}{\percent}.
 \end{align*}
 
 \subsubsection{Vergleich der Verteilungsbilder}
