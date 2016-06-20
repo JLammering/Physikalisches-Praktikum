@@ -1,27 +1,351 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+Aus den gemessenen Widerständen
+\begin{align}
+  R_1 = \SI{1728}{\kilo\ohm}
+\end{align}
+bei den ersten fünf Öltropfen und
+\begin{align}
+  R_2 = \SI{1706}{\kilo\ohm}
+\end{align}
+bei den letzten beiden folgen mit Tabelle \ref{tab:thermistor} die Temperaturen
+\begin{align}
+  T_1 & = \SI{31}{\celsius} \\
+  T_2 & = \SI{32}{\celsius}.
+  \label{eqn:gemTemp}
+\end{align}
 
-Tabelle für copy and paste:
+\subsection{Auswahl der Öltropfen}
+
+Die Messwerte der Zeiten, in der die Öltropfen jeweils die Strecke
+\begin{align}
+  s = \SI{1}{\milli\meter}
+\end{align}
+zurücklegen, sind in den Tabellen \ref{tab:Zeiten1}, \ref{tab:Zeiten2},
+\ref{tab:Zeiten3} und \ref{tab:Zeiten4} aufgelistet.
+
 \begin{table}[h]
   \centering
-  \begin{tabular}{S S}
+  \begin{tabular}{S S S}
     \toprule
-    {$k$} & {$U\:/\:\si{\milli\volt}$}\\
+    {$t_0/\si{\second}$} & {$t_\text{ab}/\si{\second}$} & {$t_\text{auf}/\si{\second}$}\\
     \midrule
-    1 & 637.2\\
-    3 & 212.4\\
-    5 & 127.4\\
-    7 & 91.03\\
-    9 & 70.8\\
+    29.64    & 7.92 & 20.92 \\
+    \text{ } & 8.49 & 22.53 \\
+    \text{ } & 7.81 & 22.09 \\
+    \addlinespace[0.3cm]
+    \to & 8.1 \pm 0.4 & 21.8 \pm 0.8 \\
+    \addlinespace[0.5cm]
+    35.35    & 3.78 & 4.60 \\
+    \text{ } & 4.13 & 5.43 \\
+    \text{ } & 4.24 & 5.66 \\
+    \text{ } & 4.09 & 5.90 \\
+    \text{ } & 4.38 & 4.92 \\
+    \addlinespace[0.3cm]
+    \to & 4.12 \pm 0.22 & 5.3 \pm 0.5 \\
+    \addlinespace[0.2cm]
     \bottomrule
   \end{tabular}
-  \caption{Amplituden Rechteckspannung.}
-  \label{tab:rechtampl}
+  \caption{Zeitenmesswerte und daraus resultierende Mittelwerte der Öltröpfchen
+  bei einer Spannung $U_1=\SI{313}{\volt}$ und
+  einer Temperatur $T_1=\SI{31}{\degree}$.}
+  \label{tab:Zeiten1}
 \end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S}
+    \toprule
+    {$t_0/\si{\second}$} & {$t_\text{ab}/\si{\second}$} & {$t_\text{auf}/\si{\second}$}\\
+    \midrule
+    61.61    & 8.18 & 9.93  \\
+    \text{ } & 7.97 & 9.64  \\
+    \text{ } & 8.00 & 10.38 \\
+    \text{ } & 8.63 & 9.81  \\
+    \text{ } & 7.95 & 9.40  \\
+    \text{ } & 8.78 & 10.03 \\
+    \text{ } & 9.93 & 8.96  \\
+    \text{ } & 8.24 & 10.36 \\
+    \addlinespace[0.3cm]
+    \to & 8.5 \pm 0.7 & 9.8 \pm 0.5  \\
+    \addlinespace[0.5cm]
+    48.53 & 12.50 & 27.01\\
+    \text{ } & 12.76 & 28.76\\
+    \text{ } & 9.30  & 26.40\\
+    \text{ } & 9.38  & 16.50\\
+    \addlinespace[0.3cm]
+    \to & 11.0 \pm 1.9 & 24.7 \pm 5.5 \\
+    \addlinespace[0.2cm]
+    \bottomrule
+  \end{tabular}
+  \caption{Zeitenmesswerte und daraus resultierende Mittelwerte der Öltröpfchen
+  bei einer Spannung $U_2=\SI{249}{\volt}$ und
+  einer Temperatur $T_1=\SI{31}{\degree}$.}
+  \label{tab:Zeiten2}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S}
+    \toprule
+    {$t_0/\si{\second}$} & {$t_\text{ab}/\si{\second}$} & {$t_\text{auf}/\si{\second}$}\\
+    \midrule
+    31.76    & 5.60 & 9.40 \\
+    \text{ } & 5.95 & 9.40 \\
+    \text{ } & 5.36 & 8.16 \\
+    \text{ } & 5.55 & 8.81 \\
+    \text{ } & 5.67 & 8.43 \\
+    \addlinespace[0.3cm]
+    \to & 5.63 \pm 0.21 & 8.8 \pm 0.6 \\
+    \addlinespace[0.2cm]
+    \bottomrule
+  \end{tabular}
+  \caption{Zeitenmesswerte und daraus resultierende Mittelwerte der Öltröpfchen
+  bei einer Spannung $U_3=\SI{272}{\volt}$ und
+  einer Temperatur $T_1=\SI{31}{\degree}$.}
+  \label{tab:Zeiten3}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S}
+    \toprule
+    {$t_0/\si{\second}$} & {$t_\text{ab}/\si{\second}$} & {$t_\text{auf}/\si{\second}$}\\
+    \midrule
+    56.96    & 5.13 & 6.23 \\
+    \text{ } & 4.26 & 5.73 \\
+    \text{ } & 4.55 & 5.63 \\
+    \text{ } & 4.18 & 5.09 \\
+    \text{ } & 3.86 & 5.53 \\
+    \text{ } & 4.24 & 5.09 \\
+    \text{ } & 4.41 & 5.63 \\
+    \text{ } & 3.70 & 4.52 \\
+    \text{ } & 3.49 & 4.49 \\
+    \text{ } & 3.36 & 3.90 \\
+    \addlinespace[0.3cm]
+    \to & 4.1 \pm 0.5 & 5.2 \pm 0.7 \\
+    \addlinespace[0.5cm]
+    40.73    & 2.93 & 3.23 \\
+    \text{ } & 3.21 & 3.27 \\
+    \text{ } & 2.81 & 3.35 \\
+    \text{ } & 2.84 & 3.46 \\
+    \text{ } & 2.90 & 3.38 \\
+    \text{ } & 2.83 & 3.21 \\
+    \text{ } & 2.60 & 3.46 \\
+    \addlinespace[0.3cm]
+    \to & 2.87 \pm 0.18 & 3.34 \pm 0.10 \\
+    \addlinespace[0.2cm]
+    \bottomrule
+  \end{tabular}
+  \caption{Zeitenmesswerte und daraus resultierende Mittelwerte der Öltröpfchen
+  bei einer Spannung $U_4=\SI{287}{\volt}$ und
+  einer Temperatur $T_2=\SI{32}{\degree}$.}
+  \label{tab:Zeiten4}
+\end{table}
+
+\FloatBarrier
+
+In Tabelle \ref{tab:Geschw} sind die daraus resultierenden Geschwindigkeiten
+und der Quotient
+\begin{align}
+  \delta v = \frac{2 v_0}{v_\text{ab}-v_\text{auf}} \approx 1
+  \label{eqn:QuotientG}
+\end{align}
+für jedes betrachtete Öltröpfchen dargestellt.
+Der Quotient ist bei allen, ausser dem dritten Öltröpfchen im Bereich
+\begin{align}
+  \delta v_\text{ok} = \num{1.0(3)}.
+\end{align}
+Beim dritten Öltröpfchen ist die Abweichung deutlich größer, weshalb dieses
+in den folgenden Berechnungen vernachlässigt wird.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S[table-format=2.1] @{${}\pm{}$} S[table-format=1.1]
+    S[table-format=2.1] @{${}\pm{}$} S[table-format=1.1] S @{${}\pm{}$} S}
+    \toprule
+    {Nr.} & {$v_0/\SI{e-5}{\meter\per\second}$} & \multicolumn{2}{c}{$v_\text{ab}/\SI{e-5}{\meter\per\second}$} &
+    \multicolumn{2}{c}{$v_\text{auf}/\SI{e-5}{\meter\per\second}$} & \multicolumn{2}{c}{$\delta v$} \\
+    \midrule
+    1 & 3.37 & 12.4 & 0.6 & 4.6  & 0.2 & 0.9 & 0.1 \\
+    2 & 2.83 & 24.2 & 1.3 & 18.9 & 1.9 & 1.1  & 0.4 \\
+    3 & 1.62 & 11.8 & 0.9 & 10.2 & 0.5 & 2.0  & 1.3 \\
+    4 & 2.06 & 9.1  & 1.6 & 4.1  & 0.9 & 0.8 & 0.3 \\
+    5 & 3.15 & 17.8 & 0.7 & 11.3 & 0.7 & 1.0 & 0.2 \\
+    6 & 1.76 & 24.3 & 3.1 & 19.3 & 2.6 & 0.7  & 0.6 \\
+    7 & 2.46 & 34.8 & 2.2 & 30.0 & 0.9 & 1.0  & 0.5 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Geschwindigkeiten der Öltröpfchen und Verhältnis
+  \eqref{eqn:QuotientG}. Das dritte Öltröpfchen wird aufgrund der Abweichung
+  bei den Ausgleichsrechnungen vernachlässigt.}
+  \label{tab:Geschw}
+\end{table}
+
+\FloatBarrier
+
+\subsection{Unkorrigierte Elementarladung}
+\label{sec:unkoel}
+
+Die unkorrigierten Viskositäten der Luft ergeben sich mit den Temperaturen
+\eqref{eqn:gemTemp} und dem Graphen \ref{fig:Visko}
+\begin{align}
+  \eta_\text{L,1} & = \SI{1.875e-5}{\newton\second\per\square\meter} \\
+  \eta_\text{L,2} & = \SI{1.881e-5}{\newton\second\per\square\meter}.
+\end{align}
+Mit der Formel \eqref{eqn:Radius} folgen die unkorrigierten Radien der Öltropfen
+in Tabelle \ref{tab:Radien}.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S @{${}\pm{}$} S}
+    \toprule
+    {Nr.} & \multicolumn{2}{c}{$r_\text{unkorr}/\SI{e-7}{\meter}$}\\
+    \midrule
+    1 & 6.2 & 0.2 \\
+    2 & 5.1 & 1.1 \\
+    3 & 2.8 & 0.9 \\
+    4 & 5.0 & 0.9 \\
+    5 & 5.6 & 0.4 \\
+    6 & 4.9 & 2.0 \\
+    7 & 4.9 & 1.2 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Berechnete Radien der Öltröpfchen.}
+  \label{tab:Radien}
+\end{table}
+
+\FloatBarrier
+
+Außerdem ergeben sich mit \eqref{eqn:Ladung} die Ladungen der Tropfen in
+Tabelle \ref{tab:Ladungen}.
+Zur Bestimmung der Elementarladung müssten sehr viele Öltröpfchen mit geringer
+Ladung betrachtet werden. Beim Plotten der Ladungen sind dann schmale Bereiche
+erkennbar, in denen sich die Punkte häufen. Daraus kann dann bereits durch
+hingucken jedem Bereich ein ganzzahliges Vielfaches der Elementarladung
+zugeordnet werden. Da es in diesem Versuch nicht möglich ist, derart viele
+Öltropfen zu betrachten, wird die Elementarladung anhand des Literaturwertes
+auf etwa
+\begin{align}
+  e_\text{grob} = \SI{1.5(3)e-19}{\coulomb}
+\end{align}
+abgeschätzt. In Tabelle \ref{tab:Ladungen} sind die ganzzahligen Vielfachen $gV$,
+die jedem Öltröpfchen anhand des groben Wertes der Elementarladung zugeordnet
+werden, aufgelistet.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S @{${}\pm{}$} S S}
+    \toprule
+    {Nr.} & \multicolumn{2}{c}{$q_\text{unkorr}/\SI{e-19}{\coulomb}$} & {$gV$}\\
+    \midrule
+    1 & 4.5 & 0.3 & 3 \\
+    2 & 9.5 & 1.9 & 6 \\
+    3 & 3.4 & 1.2 & 2 \\
+    4 & 3.5 & 1.0 & 2 \\
+    5 & 8.1 & 0.7 & 5 \\
+    6 & 10  & 4   & 6 \\
+    7 & 15  & 4   & 9 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Berechnete unkorrigierte Ladungen der Öltröpfchen und zugehörige
+  ganzzahlige Vielfache.}
+  \label{tab:Ladungen}
+\end{table}
+
+\FloatBarrier
+
+Es wird eine lineare Ausgleichsrechnung mit den Ladungen und den
+ganzzahligen Vielfachen durchgeführt. Dabei werden die Parameter
+\begin{align}
+  m_\text{unkorr} & = \num{1.67(6)e-19} \\
+  b_\text{unkorr} & = \num{0.21(32)e-19}
+\end{align}
+berechnet. Aus der Steigung folgt sofort die unkorrigierte Elementarladung
+\begin{align}
+  e_\text{0,unkorr} = \SI{1.67(6)e-19}{\coulomb}.
+\end{align}
+In Abbildung \ref{fig:elemunkorr} sind die Ladungen gegen die ganzzahligen
+Vielfachen und die Ausgleichsgerade aufgetragen.
+
+\begin{figure}
+  \centering
+  \includegraphics{build/unkor.pdf}
+  \caption{Messwerte und Ausgleichsgerade zur Bestimmung der unkorrigierten Elementarladung.
+  Es sind die Ladungen gegen die ganzzahligen Vielfachen aufgetragen.}
+  \label{fig:elemunkorr}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Unkorrigierte Avogadrokonstante}
+
+Mit der Faradaykonstante \cite{Faraday}
+\begin{align}
+  F = \SI{96485.3329(6)}{\coulomb\per\mol}
+\end{align}
+folgt die unkorrigierte Avogadro-Konstante
+\begin{align}
+  N_\text{A,unkorr} = \frac{F}{e_\text{0,unkorr}} = \SI{1}{\per\mol}.
+\end{align}
+
+\subsection{Korrigierte Elementarladung}
+
+Mit der Cunningham-Korrektur \eqref{eqn:cunning} ergeben sich die
+korrigierten Ladungen in Tabelle \ref{tab:Ladungenkorr}.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S @{${}\pm{}$} S S}
+    \toprule
+    {Nr.} & \multicolumn{2}{c}{$q_\text{korr}/\SI{e-19}{\coulomb}$} & {$gV$}\\
+    \midrule
+    1 & 5.4  & 0.4 & 3 \\
+    2 & 11.9 & 2.4 & 7 \\
+    3 & 5.0  & 1.8 & 3 \\
+    4 & 4.4  & 1.3 & 3 \\
+    5 & 9.9  & 0.9 & 6 \\
+    6 & 12.6 & 5.2 & 8 \\
+    7 & 18.9 & 5.1 & 12\\
+    \bottomrule
+  \end{tabular}
+  \caption{Berechnete korrigierte Ladungen der Öltröpfchen und zugehörige
+  ganzzahlige Vielfache.}
+  \label{tab:Ladungenkorr}
+\end{table}
+
+\FloatBarrier
+
+Analog zu \ref{sec:unkoel} wird eine Ausgleichsrechnung durchgeführt.
+Die berechneten Parameter lauten
+\begin{align}
+  m_\text{korr} & = \num{1.56(7)e-19} \\
+  b_\text{korr} & = \num{0.4(5)e-19}.
+\end{align}
+Daraus folgt die korrigierte Elementarladung
+\begin{align}
+  e_\text{0,korr} = \SI{1.56(7)e-19}{\coulomb}.
+\end{align}
+In Abbildung \ref{fig:elemunkorr} sind die korrigierten Ladungen gegen die ganzzahligen
+Vielfachen und die Ausgleichsgerade aufgetragen.
+
+\begin{figure}
+  \centering
+  \includegraphics{build/korr.pdf}
+  \caption{Messwerte und Ausgleichsgerade zur Bestimmung der unkorrigierten Elementarladung.
+  Es sind die Ladungen gegen die ganzzahligen Vielfachen aufgetragen.}
+  \label{fig:elemkorr}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Korrigierte Avogadrokonstante}
+
+Aus der korrigierten Elementarladung ergibt sich die korrigierte Avogadro-Konstante
+\begin{align}
+  N_\text{A,korr} = \frac{F}{e_\text{0,korr}} = \SI{1}{\per\mol}.
+\end{align}
+
+
+%Werte!!!

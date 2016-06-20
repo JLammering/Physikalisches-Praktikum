@@ -14,8 +14,14 @@ all: build/main.pdf
 build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python plot.py
 
+build/unkor.pdf: Oeltropfen.py matplotlibrc header-matplotlib.tex Daten/T1.txt Daten/T2.txt Daten/T3.txt Daten/T4.txt Daten/T5.txt Daten/T6.txt Daten/T7.txt | build
+	TEXINPUTS="$(call translate,$(pwd):)" python Oeltropfen.py
+
+build/korr.pdf: Oeltropfenkorr.py matplotlibrc header-matplotlib.tex Daten/Korr.txt| build
+	TEXINPUTS="$(call translate,$(pwd):)" python Oeltropfenkorr.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot.pdf
+build/main.pdf: build/plot.pdf build/unkor.pdf build/korr.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
