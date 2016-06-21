@@ -48,7 +48,9 @@ x = np.linspace(0,16)
 plt.plot(x, m*x+b, label = r'Ausgleichsgerade')
 M = ufloat(m,dm)
 B = ufloat(b,db)
-print('Steigung,Abschnitt', M,B)
+F = ufloat(96485.3329,0.0006)
+print('Steigung,Abschnitt', M,B,
+'Avogadro:',F*10**(19)/M)
 
 plt.legend(loc = 'best')
 plt.xlabel(r'$gV$')
