@@ -11,11 +11,18 @@ endif
 all: build/main.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS="$(call translate,$(pwd):)" python plot.py
+build/kennlinien.pdf: kennlinien.py daten/kennlinien.txt matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python kennlinien.py
+
+build/raumladung.pdf: raumladung.py daten/kennlinien.txt matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python raumladung.py
+
+build/anlauf.pdf: anlauf.py daten/anlauf.txt matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python anlauf.py
+
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot.pdf
+build/main.pdf: build/kennlinien.pdf build/raumladung.pdf build/anlauf.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \

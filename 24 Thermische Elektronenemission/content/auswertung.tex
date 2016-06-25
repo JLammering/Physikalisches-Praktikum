@@ -1,27 +1,284 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Die genutzten Naturkonstanten \cite{Codata} sind:
+
+\begin{align*}
+  e &= \SI{1.6021766208(98)e-19}{\coulomb}\\
+  k &= \SI{1.38064852(79)e-23}{\joule\per\kelvin}\\
+  h &= \SI{6.626070040(81)e-34}{\joule\second}\\
+  m_\g{e} &= \SI{9.10938356(11)e-31}{\kilo\gram}.
+\end{align*}
+
+\subsection{Kennlinienschar der Hochvakuumdiode}
+\label{sec:kennlinien}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S S S S}
+    \toprule
+    {$U\:/\:\si{\milli\volt}$} & {$I_1 \:/\: \si{\milli\ampere}$} & {$I_2 \:/\: \si{\milli\ampere}$} & {$I_3 \:/\: \si{\milli\ampere}$}
+     & {$I_4 \:/\: \si{\milli\ampere}$} & {$I_5 \:/\: \si{\milli\ampere}$}\\
+    \midrule
+    5 & 0.014 & 0.014 & 0.014 & 0.013 & 0.009\\
+    10 & 0.031 & 0.030 & 0.036 & 0.031 & 0.027\\
+    15 & 0.050 & 0.050 & 0.060 & 0.055 & 0.045\\
+    20 & 0.076 & 0.075 & 0.087 & 0.080 & 0.066\\
+    25 & 0.105 & 0.107 & 0.121 & 0.105 & 0.084\\
+    30 & 0.138 & 0.136 & 0.148 & 0.136 & 0.106\\
+    35 & 0.173 & 0.170 & 0.180 & 0.165 & 0.126\\
+    40 & 0.231 & 0.208 & 0.216 & 0.195 & 0.153\\
+    45 & 0.255 & 0.248 & 0.247 & 0.226 & 0.175\\
+    50 & 0.297 & 0.294 & 0.284 & 0.254 & 0.197\\
+    55 & 0.349 & 0.336 & 0.326 & 0.285 & 0.216\\
+    60 & 0.402 & 0.382 & 0.363 & 0.319 & 0.234\\
+    70 & 0.509 & 0.488 & 0.445 & 0.379 & 0.262\\
+    80 & 0.629 & 0.595 & 0.537 & 0.442 & 0.284\\
+    90 & 0.743 & 0.698 & 0.631 & 0.497 & 0.298\\
+    100 & 0.842 & 0.794 & 0.709 & 0.540 & 0.309\\
+    110 & 0.970 & 0.910 & 0.791 & 0.582 & 0.316\\
+    120 & 1.10 & 1.02 & 0.867 & 0.619 & 0.322\\
+    130 & 1.23 & 1.14 & 0.940 & 0.648 & 0.326\\
+    140 & 1.38 & 1.26 & 1.01 & 0.666 & 0.329\\
+    150 & 1.51 & 1.38 & 1.07 & 0.678 & 0.331\\
+    160 & 1.66 & 1.51 & 1.12 & 0.688 & 0.333\\
+    170 & 1.79 & 1.61 & 1.19 & 0.701 & 0.333\\
+    180 & 1.93 & 1.71 & 1.24 & 0.715 & 0.329\\
+    190 & 2.07 & 1.81 & 1.28 & 0.730 & 0.330\\
+    200 & 2.20 & 1.90 & 1.31 & 0.732 & 0.334\\
+    210 & 2.34 & 2.00 & 1.34 & 0.737 & 0.338\\
+    220 & 2.47 & 2.09 & 1.37 & 0.741 & 0.339\\
+    230 & 2.60 & 2.18 & 1.38 & 0.744 & 0.340\\
+    240 & 2.73 & 2.26 & 1.40 & 0.748 & 0.341\\
+    250 & 2.85 & 2.34 & 1.42 & 0.751 & 0.343\\
+    \bottomrule
+  \end{tabular}
+  \caption{Der gemessene Anodenstrom $I$ in Abhängigkeit von der Spannung $U$.}
+  \label{tab:kennlinien}
+\end{table}
+
+In Tabelle \ref{tab:kennlinien} sind die Messwerte zur Bestimmung der Kennlinien
+bei fünf verschiedenen Heizströmen:
+\begin{align*}
+  I_{\text{H}_1} &= \SI{2.5}{\ampere} & I_{\text{H}_2} &= \SI{2.4}{\ampere} & I_{\text{H}_3} &= \SI{2.3}{\ampere} &
+  I_{\text{H}_4} &= \SI{2.2}{\ampere} & I_{\text{H}_5} &= \SI{2.1}{\ampere}\\
+  \intertext{und den zugehörigen Spannungen}
+  U_{\text{H}_1} &= \SI{6}{\volt} & U_{\text{H}_2} &= \SI{6}{\volt} & U_{\text{H}_3} &= \SI{5.5}{\volt} &
+  U_{\text{H}_4} &= \SI{5}{\volt} & U_{\text{H}_5} &= \SI{5}{\volt}
+\end{align*}
+eingetragen.
+
+Grafisch dargestellt sind sie in Abbildung \ref{fig:kennlinien}.
+
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics[width = \textwidth]{build/kennlinien.pdf}
+  \caption{Die Kennlinien der Diode bei fünf unterschiedlichen Heizströmen.}
+  \label{fig:kennlinien}
 \end{figure}
 
-Tabelle für copy and paste:
+Hier wurde der Sättigungsstrom $I_\text{S}$ abgelesen:
+\begin{align*}
+  I_{\text{S}_2} &= \SI{2.6}{\milli\ampere} & I_{\text{S}_3} &= \SI{1.5}{\milli\ampere} & I_{\text{S}_4} &= \SI{0.76}{\milli\ampere} & I_{\text{S}_5} &= \SI{0.35}{\milli\ampere}.
+\end{align*}
+Der Sättigungsstrom für $I_1$ kann nicht bestimmt werden, da die Messwerte in diesem
+Messbereich noch kein ausreichendes asymptotisches Verhalten zeigen. Für $I_2$ kann er nur
+ungenau bestimmt werden.
+\FloatBarrier
+
+\subsection{Gültigkeitsbereich des Langmuir-Schottkyschen Raumladungsgesetzes}
+
+Für den Gültigkeitsbereich des Raumladungsgesetzes wurden alle Messwerte von $I_1$
+genutzt bis einschließlich Spannung $U = \SI{210}{\volt}$.
+Nun werden für die Ausgleichsfunktion:
+\begin{equation}
+  I = a \cdot U^b
+\end{equation}
+mittels Ausgleichsrechnung die beiden Parameter $a$ und $b$ bestimmt.
+
+Die ausgewählten Messwerte und die bestimmte Ausgleichskurve sind in Abbildung
+\ref{fig:raumladung} zu sehen.
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{build/raumladung.pdf}
+  \caption{Das Raumladungsgebiet der Anode bei höchstem Heizstrom.}
+  \label{fig:raumladung}
+\end{figure}
+
+Bestimmt wurden die Fitparameter:
+\begin{align*}
+  a &= \SI{1.38(8)e-6}{\ampere\per\volt}\\
+  b &= \num{1.39(1)}.
+\end{align*}
+
+Die Abweichung des Exponenten $b$ vom theoretischen Wert $\num{1.5}$
+beträgt:
+\begin{equation*}
+  \Delta b = \SI{7.1}{\percent}.
+\end{equation*}
+\FloatBarrier
+
+\subsection{Bestimmung der Kathodentemperatur aus dem Anlaufstromgebiet}
+
+Zunächst wird die angezeigte Spannung korrigiert, da an dem in Reihe geschalteten
+Amperemeter eine Spannung abfällt. Der Innenwiderstand dort beträgt $R_\g{i} = \SI{1}{\mega\ohm}$.
+Nach dem Ohmschen Gesetz folgt diese Formel:
+\begin{equation}
+  U_\text{korrigiert} = U_\text{angezeigt} - R_\g{i} \cdot I.
+\end{equation}
+
+Die gemessenen und korrigierten Werte für $U$ sowie die Stromstärken sind in Tabelle \ref{tab:anlauf}
+eingetragen.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S}
+    \toprule
+    {$U\:/\:\si{\volt}$} & {$U_\text{korr.}\:/\:\si{\volt}$} & {$I\:/\:\si{\nano\ampere}$}\\
+    \midrule
+    -0 & 0.013 & 13\\
+    -0.04 & -0.029 & 11\\
+    -0.08 & -0.0709 & 9.1\\
+    -0.12 & -0.1125 & 7.5\\
+    -0.16 & -0.1539 & 6.1\\
+    -0.2 & -0.195 & 5.0\\
+    -0.24 & -0.236 & 4.0\\
+    -0.28 & -0.2768 & 3.2\\
+    -0.32 & -0.3174 & 2.6\\
+    -0.36 & -0.3579 & 2.1\\
+    -0.40 & -0.3983 & 1.7\\
+    -0.44 & -0.4386 & 1.4\\
+    -0.48 & -0.4789 & 1.1\\
+    -0.52 & -0.5191 & 0.95\\
+    -0.56 & -0.5593 & 0.75\\
+    -0.6 & -0.5994 & 0.60\\
+    -0.64 & -0.6395 & 0.50\\
+    -0.68 & 0.6796 & 0.40\\
+    -0.72 & -0.7196 & 0.39\\
+    -0.76 & -0.7597 & 0.33\\
+    -0.8 & -0.7997 & 0.28\\
+    -0.84 & -0.8398 & 0.23\\
+    -0.88 & -0.8798 & 0.20\\
+    -0.92 & -0.9198 & 0.17\\
+    -0.96 & -0.9599 & 0.15\\
+    \bottomrule
+  \end{tabular}
+  \caption{Werte des Anlaufstromgebiets.}
+  \label{tab:anlauf}
+\end{table}
+
+Die zum Ausgleich genutzte Kurvengleichung lautet:
+\begin{equation}
+  I = c e^{d\cdot U}.
+  \label{eqn:ausgleichanlauf}
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{build/anlauf.pdf}
+  \caption{Das Anlaufstromgebiet der Diode.}
+  \label{fig:anlauf}
+\end{figure}
+
+In Abbildung \ref{fig:anlauf} ist die gemessene Stromstärke gegen die korrigierte Spannung
+aufgetragen. Außerdem ist die Ausgleichskurve eingezeichnet.
+
+Die sich aus der Ausgleichsrechnung ergebenden Fitparameter betragen:
+\begin{align*}
+  c &= \SI{12.53(8)}{\nano\ampere}\\
+  d &= \SI{4.83(5)}{\per\volt}.
+\end{align*}
+
+Aus Gleichung \eqref{eqn:???} folgt:
+\begin{align*}
+  d = \frac{e}{k T}\\
+  \intertext{und damit: }
+  T = \frac{e}{k d}.\\
+  \intertext{Eingesetzt ergibt sich:}
+  T = \SI{2402(26)}{\kelvin}.
+\end{align*}
+\FloatBarrier
+
+\subsection{Bestimmung der Kathodentemperatur aus der Leistungsbilanz}
+
+Mit den Messwerten aus Kapitel \ref{sec:kennlinien} wird zunächst die zugeführte
+Leistung $N_\text{zu}$ nach Formel \eqref{eqn:Nzu} bestimmt.
+\begin{equation}
+  N_\text{zu} = U_\g{f} I_\g{f}
+  \label{eqn:Nzu}
+\end{equation}
+Dann kann die Kathodentemperatur $T$ nach Gleichung \eqref{eqn:kathodentemperatur}
+bestimmt werden.
+\begin{equation}
+  T = \sqrt[4]{\frac{N_\g{zu} - N_\g{WL}}{f \eta \sigma}}
+  \label{eqn:kathodentemperatur}
+\end{equation}
+Angegeben sind \cite{anleitung}:
+\begin{align*}
+  f &= \SI{0.35}{\centi\meter\squared} & \sigma &= \SI{5.7e-12}{\watt\per\centi\meter\squared\kelvin\tothe{4}} &
+  \eta &= 0.28 & N_\g{WL} &= \SI{1}{\watt}.
+\end{align*}
+Die bestimmten Leistungen $N_\g{zu}$ und Kathodentemperaturen sind in Tabelle \ref{tab:kathodentemperatur}
+zu finden.
+
 \begin{table}[h]
   \centering
   \begin{tabular}{S S}
     \toprule
-    {$k$} & {$U\:/\:\si{\milli\volt}$}\\
+    {$N_\g{zu}\:/\:\si{\watt}$} & {$T\:/\:\si{\kelvin}$}\\
     \midrule
-    1 & 637.2\\
-    3 & 212.4\\
-    5 & 127.4\\
-    7 & 91.03\\
-    9 & 70.8\\
+    15 & 2237.5\\
+    14.4 & 2213.1\\
+    12.65 & 2137.0\\
+    11 & 2057.0\\
+    10.5 & 2030.7\\
     \bottomrule
   \end{tabular}
-  \caption{Amplituden Rechteckspannung.}
-  \label{tab:rechtampl}
+  \caption{Die zugeführte Leistung des Heizstroms sowie die Ergebnisse der Kathodentemperatur.}
+  \label{tab:kathodentemperatur}
 \end{table}
+
+\FloatBarrier
+
+\subsection{Bestimmung der Austrittsarbeit}
+
+Gleichung \eqref{eqn:???} lässt sich umstellen zu:
+\begin{equation}
+  e \phi = - k T \ln \left(\frac{I_\g{S} h^3}{4 \pi f e m_\g{e} k^2 T^2}\right).
+\end{equation}
+
+Mit den abgelesen Sättigungsströmen und den bestimmten Kathodentemperaturen
+lässt sich nun die Austrittsarbeit $e \phi$ bestimmen. Die Ergebnisse sind
+ in Tabelle \ref{tab:Austrittsarbeit} zu
+sehen.
+Von der Angabe der Fehler wurde abgesehen, da sie sehr klein, da
+sie nur aus der sehr genauen Angabe der physikalischen Konstanten
+resultieren.
+Der Literaturwert zur Austrittsarbeit von Wolfram beträgt \cite{Spektrum}:
+\begin{equation*}
+  e\phi_\g{lit.} = \SI{4.54}{\electronvolt}.
+\end{equation*}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S S}
+    \toprule
+    {Nr. der Kennlinie} & {$I_\g{S}\:/\:\si{\ampere}$} & {$T\:/\:\si{\kelvin}$}
+    & {$e \phi\:/\:\si{\electronvolt}$}\\
+    \midrule
+    2 & 2.6 & 2213.1 & 3.47\\
+    3 & 1.5 & 2137.0 & 3.44 \\
+    4 & 0.76 & 2057 & 3.42\\
+    5 & 0.35 & 2030.7 & 3.50\\
+    \bottomrule
+  \end{tabular}
+  \caption{Die aus dem Sättigungsstrom und der Kathodentemperatur bestimmte Austrittsarbeit.}
+  \label{tab:Austrittsarbeit}
+\end{table}
+
+Daraus wird der Mittelwert bestimmt:
+\begin{align*}
+  e \phi_\g{mittel.} &= \SI{3.46 +- 0.03}{\electronvolt};\\
+  \intertext{die Abweichung vom Literaturwert beträgt:}
+  \Delta e\phi_\g{mittel} &= \SI{23.9}{\percent}.
+\end{align*}
