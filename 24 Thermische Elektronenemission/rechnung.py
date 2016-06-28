@@ -32,6 +32,7 @@ print('T = ', T)
 
 #Austrittsarbeit
 I_S = np.array([2.6, 1.5, 0.76, 0.35])
+I_S *= 1e-3
 T = np.array([2213.1, 2137, 2057, 2030.7])
 
 phi = -(k*T) * unp.log((I_S * h**3)/ (4 * np.pi * f * e * m0 * k**2 * T**2))
