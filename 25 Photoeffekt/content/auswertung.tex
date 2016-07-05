@@ -1,27 +1,382 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Die Elementarladung $\symup{e}_0$, das Plancksche Wirkungsquantum $\symup{h}$
+und die Lichtgeschwindigkeit $c$ werden den Quellen
+\cite{elem}, \cite{planck} und \cite{licht} entnommen. Die Wellenlängen zu den
+jeweiligen Farben der Spektrallinien werden Abbildung
+\ref{fig:linien} \subref{fig:linienhg} entnommen.
+
+\subsection{Photostrom bei Bremsspannung für verschiedenes Licht}
+
+In den Tabellen \ref{tab:orange}, \ref{tab:gruen}, \ref{tab:tuerkis},
+\ref{tab:blau} und \ref{tab:violett} sind die Messwerte für Spannung und
+Stomstärke bei verschiedenen Lichtwellenlängen abgebildet. Mit der Wurzel der
+Stromstärkemesswerten und den Spannungsmesswerten wird eine lineare
+Ausgleichsrechnung durchgeführt. Die Messwerte und zugehörigen
+Ausgleichsfunktionen sind in den Abbildungen \ref{fig:orange}, \ref{fig:gruen},
+\ref{fig:tuerkis}, \ref{fig:blau} und \ref{fig:violett} abgebildet.
+
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics{build/orange.pdf}
+  \caption{Messwerte und Ausgleichsfunktion der Messung bei orangenem Licht,
+  $\lambda=\SI{578}{\nano\meter}$. Es ist die Wurzel der Stromstärke gegen
+  die Spannung aufgetragen.}
+  \label{fig:orange}
 \end{figure}
 
-Tabelle für copy and paste:
+\FloatBarrier
+
+\begin{figure}
+  \centering
+  \includegraphics{build/gruen.pdf}
+  \caption{Messwerte und Ausgleichsfunktion der Messung bei grünem Licht,
+  $\lambda=\SI{546}{\nano\meter}$. Es ist die Wurzel der Stromstärke gegen
+  die Spannung aufgetragen.}
+  \label{fig:gruen}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+  \centering
+  \includegraphics{build/tuerkis.pdf}
+  \caption{Messwerte und Ausgleichsfunktion der Messung bei türkisem Licht,
+  $\lambda=\SI{492}{\nano\meter}$. Es ist die Wurzel der Stromstärke gegen
+  die Spannung aufgetragen.}
+  \label{fig:tuerkis}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+  \centering
+  \includegraphics{build/blau.pdf}
+  \caption{Messwerte und Ausgleichsfunktion der Messung bei violettem Licht,
+  $\lambda=\SI{435}{\nano\meter}$. Es ist die Wurzel der Stromstärke gegen
+  die Spannung aufgetragen.}
+  \label{fig:blau}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+  \centering
+  \includegraphics{build/violett.pdf}
+  \caption{Messwerte und Ausgleichsfunktion der Messung bei violettem Licht,
+  $\lambda=\SI{405}{\nano\meter}$. Es ist die Wurzel der Stromstärke gegen
+  die Spannung aufgetragen.}
+  \label{fig:violett}
+\end{figure}
+
+\FloatBarrier
+
+Die berechneten Regressionsparameter sind in Tabelle \ref{tab:regression}
+dargestellt.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S @{${}\pm{}$} S S @{${}\pm{}$} S}
+    \toprule
+    {$\lambda/\si{\nano\meter}$} & \multicolumn{2}{c}{$m$} & \multicolumn{2}{c}{$b$}\\
+    \midrule
+    578 & -0.83 & 0.03 & 0.34 & 0.01 \\
+    546 & -0.60 & 0.03 & 0.45 & 0.01 \\
+    492 & -2.53 & 0.13 & 0.60 & 0.02 \\
+    435 & -0.83 & 0.03 & 1.02 & 0.02 \\
+    366 & -1.38 & 0.02 & 1.19 & 0.01 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Berechnete Regressionsparameter für die verschiedenen Wellenlängen.}
+  \label{tab:regression}
+\end{table}
+
+\FloatBarrier
+
+Die Gegenspannung $U_\text{g}$ folgt unmittelbar aus den jeweiligen
+Abzissenabschnitten und die Frequenz $\nu$ des jeweiligen Lichtes mit
+\begin{align}
+  \nu = \frac{c}{\lambda}.
+\end{align}
+In Tabelle \ref{tab:Frequenz} sind die jeweiligen Gegenspannungen und
+Frequenzen für die verschiedenen Wellenlängen $\lambda$ abgebildet.
+Mit diesen Werten wird erneut eine Ausgleichsrechnung durchgeführt.
+Ausgleichsgerade und Werte sind in Abbildung \ref{tab:Frequenz}
+aufgetragen.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S S @{${}\pm{}$} S}
+    \toprule
+    {$\lambda/\si{\nano\meter}$} & {$\nu/\si{\tera\hertz}$} & \multicolumn{2}{c}{$U/\si{\volt}$}\\
+    \midrule
+    578 & 518.7 & 0.34 & 0.01 \\
+    546 & 549.1 & 0.45 & 0.01 \\
+    492 & 609.3 & 0.60 & 0.02 \\
+    435 & 689.2 & 1.02 & 0.02 \\
+    366 & 819.1 & 1.19 & 0.01 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Zugehörige Frequenzen und Bremsspannungen zu den jeweiligen Wellenlängen.}
+  \label{tab:Frequenz}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics{build/Frequenz.pdf}
+  \caption{Graph der Frequenzen und Bremsspannungen und Ausgleichsgerade.}
+  \label{fig:Frequenz}
+\end{figure}
+
+\FloatBarrier
+
+Die berechneten Regressionsparameter sind
+\begin{align}
+  m_\text{f} & = \num{3.93(26)e-15} \\
+  b_\text{f} & = \num{-1.72(16)}.
+\end{align}
+Aus der Steigung folgt das Verhältnis
+\begin{align}
+  \frac{\symup{h}}{\symup{e}_0} = \num{0.39(3)e-15}\si{\volt\second}
+\end{align}
+und aus dem Betrag des Abzissenabschnittes die Austrittsarbeit
+\begin{align}
+  A_\text{K} = |b| = \SI{1.72(16)}{\electronvolt}.
+\end{align}
+
+\subsection{Photostrom bei einer Wellenlänge}
+
+In den Tabellen \ref{tab:c1} und \ref{tab:c2} sind die Messwerte der
+Photostrom-Messung bei orangenem
+Licht, $\lambda=\SI{578}{\nano\meter}$, aufgelistet. In Abbildung
+\ref{fig:c} sind diese als Graph aufgetragen.
+
+\begin{figure}
+  \centering
+  \includegraphics{build/c.pdf}
+  \caption{Messwerte der Photostrom-Messung bei Gegen- und
+  Beschleunigungsspannung.}
+  \label{fig:c}
+\end{figure}
+
+\FloatBarrier
+
+Bis zur Bremsspannung
+\begin{align}
+  U_\text{g} \approx \SI{0}{\volt}
+\end{align}
+ist der Strom etwa bei einem konstanten negativen Wert. Im Mittel beträgt die
+Stromstärke
+\begin{align}
+  \bar{I}_\text{g} = \SI{0.013(7)}{\nano\ampere}.
+\end{align}
+An dem Graph ist erkennbar, dass die Stromstärke ab der Bremsspannung zunächst
+drastisch steigt und sich dann ab etwa $U= \SI{10}{\volt}$ asymptotisch
+einem Sättigungsstrom annähert.
+
 \begin{table}[h]
   \centering
   \begin{tabular}{S S}
     \toprule
-    {$k$} & {$U\:/\:\si{\milli\volt}$}\\
+    {$I/\si{\nano\ampere}$} & {$U/\si{\volt}$}\\
     \midrule
-    1 & 637.2\\
-    3 & 212.4\\
-    5 & 127.4\\
-    7 & 91.03\\
-    9 & 70.8\\
+    0.17   & 0.001 \\
+    0.125  & 0.050 \\
+    0.08   & 0.100 \\
+    0.06   & 0.150 \\
+    0.02   & 0.200 \\
+    0.018  & 0.220 \\
+    0.011  & 0.240 \\
+    0.008  & 0.260 \\
+    0.004  & 0.280 \\
+    0.0015 & 0.300 \\
+    0.0005 & 0.350 \\
+    0.0      & 0.355 \\
     \bottomrule
   \end{tabular}
-  \caption{Amplituden Rechteckspannung.}
-  \label{tab:rechtampl}
+  \caption{Messwerte der Spannung und Stromstärke bei orangenem Licht,
+  $\lambda=\SI{578}{\nano\meter}$.}
+  \label{tab:orange}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$I/\si{\nano\ampere}$} & {$U/\si{\volt}$}\\
+    \midrule
+    0.0     & 0.462 \\
+    0.006 & 0.430 \\
+    0.016 & 0.400 \\
+    0.012 & 0.350 \\
+    0.060 & 0.300 \\
+    0.090 & 0.250 \\
+    0.150 & 0.200 \\
+    0.250 & 0.150 \\
+    0.320 & 0.100 \\
+    0.480 & 0.050 \\
+    0.600 & 0.001 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der Spannung und Stromstärke bei grünem Licht,
+  $\lambda=\SI{546}{\nano\meter}$.}
+  \label{tab:gruen}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$I/\si{\nano\ampere}$} & {$U/\si{\volt}$}\\
+    \midrule
+    0.0   & 0.533 \\
+    0.002 & 0.500 \\
+    0.005 & 0.450 \\
+    0.008 & 0.400 \\
+    0.012 & 0.350 \\
+    0.014 & 0.300 \\
+    0.022 & 0.250 \\
+    0.024 & 0.200 \\
+    0.028 & 0.150 \\
+    0.040 & 0.100 \\
+    0.046 & 0.050 \\
+    0.050 & 0.001 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der Spannung und Stromstärke bei türkisem Licht,
+  $\lambda=\SI{492}{\nano\meter}$.}
+  \label{tab:tuerkis}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$I/\si{\nano\ampere}$} & {$U/\si{\volt}$}\\
+    \midrule
+    0     & 1.050 \\
+    0.004 & 1.000 \\
+    0.026 & 0.900 \\
+    0.068 & 0.800 \\
+    0.120 & 0.700 \\
+    0.225 & 0.600 \\
+    0.380 & 0.500 \\
+    0.480 & 0.400 \\
+    0.700 & 0.300 \\
+    0.840 & 0.200 \\
+    1.200 & 0.100 \\
+    1.750 & 0.001 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der Spannung und Stromstärke bei violettem Licht,
+  $\lambda=\SI{435}{\nano\meter}$.}
+  \label{tab:blau}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$I/\si{\nano\ampere}$} & {$U/\si{\volt}$}\\
+    \midrule
+    0     & 1.190 \\
+    0.008 & 1.100 \\
+    0.024 & 1.000 \\
+    0.038 & 0.900 \\
+    0.072 & 0.800 \\
+    0.120 & 0.700 \\
+    0.170 & 0.600 \\
+    0.260 & 0.500 \\
+    0.360 & 0.400 \\
+    0.400 & 0.300 \\
+    0.520 & 0.200 \\
+    0.600 & 0.100 \\
+    0.780 & 0.001 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der Spannung und Stromstärke bei violettem Licht,
+  $\lambda=\SI{405}{\nano\meter}$.}
+  \label{tab:violett}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$U/\si{\volt}$} & {$I/\si{\nano\ampere}$}\\
+    \midrule
+    -19  & -0.025\\
+    -18  & -0.024\\
+    -17  & -0.024\\
+    -16  & -0.022\\
+    -15  & -0.022\\
+    -14  & -0.020\\
+    -13  & -0.020\\
+    -12  & -0.019\\
+    -11  & -0.019\\
+    -10  & -0.016\\
+    -9   & -0.015\\
+    -8   & -0.016\\
+    -7   & -0.014\\
+    -6   & -0.012\\
+    -5   & -0.011\\
+    -4   & -0.011\\
+    -3   & -0.009\\
+    -2   & -0.008\\
+    -1.8 & -0.008\\
+    -1.6 & -0.008\\
+    -1.4 & -0.008\\
+    -1.2 & -0.008\\
+    -1.0 & -0.007\\
+    -0.8 & -0.006\\
+    -0.6 & -0.002\\
+    -0.4 & -0.002\\
+    -0.2 & -0.006\\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der Stromstärke bei Gegenspannungen und der
+  Wellenlänge $\lambda=\SI{578}{\nano\meter}$.}
+  \label{tab:c1}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{S S}
+    \toprule
+    {$U/\si{\volt}$} & {$I/\si{\nano\ampere}$}\\
+    \midrule
+    0    & 0.02\\
+    0.2  & 0.12\\
+    0.4  & 0.6\\
+    0.6  & 0.86\\
+    0.8  & 0.95\\
+    1.0  & 1.30\\
+    1.2  & 1.50\\
+    1.4  & 1.60\\
+    1.6  & 1.70\\
+    1.8  & 1.60\\
+    2.0  & 1.80\\
+    3    & 2.25\\
+    4    & 2.50\\
+    5    & 3.80\\
+    6    & 4.20\\
+    7    & 4.60\\
+    8    & 5.00\\
+    9    & 4.20\\
+    10   & 4.80\\
+    11   & 4.60\\
+    12   & 5.00\\
+    13   & 5.60\\
+    14   & 5.40\\
+    15   & 4.60\\
+    16   & 5.40\\
+    17   & 5.10\\
+    18   & 4.90\\
+    19   & 4.80\\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der Stromstärke bei Beschleunigungsspannungen und der
+  Wellenlänge $\lambda=\SI{578}{\nano\meter}$.}
+  \label{tab:c2}
 \end{table}
