@@ -47,5 +47,5 @@ print('Apparaturkonstante:', K)
 l = 0.1
 v = l/38.09
 d = 2*r
-Re = (p*v*d)/n
+Re = (P*v*d)/n
 print('Reynolds-Zahl:', Re)
